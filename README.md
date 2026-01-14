@@ -15,7 +15,9 @@ This project helps users understand economic changes by showing how many "years 
 
 ## Main Application
 
-The primary application is `ONE_YEAR_APP.html` - a self-contained HTML file that can be opened directly in any modern web browser.
+The primary application is `index.html` - a self-contained HTML file that can be opened directly in any modern web browser.
+
+**Live Version**: The app is hosted on GitHub Pages at: https://maxgerald.github.io/one-year/
 
 ## Data Sources
 
@@ -26,7 +28,7 @@ The primary application is `ONE_YEAR_APP.html` - a self-contained HTML file that
 
 ## Usage
 
-Simply open `ONE_YEAR_APP.html` in your web browser. No server or installation required - it's a standalone HTML file with embedded CSS and JavaScript.
+Simply open `index.html` in your web browser, or visit the [live version on GitHub Pages](https://maxgerald.github.io/one-year/). No server or installation required - it's a standalone HTML file with embedded CSS and JavaScript.
 
 ## License
 
