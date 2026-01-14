@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONE YEAR - How Many Years of Your Life Is a House Worth?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #1a3a52;
+      line-height: 1.6;
+    }
+    
+    /* Hero Section - Impact Hook */
+    .hero {
+      background: linear-gradient(135deg, #1a3a52 0%, #2d4a5e 100%);
+      color: white;
+      padding: 60px 24px;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: white;
+      color: #1a3a52;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 32px;
+      margin-bottom: 24px;
+      border: 4px solid #e67e22;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+      max-width: 800px;
+    }
+    
+    .hero-subtitle {
+      font-size: 24px;
+      opacity: 0.9;
+      margin-bottom: 48px;
+      max-width: 600px;
+    }
+    
+    /* Comparison Visual */
+    .comparison-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      width: 100%;
+      margin: 48px 0;
+    }
+    
+    .comparison-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .comparison-year {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .years-bar {
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      margin: 16px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .years-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7cb342, #e67e22);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      transition: width 1s ease;
+    }
+    
+    .years-fill.severe {
+      background: linear-gradient(90deg, #e67e22, #d32f2f);
+    }
+    
+    .years-value {
+      font-size: 56px;
+      font-weight: 900;
+      margin: 16px 0;
+    }
+    
+    .years-label {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    
+    .delta-highlight {
+      background: #e67e22;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 32px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    
+    .cta-button {
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 18px 48px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 32px;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    
+    .cta-button:hover {
+      background: #d35400;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(230, 126, 34, 0.4);
+    }
+    
+    /* Budget Section */
+    .budget-section {
+      background: white;
+      padding: 80px 24px;
+      min-height: 100vh;
+    }
+    
+    .budget-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .budget-title {
+      font-size: 42px;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #1a3a52;
+      line-height: 1.2;
+    }
+    
+    .budget-subtitle {
+      font-size: 20px;
+      text-align: center;
+      color: #546e7a;
+      margin-bottom: 64px;
+    }
+    
+    .budget-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    
+    .budget-card {
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 32px;
+      border: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .budget-card-1975 {
+      border-color: #7cb342;
+    }
+    
+    .budget-card-2025 {
+      border-color: #d32f2f;
+    }
+    
+    .budget-year {
+      font-size: 32px;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 24px;
+      color: #1a3a52;
+    }
+    
+    .budget-income {
+      text-align: center;
+      padding: 24px;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .income-amount {
+      font-size: 48px;
+      font-weight: 900;
+      color: #1a3a52;
+      margin-bottom: 8px;
+    }
+    
+    .income-label {
+      font-size: 14px;
+      color: #546e7a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .budget-breakdown {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    
+    .budget-item {
+      display: grid;
+      grid-template-columns: 32px 1fr auto auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .budget-item:last-of-type {
+      border-bottom: none;
+    }
+    
+    .budget-item.debt-item {
+      background: #fff3e0;
+      margin: 12px -12px;
+      padding: 16px 12px;
+      border-radius: 8px;
+      border: none;
+    }
+    
+    .item-icon {
+      font-size: 24px;
+    }
+    
+    .item-name {
+      font-weight: 600;
+      color: #1a3a52;
+    }
+    
+    .item-amount {
+      font-weight: 700;
+      color: #1a3a52;
+      text-align: right;
+    }
+    
+    .item-weeks {
+      font-size: 14px;
+      color: #1a3a52;
+      text-align: right;
+      font-weight: 700;
+      min-width: 80px;
+    }
+    
+    .item-percent {
+      font-size: 14px;
+      color: #546e7a;
+      text-align: right;
+      min-width: 50px;
+    }
+    
+    .budget-total {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 2px solid #1a3a52;
+    }
+    
+    .total-spent {
+      font-size: 18px;
+      font-weight: 600;
+      color: #546e7a;
+      margin-bottom: 8px;
+    }
+    
+    .total-leftover {
+      font-size: 32px;
+      font-weight: 900;
+      color: #7cb342;
+      margin-bottom: 8px;
+    }
+    
+    .total-leftover.negative {
+      color: #d32f2f;
+    }
+    
+    .leftover-months {
+      font-size: 14px;
+      color: #546e7a;
+    }
+    
+    .house-savings {
+      margin-top: 32px;
+      padding: 24px;
+      background: #f5f5f5;
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .savings-note {
+      font-size: 14px;
+      color: #546e7a;
+      margin-bottom: 12px;
+    }
+    
+    .savings-years {
+      font-size: 48px;
+      font-weight: 900;
+      color: #1a3a52;
+      margin-bottom: 8px;
+    }
+    
+    .savings-years.severe {
+      color: #d32f2f;
+    }
+    
+    .savings-detail {
+      font-size: 16px;
+      font-weight: 600;
+      color: #546e7a;
+    }
+    
+    .budget-conclusion {
+      background: linear-gradient(135deg, #1a3a52 0%, #2d4a5e 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 48px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    
+    .conclusion-title {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+    
+    .conclusion-text {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      opacity: 0.95;
+    }
+    
+    .conclusion-text strong {
+      color: #e67e22;
+    }
+    
+    .conclusion-impact {
+      font-size: 24px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 24px;
+      border-radius: 12px;
+      margin-top: 24px;
+    }
+    
+    .conclusion-impact strong {
+      color: #e67e22;
+    }
+    
+    @media (max-width: 768px) {
+      .budget-comparison {
+        grid-template-columns: 1fr;
+      }
+      
+      .budget-title {
+        font-size: 32px;
+      }
+      
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+    
+    /* Act 1: Personal Calculator */
+    .act-section {
+      display: none;
+      padding: 60px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .act-section.active {
+      display: block;
+    }
+    
+    .act-title {
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #1a3a52;
+    }
+    
+    .act-subtitle {
+      font-size: 18px;
+      color: #546e7a;
+      margin-bottom: 48px;
+    }
+    
+    /* Input Form */
+    .input-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .form-group {
+      margin-bottom: 32px;
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #1a3a52;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 18px;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #1a3a52;
+    }
+    
+    .form-help {
+      font-size: 14px;
+      color: #546e7a;
+      margin-top: 8px;
+    }
+    
+    .form-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 28px;
+      background: #e0e0e0;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch.active {
+      background: #1a3a52;
+    }
+    
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    
+    .toggle-switch.active::after {
+      transform: translateX(22px);
+    }
+    
+    /* Life Bar Visualization */
+    .life-bar-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .life-bar-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #1a3a52;
+    }
+    
+    .life-bar {
+      height: 80px;
+      background: #e9ecef;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a3a52;
+    }
+    
+    .life-bar-segment {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      transition: width 0.5s ease;
+    }
+    
+    .segment-housing { background: #d32f2f; }
+    .segment-debt { background: #37474f; }
+    .segment-education { background: #e67e22; }
+    .segment-transportation { background: #546e7a; }
+    .segment-other { background: #7cb342; }
+    .segment-remaining { background: #1a3a52; }
+    
+    .item-breakdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    .item-card {
+      background: #f5f5f5;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    
+    .item-name {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    
+    .item-years {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a3a52;
+    }
+    
+    /* Act 2: Generational Delta */
+    .delta-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    
+    .delta-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .delta-highlight-box {
+      background: #fff3e0;
+      border-left: 5px solid #e67e22;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #e65100;
+    }
+    
+    /* Act 3: Billionaire Stack */
+    .billionaire-section {
+      background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 48px;
+    }
+    
+    .billionaire-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    
+    .billionaire-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .billionaire-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .billionaire-years {
+      color: #e67e22;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .billionaire-progress {
+      height: 12px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+    
+    .billionaire-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #1a3a52, #d32f2f);
+      border-radius: 6px;
+      transition: width 1s ease;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      
+      .hero-subtitle {
+        font-size: 18px;
+      }
+      
+      .comparison-visual {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      
+      .delta-comparison {
+        grid-template-columns: 1fr;
+      }
+      
+      .input-section,
+      .life-bar-section {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Hook -->
+  <section class="hero" id="hero-section">
+    <div class="logo">1Y</div>
+    <h1>In 1970, the median US worker could afford a lot with One Year of Work</h1>
+    <p class="hero-subtitle">One salary. One house. One car. Food on the table. Money left over.</p>
+    
+    <div class="comparison-visual">
+      <div class="comparison-card">
+        <div class="comparison-year">1970</div>
+        <div class="years-bar">
+          <div class="years-fill" id="hero-bar-1970" style="width: 45%;">3.2</div>
+        </div>
+        <div class="years-value" id="hero-years-1970">3.2</div>
+        <div class="years-label">years for a house</div>
+      </div>
+      
+      <div class="comparison-card">
+        <div class="comparison-year">2025</div>
+        <div class="years-bar">
+          <div class="years-fill severe" id="hero-bar-2025" style="width: 82%;">6.5</div>
+        </div>
+        <div class="years-value" id="hero-years-2025">6.5</div>
+        <div class="years-label">years for a house</div>
+      </div>
+    </div>
+    
+    <div class="delta-highlight" id="delta-highlight">
+      You're working 3.3 extra years for the same house
+    </div>
+    
+    <button class="cta-button" onclick="scrollToBudget()">See the Full Budget Breakdown ↓</button>
+  </section>
+  
+  <!-- Budget Comparison Section -->
+  <section class="budget-section" id="budget-section">
+    <div class="budget-container">
+      <h2 class="budget-title">The Real Budget: What One Year of Work Actually Buys</h2>
+      <p class="budget-subtitle">A realistic look at how far one salary went then vs. now</p>
+      
+      <div class="budget-comparison">
+        <!-- 1970 Budget -->
+        <div class="budget-card budget-card-1975">
+          <div class="budget-year">1970</div>
+          <div class="budget-income">
+            <div class="income-amount" id="income-1970">$7,400</div>
+            <div class="income-label">Median Annual Salary (1Y)</div>
+          </div>
+          
+          <div class="budget-breakdown">
+            <div class="budget-item">
+              <span class="item-icon">🏢</span>
+              <span class="item-name">Annual Rent</span>
+              <span class="item-amount">$2,100</span>
+              <span class="item-weeks" id="rent-weeks-1970">9 weeks</span>
+              <span class="item-percent">20%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🛒</span>
+              <span class="item-name">Groceries (Family of 4)</span>
+              <span class="item-amount">$2,300</span>
+              <span class="item-weeks" id="groceries-weeks-1970">10 weeks</span>
+              <span class="item-percent">22%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🚗</span>
+              <span class="item-name">Car Payment (Annual)</span>
+              <span class="item-amount">$1,200</span>
+              <span class="item-weeks" id="car-weeks-1970">5 weeks</span>
+              <span class="item-percent">12%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🔌</span>
+              <span class="item-name">Utilities</span>
+              <span class="item-amount" id="utilities-1970">$360</span>
+              <span class="item-weeks" id="utilities-weeks-1970">2 weeks</span>
+              <span class="item-percent" id="utilities-pct-1970">5%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">⛽</span>
+              <span class="item-name">Gasoline (Annual)</span>
+              <span class="item-amount" id="gas-1970">$216</span>
+              <span class="item-weeks" id="gas-weeks-1970">1 week</span>
+              <span class="item-percent" id="gas-pct-1970">3%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🏥</span>
+              <span class="item-name">Healthcare</span>
+              <span class="item-amount" id="healthcare-1970">$350</span>
+              <span class="item-weeks" id="healthcare-weeks-1970">2 weeks</span>
+              <span class="item-percent" id="healthcare-pct-1970">5%</span>
+            </div>
+            
+            <div class="budget-total">
+              <div class="total-spent" id="total-1970">Total Essentials: $4,622</div>
+              <div class="total-leftover" id="leftover-1970">Leftover: $2,778</div>
+              <div class="leftover-months" id="leftover-months-1970">(38% of salary = 4.5 months)</div>
+            </div>
+            
+            <div class="house-savings">
+              <div class="savings-note">To save for down payment:</div>
+              <div class="savings-years" id="savings-years-1970">3.2 years</div>
+              <div class="savings-detail" id="savings-detail-1970">One salary. One house. Money left over.</div>
+              <div class="savings-fineprint" id="savings-fineprint-1970" style="font-size: 11px; color: #546e7a; margin-top: 8px; line-height: 1.4;">
+                Assumes FHA loan (3% down = $704). VA loans available for veterans (0% down).<br>
+                <em>Note: $7,400 = median individual worker income (not household).</em>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 2025 Budget -->
+        <div class="budget-card budget-card-2025">
+          <div class="budget-year">2025</div>
+          <div class="budget-income">
+            <div class="income-amount">$63,128</div>
+            <div class="income-label">Median Annual Salary (1Y)</div>
+          </div>
+          
+          <div class="budget-breakdown">
+            <div class="budget-item">
+              <span class="item-icon">🏢</span>
+              <span class="item-name">Annual Rent</span>
+              <span class="item-amount">$17,400</span>
+              <span class="item-weeks" id="rent-weeks-2025">14 weeks</span>
+              <span class="item-percent">28%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🛒</span>
+              <span class="item-name">Groceries (Family of 4)</span>
+              <span class="item-amount">$10,500</span>
+              <span class="item-weeks" id="groceries-weeks-2025">8 weeks</span>
+              <span class="item-percent">17%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🚗</span>
+              <span class="item-name">Car Payment (Annual)</span>
+              <span class="item-amount">$6,000</span>
+              <span class="item-weeks" id="car-weeks-2025">5 weeks</span>
+              <span class="item-percent">10%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🔌</span>
+              <span class="item-name">Utilities</span>
+              <span class="item-amount" id="utilities-2025">$3,600</span>
+              <span class="item-weeks" id="utilities-weeks-2025">3 weeks</span>
+              <span class="item-percent" id="utilities-pct-2025">6%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">⛽</span>
+              <span class="item-name">Gasoline (Annual)</span>
+              <span class="item-amount" id="gas-2025">$1,704</span>
+              <span class="item-weeks" id="gas-weeks-2025">1 week</span>
+              <span class="item-percent" id="gas-pct-2025">3%</span>
+            </div>
+            <div class="budget-item">
+              <span class="item-icon">🏥</span>
+              <span class="item-name">Healthcare</span>
+              <span class="item-amount" id="healthcare-2025">$8,500</span>
+              <span class="item-weeks" id="healthcare-weeks-2025">7 weeks</span>
+              <span class="item-percent" id="healthcare-pct-2025">13%</span>
+            </div>
+            <div class="budget-item debt-item">
+              <span class="item-icon">💳</span>
+              <span class="item-name">Student Loan + Credit Debt</span>
+              <span class="item-amount" id="debt-2025">$4,900</span>
+              <span class="item-weeks" id="debt-weeks-2025">4 weeks</span>
+              <span class="item-percent" id="debt-pct-2025">8%</span>
+            </div>
+            
+            <div class="budget-total">
+              <div class="total-spent" id="total-2025">Total Essentials: $52,604</div>
+              <div class="total-leftover negative" id="leftover-2025">Leftover: $10,524</div>
+              <div class="leftover-months" id="leftover-months-2025">(17% of salary = 2.0 months)</div>
+            </div>
+            
+            <div class="house-savings">
+              <div class="savings-note">To save for down payment:</div>
+              <div class="savings-years severe" id="savings-years-2025">6.5 years</div>
+              <div class="savings-detail" id="savings-detail-2025">One salary. No house. Can't save enough.</div>
+              <div class="savings-fineprint" id="savings-fineprint-2025" style="font-size: 11px; color: #546e7a; margin-top: 8px; line-height: 1.4;">
+                Assumes FHA loan (3.5% down = $14,322). VA loans available for veterans (0% down).<br>
+                <em>FHA has no income limits; $63,128 qualifies if debt-to-income ratio is acceptable.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="budget-conclusion">
+        <div class="conclusion-title">The Math Changed</div>
+        <div class="conclusion-text" id="conclusion-text">
+          Loading...
+        </div>
+        <div class="conclusion-impact" id="conclusion-impact">
+          Loading...
+        </div>
+      </div>
+      
+      <button class="cta-button" onclick="showAct1()" style="margin-top: 48px;">Calculate Your Personal Reality</button>
+    </div>
+  </section>
+  
+  <!-- Act 1: Personal Calculator -->
+  <section class="act-section" id="act1-section">
+    <h2 class="act-title">Act 1: Your Life-Time</h2>
+    <p class="act-subtitle">Enter your information to see how many years of your life each major purchase costs</p>
+    
+    <div class="input-section">
+      <div class="form-group">
+        <label class="form-label">Your Annual Salary</label>
+        <input type="number" id="user-salary" class="form-input" placeholder="63000" value="63128">
+        <div class="form-help">This defines your "1Y" - one year of your life's work</div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Total Existing Debt</label>
+        <input type="number" id="user-debt" class="form-input" placeholder="0" value="0">
+        <div class="form-help">Student loans, credit cards, car loans, etc. This represents "negative years" you already owe</div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Customize Prices (Optional)</label>
+        <div class="form-toggle">
+          <span>Use my local prices instead of national medians</span>
+          <div class="toggle-switch" id="custom-prices-toggle" onclick="toggleCustomPrices()"></div>
+        </div>
+      </div>
+      
+      <div id="custom-prices-section" style="display: none;">
+        <div class="form-group">
+          <label class="form-label">Monthly Rent/Mortgage</label>
+          <input type="number" id="custom-rent" class="form-input" placeholder="Leave blank to use median">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Monthly Groceries</label>
+          <input type="number" id="custom-groceries" class="form-input" placeholder="Leave blank to use median">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Monthly Car Payment</label>
+          <input type="number" id="custom-car" class="form-input" placeholder="Leave blank to use median">
+        </div>
+      </div>
+      
+      <button class="cta-button" onclick="calculatePersonalReality()">Calculate My Life Bar</button>
+    </div>
+    
+    <div class="life-bar-section" id="life-bar-section" style="display: none;">
+      <h3 class="life-bar-title">Your 1Y Breakdown</h3>
+      <div class="life-bar" id="life-bar-visual">
+        <div id="life-bar-segments"></div>
+      </div>
+      <div class="item-breakdown" id="item-breakdown"></div>
+    </div>
+    
+    <button class="cta-button" id="act2-button" onclick="showAct2()" style="display: none; margin-top: 32px;">See How You Compare to 1970 →</button>
+  </section>
+  
+  <!-- Act 2: Generational Delta -->
+  <section class="act-section" id="act2-section">
+    <h2 class="act-title">Act 2: The Generational Delta</h2>
+    <p class="act-subtitle">See how many extra years you're working compared to someone in 1970</p>
+    
+    <div class="delta-comparison" id="delta-comparison">
+      <!-- Populated by JavaScript -->
+    </div>
+    
+    <button class="cta-button" onclick="showAct3()" style="margin-top: 32px;">Where Did the Value Go? →</button>
+  </section>
+  
+  <!-- Act 3: Systemic Reveal -->
+  <section class="act-section" id="act3-section">
+    <h2 class="act-title">Act 3: The Systemic Pivot</h2>
+    <p class="act-subtitle">The economy grew. Productivity tripled. So where did all that value go?</p>
+    
+    <div class="billionaire-section">
+      <h3 class="billionaire-title">Billionaire Wealth in Years of Work</h3>
+      <p style="margin-bottom: 32px; opacity: 0.9;">How many years would a median worker need to work to match this wealth?</p>
+      <div id="billionaire-container"></div>
+    </div>
+  </section>
+  
+  <script>
+    // Load data
+    let appData = null;
+    
+    async function loadData() {
+      try {
+        const response = await fetch('ONE_YEAR_COMPLETE_DATA.json');
+        appData = await response.json();
+      } catch (error) {
+        console.error('Error loading data:', error);
+        // Fallback to inline data if fetch fails
+        appData = {
+          incomeData: {
+            medianWorker: {
+              data: {
+                1970: { value: 7400 },
+                2025: { value: 63128 }
+              }
+            }
+          },
+          items: {
+            medianHome: {
+              prices: {
+                1970: 23450,
+                2025: 409200
+              }
+            }
+          }
+        };
+      }
+    }
+    
+    // Navigation
+    function scrollToBudget() {
+      document.getElementById('budget-section').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function showAct1() {
+      document.getElementById('hero-section').style.display = 'none';
+      document.getElementById('budget-section').style.display = 'none';
+      document.getElementById('act1-section').classList.add('active');
+      window.scrollTo(0, 0);
+    }
+    
+    function showAct2() {
+      document.getElementById('act1-section').classList.remove('active');
+      document.getElementById('act2-section').classList.add('active');
+      renderAct2();
+      window.scrollTo(0, 0);
+    }
+    
+    function showAct3() {
+      document.getElementById('act2-section').classList.remove('active');
+      document.getElementById('act3-section').classList.add('active');
+      renderAct3();
+      window.scrollTo(0, 0);
+    }
+    
+    // Custom prices toggle
+    function toggleCustomPrices() {
+      const toggle = document.getElementById('custom-prices-toggle');
+      const section = document.getElementById('custom-prices-section');
+      toggle.classList.toggle('active');
+      section.style.display = toggle.classList.contains('active') ? 'block' : 'none';
+    }
+    
+    // Calculate personal reality
+    function calculatePersonalReality() {
+      const salary = parseFloat(document.getElementById('user-salary').value) || 63128;
+      const debt = parseFloat(document.getElementById('user-debt').value) || 0;
+      const useCustom = document.getElementById('custom-prices-toggle').classList.contains('active');
+      
+      // Get 2025 prices from data (handle multiple possible data structures)
+      const homePrice = appData?.items?.medianHome?.data?.['2025']?.price || 409200;
+      const rentAnnual = appData?.items?.annualRent?.data?.['2025']?.price || 17400;
+      const collegePrice = appData?.items?.collegeTuition4Year?.data?.['2025']?.price || 47800;
+      const carPrice = appData?.items?.newCar?.data?.['2025']?.price || 48644;
+      
+      // Use custom prices if provided
+      const customRent = useCustom ? parseFloat(document.getElementById('custom-rent').value) * 12 : null;
+      const customGroceries = useCustom ? parseFloat(document.getElementById('custom-groceries').value) * 12 : null;
+      const customCar = useCustom ? parseFloat(document.getElementById('custom-car').value) * 12 : null;
+      
+      const rent = customRent || rentAnnual;
+      const groceries = customGroceries || 10500; // Default from data
+      const car = customCar || carPrice;
+      
+      // Calculate years for each item
+      const housingYears = homePrice / salary;
+      const rentYears = rent / salary;
+      const collegeYears = collegePrice / salary;
+      const carYears = car / salary;
+      const groceriesYears = groceries / salary;
+      const debtYears = debt / salary;
+      
+      // Render life bar
+      renderLifeBar({
+        salary,
+        debtYears,
+        housingYears,
+        rentYears,
+        collegeYears,
+        carYears,
+        groceriesYears
+      });
+      
+      // Show Act 2 button
+      document.getElementById('act2-button').style.display = 'block';
+      
+      // Store for Act 2
+      window.userData = {
+        salary,
+        debt,
+        housingYears,
+        rentYears,
+        collegeYears,
+        carYears,
+        groceriesYears
+      };
+    }
+    
+    function renderLifeBar(data) {
+      const section = document.getElementById('life-bar-section');
+      section.style.display = 'block';
+      
+      const segments = [];
+      const breakdown = [];
+      
+      // Housing
+      if (data.housingYears > 0) {
+        segments.push({
+          width: (data.housingYears / 10) * 100, // Scale to max 10 years
+          label: 'House',
+          years: data.housingYears.toFixed(1),
+          class: 'segment-housing'
+        });
+        breakdown.push({ name: '🏠 Median Home', years: data.housingYears.toFixed(1) });
+      }
+      
+      // Debt
+      if (data.debtYears > 0) {
+        segments.push({
+          width: (data.debtYears / 10) * 100,
+          label: 'Debt',
+          years: data.debtYears.toFixed(1),
+          class: 'segment-debt'
+        });
+        breakdown.push({ name: '💳 Existing Debt', years: data.debtYears.toFixed(1) });
+      }
+      
+      // College
+      if (data.collegeYears > 0) {
+        segments.push({
+          width: (data.collegeYears / 10) * 100,
+          label: 'College',
+          years: data.collegeYears.toFixed(1),
+          class: 'segment-education'
+        });
+        breakdown.push({ name: '🎓 4-Year College', years: data.collegeYears.toFixed(1) });
+      }
+      
+      // Car
+      if (data.carYears > 0) {
+        segments.push({
+          width: (data.carYears / 10) * 100,
+          label: 'Car',
+          years: data.carYears.toFixed(1),
+          class: 'segment-transportation'
+        });
+        breakdown.push({ name: '🚗 New Car', years: data.carYears.toFixed(1) });
+      }
+      
+      // Groceries
+      if (data.groceriesYears > 0) {
+        segments.push({
+          width: (data.groceriesYears / 10) * 100,
+          label: 'Groceries',
+          years: data.groceriesYears.toFixed(2),
+          class: 'segment-other'
+        });
+        breakdown.push({ name: '🛒 Annual Groceries', years: data.groceriesYears.toFixed(2) });
+      }
+      
+      // Render segments
+      let segmentsHtml = '';
+      segments.forEach(seg => {
+        segmentsHtml += `<div class="life-bar-segment ${seg.class}" style="width: ${Math.min(seg.width, 100)}%;">${seg.years}y</div>`;
+      });
+      
+      document.getElementById('life-bar-segments').innerHTML = segmentsHtml;
+      
+      // Render breakdown
+      let breakdownHtml = '';
+      breakdown.forEach(item => {
+        breakdownHtml += `
+          <div class="item-card">
+            <div class="item-name">${item.name}</div>
+            <div class="item-years">${item.years} years</div>
+          </div>
+        `;
+      });
+      
+      document.getElementById('item-breakdown').innerHTML = breakdownHtml;
+    }
+    
+    function renderAct2() {
+      if (!window.userData) return;
+      
+      const userData = window.userData;
+      const salary1970 = appData?.incomeData?.medianWorker?.data?.['1970']?.value || 7400;
+      const home1970 = appData?.items?.medianHome?.data?.['1970']?.price || 23450;
+      
+      const userHomeYears = userData.housingYears;
+      const home1970Years = home1970 / salary1970;
+      const delta = userHomeYears - home1970Years;
+      
+      const container = document.getElementById('delta-comparison');
+      container.innerHTML = `
+        <div class="delta-card">
+          <h3 style="font-size: 24px; margin-bottom: 16px;">Your Reality (2025)</h3>
+          <div class="years-value" style="color: #d32f2f;">${userHomeYears.toFixed(1)} years</div>
+          <div class="years-label">to buy a median home</div>
+          <div style="margin-top: 24px; padding: 16px; background: #f5f5f5; border-radius: 8px;">
+            <div style="font-size: 14px; color: #546e7a; margin-bottom: 8px;">Your salary: $${userData.salary.toLocaleString()}/year</div>
+            <div style="font-size: 14px; color: #546e7a;">Home price: $${(userData.salary * userHomeYears).toLocaleString()}</div>
+          </div>
+        </div>
+        
+        <div class="delta-card">
+          <h3 style="font-size: 24px; margin-bottom: 16px;">1970 Median Worker</h3>
+          <div class="years-value" style="color: #7cb342;">${home1970Years.toFixed(1)} years</div>
+          <div class="years-label">to buy a median home</div>
+          <div style="margin-top: 24px; padding: 16px; background: #f5f5f5; border-radius: 8px;">
+            <div style="font-size: 14px; color: #546e7a; margin-bottom: 8px;">1970 salary: $${salary1970.toLocaleString()}/year</div>
+            <div style="font-size: 14px; color: #546e7a;">Home price: $${home1970.toLocaleString()}</div>
+          </div>
+        </div>
+        
+        <div class="delta-highlight-box" style="grid-column: 1 / -1;">
+          You are working <strong>${delta.toFixed(1)} extra years</strong> for the same house compared to 1970
+        </div>
+      `;
+    }
+    
+    function renderAct3() {
+      // Get billionaire data from JSON or use defaults
+      let billionaires = [];
+      if (appData?.wealthConcentration?.billionaireWealth?.data) {
+        const data = appData.wealthConcentration.billionaireWealth.data;
+        billionaires = [
+          { name: data.rockefeller_1913?.name || 'Rockefeller (1913)', years: data.rockefeller_1913?.yearsOfMedianWork || 1410658 },
+          { name: data.getty_1976?.name || 'J. Paul Getty (1976)', years: data.getty_1976?.yearsOfMedianWork || 212000 },
+          { name: data.bezos_2024?.name || 'Jeff Bezos (2024)', years: data.bezos_2024?.yearsOfMedianWork || 3342600 },
+          { name: data.musk_2024?.name || 'Elon Musk (2024)', years: data.musk_2024?.yearsOfMedianWork || 3976700 }
+        ];
+      } else {
+        // Fallback to hardcoded data
+        billionaires = [
+          { name: 'Rockefeller (1913)', years: 1410658 },
+          { name: 'J. Paul Getty (1976)', years: 212000 },
+          { name: 'Jeff Bezos (2024)', years: 3342600 },
+          { name: 'Elon Musk (2024)', years: 3976700 }
+        ];
+      }
+      
+      const maxYears = Math.max(...billionaires.map(b => b.years));
+      
+      let html = '';
+      billionaires.forEach(b => {
+        const lifetimes = Math.round(b.years / 40);
+        const width = (b.years / maxYears) * 100;
+        
+        html += `
+          <div class="billionaire-bar">
+            <div class="billionaire-header">
+              <span>${b.name}</span>
+              <span class="billionaire-years">${(b.years / 1000000).toFixed(1)}M years</span>
+            </div>
+            <div class="billionaire-progress">
+              <div class="billionaire-fill" style="width: ${width}%;"></div>
+            </div>
+            <div style="font-size: 14px; opacity: 0.8; margin-top: 8px;">
+              That's ${lifetimes.toLocaleString()} complete working lifetimes
+            </div>
+          </div>
+        `;
+      });
+      
+      document.getElementById('billionaire-container').innerHTML = html;
+    }
+    
+    // Calculate and update budget values
+    function updateBudgetValues() {
+      if (!appData) return;
+      
+      // 1970 values (using actual data from JSON)
+      const income1970 = appData?.incomeData?.medianWorker?.data?.['1970']?.value || 7400;
+      const rent1970 = appData?.items?.annualRent?.data?.['1970']?.price || 1296;
+      const groceries1970 = appData?.items?.groceriesFamily4?.data?.['1970']?.price || 1800;
+      const carPrice1970 = appData?.items?.newCar?.data?.['1970']?.price || 3450;
+      // 1970: Many saved up and paid cash for cars (common practice)
+      // But if financed: 2-3 year terms were standard (not 5 years like today)
+      // For realistic comparison, assume 3-year loan at 10% annual interest
+      const carLoanTerm1970 = 3; // years (typical for 1970)
+      const carInterestRate1970 = 0.10; // 10% annual interest (typical for 1970)
+      // Calculate monthly payment using standard loan formula
+      // Monthly rate = annual rate / 12, n = months
+      const monthlyRate1970 = carInterestRate1970 / 12;
+      const months1970 = carLoanTerm1970 * 12;
+      const monthlyPayment1970 = carPrice1970 * (monthlyRate1970 * Math.pow(1 + monthlyRate1970, months1970)) / (Math.pow(1 + monthlyRate1970, months1970) - 1);
+      const carPayment1970 = Math.round(monthlyPayment1970 * 12); // Annual payment
+      const utilities1970 = appData?.items?.utilities?.data?.['1970']?.price || 360;
+      const gasPrice1970 = appData?.items?.gasoline?.data?.['1970']?.price || 0.36;
+      const gasAnnual1970 = Math.round(gasPrice1970 * 600); // ~600 gallons/year average
+      const healthcare1970 = appData?.items?.healthcare?.data?.['1970']?.price || 350;
+      const house1970 = appData?.items?.medianHome?.data?.['1970']?.price || 23450;
+      
+      // 1970 Down Payment Requirements:
+      // - FHA loans: 3-5% down (most common for first-time buyers)
+      // - VA loans: 0% down (for veterans)
+      // - Conventional: 20% down
+      // Assume FHA loan (3% down) as most accessible option
+      const downPaymentPercent1970 = 0.03; // 3% for FHA loan
+      const downPayment1970 = house1970 * downPaymentPercent1970;
+      const loanProgram1970 = 'FHA (3% down)'; // Most accessible in 1970
+      
+      // Calculate essentials WITHOUT car payment (for after car is paid off)
+      const essentialsNoCar1970 = rent1970 + groceries1970 + utilities1970 + gasAnnual1970 + healthcare1970;
+      const leftoverNoCar1970 = income1970 - essentialsNoCar1970;
+      
+      // Calculate essentials WITH car payment (during car loan period)
+      const totalWithCar1970 = essentialsNoCar1970 + carPayment1970;
+      const leftoverWithCar1970 = income1970 - totalWithCar1970;
+      
+      // Calculate realistic DOWN PAYMENT savings timeline (not full house price):
+      // Years 1-3: Save leftoverWithCar1970 per year (car payment active)
+      // Years 4+: Save leftoverNoCar1970 per year (car paid off)
+      let savingsYears1970;
+      let savingsDetail1970 = '';
+      
+      if (leftoverWithCar1970 > 0) {
+        // Can save during car payment period
+        if (leftoverWithCar1970 >= downPayment1970) {
+          // Down payment saved in first year (during car payment)
+          savingsYears1970 = downPayment1970 / leftoverWithCar1970;
+          savingsDetail1970 = `Down payment saved in ${savingsYears1970.toFixed(1)} years (during car payment period).`;
+        } else {
+          // Need to save across car payment period and after
+          const savingsDuringCar1970 = leftoverWithCar1970 * carLoanTerm1970;
+          const remainingForDownPayment1970 = downPayment1970 - savingsDuringCar1970;
+          if (remainingForDownPayment1970 <= 0) {
+            // Saved during car payment period (but takes full term)
+            savingsYears1970 = downPayment1970 / leftoverWithCar1970;
+            savingsDetail1970 = `Down payment saved in ${savingsYears1970.toFixed(1)} years (during car payment period).`;
+          } else if (leftoverNoCar1970 > 0) {
+            const yearsAfterCar = remainingForDownPayment1970 / leftoverNoCar1970;
+            savingsYears1970 = carLoanTerm1970 + yearsAfterCar;
+            savingsDetail1970 = `Years 1-${carLoanTerm1970}: Save $${leftoverWithCar1970.toLocaleString()}/yr (car payment). Years ${carLoanTerm1970 + 1}-${Math.ceil(savingsYears1970)}: Save $${leftoverNoCar1970.toLocaleString()}/yr (car paid off).`;
+          } else {
+            savingsYears1970 = Infinity;
+            savingsDetail1970 = 'Cannot save enough for down payment.';
+          }
+        }
+      } else if (leftoverNoCar1970 > 0) {
+        // Can't save during car payment, but can after
+        savingsYears1970 = carLoanTerm1970 + (downPayment1970 / leftoverNoCar1970);
+        savingsDetail1970 = `Years 1-${carLoanTerm1970}: No savings (car payment). Years ${carLoanTerm1970 + 1}-${Math.ceil(savingsYears1970)}: Save $${leftoverNoCar1970.toLocaleString()}/yr (car paid off).`;
+      } else {
+        savingsYears1970 = Infinity;
+        savingsDetail1970 = 'Cannot save enough for down payment.';
+      }
+      
+      const houseYears1970 = house1970 / income1970;
+      
+      // Debug: Log calculations for verification
+      console.log('1970 Calculations:', {
+        income: income1970,
+        essentialsNoCar: essentialsNoCar1970,
+        leftoverNoCar: leftoverNoCar1970,
+        carPayment: carPayment1970,
+        leftoverWithCar: leftoverWithCar1970,
+        house: house1970,
+        downPayment: downPayment1970,
+        savingsYears: savingsYears1970,
+        savingsDetail: savingsDetail1970,
+        calculation: `Down payment $${downPayment1970} / leftover $${leftoverWithCar1970} = ${(downPayment1970/leftoverWithCar1970).toFixed(2)} years`
+      });
+      
+      // 2025 values (using actual data from JSON)
+      const income2025 = appData?.incomeData?.medianWorker?.data?.['2025']?.value || 63128;
+      const rent2025 = appData?.items?.annualRent?.data?.['2025']?.price || 17400;
+      const groceries2025 = appData?.items?.groceriesFamily4?.data?.['2025']?.price || 10500;
+      const carPrice2025 = appData?.items?.newCar?.data?.['2025']?.price || 48644;
+      // 2025: 5-7 year loans are standard, assume 5 years at 6% interest
+      const carLoanTerm2025 = 5; // years (standard today)
+      const carInterestRate2025 = 0.06; // 6% annual interest (typical for 2025)
+      // Calculate monthly payment using standard loan formula
+      const monthlyRate2025 = carInterestRate2025 / 12;
+      const months2025 = carLoanTerm2025 * 12;
+      const monthlyPayment2025 = carPrice2025 * (monthlyRate2025 * Math.pow(1 + monthlyRate2025, months2025)) / (Math.pow(1 + monthlyRate2025, months2025) - 1);
+      const carPayment2025 = Math.round(monthlyPayment2025 * 12); // Annual payment
+      const utilities2025 = appData?.items?.utilities?.data?.['2025']?.price || 3600;
+      const gasPrice2025 = appData?.items?.gasoline?.data?.['2025']?.price || 2.84;
+      const gasAnnual2025 = Math.round(gasPrice2025 * 600); // ~600 gallons/year average
+      const healthcare2025 = appData?.items?.healthcare?.data?.['2025']?.price || 8500;
+      const studentDebt2025 = appData?.items?.studentLoanDebt?.data?.['2025']?.price || 39375;
+      const creditDebt2025 = appData?.items?.creditCardDebt?.data?.['2025']?.price || 9326;
+      // Student loans: 10-year standard, credit cards: 5-year payoff
+      const debtPayment2025 = Math.round((studentDebt2025 / 10) + (creditDebt2025 / 5));
+      const house2025 = appData?.items?.medianHome?.data?.['2025']?.price || 409200;
+      
+      // 2025 Down Payment Requirements:
+      // - FHA loans: 3.5% down (most accessible for first-time buyers)
+      //   Note: FHA has no income limits, but has loan limits ($524K-$1.2M by area)
+      //   $63,128 income should qualify if debt-to-income ratio is acceptable
+      // - VA loans: 0% down (for veterans)
+      // - Conventional: 20% down (standard)
+      // Assume FHA loan (3.5% down) as most accessible option
+      const downPaymentPercent2025 = 0.035; // 3.5% for FHA loan
+      const downPayment2025 = house2025 * downPaymentPercent2025;
+      const loanProgram2025 = 'FHA (3.5% down)'; // Most accessible in 2025
+      
+      // Calculate essentials WITHOUT car payment (for after car is paid off)
+      const essentialsNoCar2025 = rent2025 + groceries2025 + utilities2025 + gasAnnual2025 + healthcare2025 + debtPayment2025;
+      const leftoverNoCar2025 = income2025 - essentialsNoCar2025;
+      
+      // Calculate essentials WITH car payment (during car loan period)
+      const totalWithCar2025 = essentialsNoCar2025 + carPayment2025;
+      const leftoverWithCar2025 = income2025 - totalWithCar2025;
+      
+      // Calculate realistic DOWN PAYMENT savings timeline (not full house price):
+      // Years 1-5: Save leftoverWithCar2025 per year (car payment active)
+      // Years 6+: Save leftoverNoCar2025 per year (car paid off)
+      let savingsYears2025;
+      let savingsDetail2025 = '';
+      
+      if (leftoverWithCar2025 > 0) {
+        // Can save during car payment period
+        if (leftoverWithCar2025 >= downPayment2025) {
+          // Down payment saved in first year (during car payment)
+          savingsYears2025 = downPayment2025 / leftoverWithCar2025;
+          savingsDetail2025 = `Down payment saved in ${savingsYears2025.toFixed(1)} years (during car payment period).`;
+        } else {
+          // Need to save across car payment period and after
+          const savingsDuringCar2025 = leftoverWithCar2025 * carLoanTerm2025;
+          const remainingForDownPayment2025 = downPayment2025 - savingsDuringCar2025;
+          if (remainingForDownPayment2025 <= 0) {
+            // Saved during car payment period (but takes full term)
+            savingsYears2025 = downPayment2025 / leftoverWithCar2025;
+            savingsDetail2025 = `Down payment saved in ${savingsYears2025.toFixed(1)} years (during car payment period).`;
+          } else if (leftoverNoCar2025 > 0) {
+            const yearsAfterCar = remainingForDownPayment2025 / leftoverNoCar2025;
+            savingsYears2025 = carLoanTerm2025 + yearsAfterCar;
+            savingsDetail2025 = `Years 1-${carLoanTerm2025}: Save $${Math.round(leftoverWithCar2025).toLocaleString()}/yr (car payment). Years ${carLoanTerm2025 + 1}-${Math.ceil(savingsYears2025)}: Save $${Math.round(leftoverNoCar2025).toLocaleString()}/yr (car paid off).`;
+          } else {
+            savingsYears2025 = Infinity;
+            savingsDetail2025 = 'Cannot save enough for down payment.';
+          }
+        }
+      } else if (leftoverNoCar2025 > 0) {
+        // Can't save during car payment, but can after
+        savingsYears2025 = carLoanTerm2025 + (downPayment2025 / leftoverNoCar2025);
+        savingsDetail2025 = `Years 1-${carLoanTerm2025}: No savings (car payment). Years ${carLoanTerm2025 + 1}-${Math.ceil(savingsYears2025)}: Save $${Math.round(leftoverNoCar2025).toLocaleString()}/yr (car paid off).`;
+      } else {
+        savingsYears2025 = Infinity;
+        savingsDetail2025 = 'Cannot save enough for down payment.';
+      }
+      
+      const houseYears2025 = house2025 / income2025;
+      
+      // Debug: Log calculations for verification
+      console.log('2025 Calculations:', {
+        income: income2025,
+        essentialsNoCar: essentialsNoCar2025,
+        leftoverNoCar: leftoverNoCar2025,
+        carPayment: carPayment2025,
+        leftoverWithCar: leftoverWithCar2025,
+        house: house2025,
+        downPayment: downPayment2025,
+        savingsYears: savingsYears2025,
+        savingsDetail: savingsDetail2025
+      });
+      
+      // For display: show total with car payment during loan period
+      const total2025 = totalWithCar2025;
+      const leftover2025 = leftoverWithCar2025; // Show during-car-payment leftover for comparison
+      
+      // Also calculate for 1970 display
+      const total1970 = totalWithCar1970;
+      const leftover1970 = leftoverWithCar1970; // Show during-car-payment leftover for comparison
+      
+      // Update 1970 card
+      const card1970 = document.querySelector('.budget-card-1975');
+      if (card1970) {
+        card1970.querySelector('.income-amount').textContent = '$' + income1970.toLocaleString();
+        
+        // Helper function to calculate weeks
+        const weeksPerYear = 52;
+        const getWeeks = (amount, income) => {
+          const weeks = (amount / income) * weeksPerYear;
+          if (weeks < 1) return '<1 week of work';
+          if (weeks < 2) return '1 week of work';
+          return Math.round(weeks) + ' weeks of work';
+        };
+        
+        // Update each expense item
+        const items1970 = card1970.querySelectorAll('.budget-item');
+        if (items1970[0]) { // Rent
+          items1970[0].querySelector('.item-amount').textContent = '$' + rent1970.toLocaleString();
+          items1970[0].querySelector('.item-weeks').textContent = getWeeks(rent1970, income1970);
+          items1970[0].querySelector('.item-percent').textContent = Math.round((rent1970/income1970)*100) + '%';
+        }
+        if (items1970[1]) { // Groceries
+          items1970[1].querySelector('.item-amount').textContent = '$' + groceries1970.toLocaleString();
+          items1970[1].querySelector('.item-weeks').textContent = getWeeks(groceries1970, income1970);
+          items1970[1].querySelector('.item-percent').textContent = Math.round((groceries1970/income1970)*100) + '%';
+        }
+        if (items1970[2]) { // Car
+          items1970[2].querySelector('.item-amount').textContent = '$' + carPayment1970.toLocaleString();
+          items1970[2].querySelector('.item-weeks').textContent = getWeeks(carPayment1970, income1970);
+          items1970[2].querySelector('.item-percent').textContent = Math.round((carPayment1970/income1970)*100) + '%';
+        }
+        if (items1970[3]) { // Utilities
+          items1970[3].querySelector('.item-amount').textContent = '$' + utilities1970.toLocaleString();
+          items1970[3].querySelector('.item-weeks').textContent = getWeeks(utilities1970, income1970);
+          items1970[3].querySelector('.item-percent').textContent = Math.round((utilities1970/income1970)*100) + '%';
+        }
+        if (items1970[4]) { // Gas
+          items1970[4].querySelector('.item-amount').textContent = '$' + gasAnnual1970.toLocaleString();
+          items1970[4].querySelector('.item-weeks').textContent = getWeeks(gasAnnual1970, income1970);
+          items1970[4].querySelector('.item-percent').textContent = Math.round((gasAnnual1970/income1970)*100) + '%';
+        }
+        if (items1970[5]) { // Healthcare
+          items1970[5].querySelector('.item-amount').textContent = '$' + healthcare1970.toLocaleString();
+          items1970[5].querySelector('.item-weeks').textContent = getWeeks(healthcare1970, income1970);
+          items1970[5].querySelector('.item-percent').textContent = Math.round((healthcare1970/income1970)*100) + '%';
+        }
+        
+        card1970.querySelector('.total-spent').textContent = 'Total Essentials: $' + total1970.toLocaleString();
+        // Show leftover WITH car payment (current situation)
+        card1970.querySelector('.total-leftover').textContent = 'Leftover: $' + leftoverWithCar1970.toLocaleString();
+        const leftoverPercent = Math.round((leftoverWithCar1970/income1970)*100);
+        const leftoverMonths = Math.round((leftoverWithCar1970/income1970)*12 * 10) / 10;
+        card1970.querySelector('.leftover-months').textContent = `(${leftoverPercent}% of salary = ${leftoverMonths} months)`;
+        if (savingsYears1970 === Infinity || savingsYears1970 > 50) {
+          card1970.querySelector('.savings-years').textContent = 'Never';
+          card1970.querySelector('.savings-detail').textContent = 'One salary. Can\'t save enough for down payment.';
+          card1970.querySelector('.savings-fineprint').innerHTML = `Assumes ${loanProgram1970} (${(downPaymentPercent1970*100).toFixed(1)}% down = $${Math.round(downPayment1970).toLocaleString()}). VA loans available for veterans (0% down).<br><em>Note: $${income1970.toLocaleString()} = median individual worker income (not household).</em>`;
+        } else {
+          card1970.querySelector('.savings-years').textContent = savingsYears1970.toFixed(1) + ' years';
+          card1970.querySelector('.savings-detail').textContent = savingsDetail1970 || 'One salary. One house. Money left over.';
+          card1970.querySelector('.savings-fineprint').innerHTML = `Assumes ${loanProgram1970} (${(downPaymentPercent1970*100).toFixed(1)}% down = $${Math.round(downPayment1970).toLocaleString()}). VA loans available for veterans (0% down).<br><em>Note: $${income1970.toLocaleString()} = median individual worker income (not household).</em>`;
+        }
+      }
+      
+      // Update 2025 card
+      const card2025 = document.querySelector('.budget-card-2025');
+      if (card2025) {
+        card2025.querySelector('.income-amount').textContent = '$' + income2025.toLocaleString();
+        
+        // Helper function to calculate weeks (same as above, but keeping separate for clarity)
+        const weeksPerYear2025 = 52;
+        const getWeeks2025 = (amount, income) => {
+          const weeks = (amount / income) * weeksPerYear2025;
+          if (weeks < 1) return '<1 week of work';
+          if (weeks < 2) return '1 week of work';
+          return Math.round(weeks) + ' weeks of work';
+        };
+        
+        // Update each expense item
+        const items2025 = card2025.querySelectorAll('.budget-item');
+        if (items2025[0]) { // Rent
+          items2025[0].querySelector('.item-amount').textContent = '$' + rent2025.toLocaleString();
+          items2025[0].querySelector('.item-weeks').textContent = getWeeks2025(rent2025, income2025);
+          items2025[0].querySelector('.item-percent').textContent = Math.round((rent2025/income2025)*100) + '%';
+        }
+        if (items2025[1]) { // Groceries
+          items2025[1].querySelector('.item-amount').textContent = '$' + groceries2025.toLocaleString();
+          items2025[1].querySelector('.item-weeks').textContent = getWeeks2025(groceries2025, income2025);
+          items2025[1].querySelector('.item-percent').textContent = Math.round((groceries2025/income2025)*100) + '%';
+        }
+        if (items2025[2]) { // Car
+          items2025[2].querySelector('.item-amount').textContent = '$' + carPayment2025.toLocaleString();
+          items2025[2].querySelector('.item-weeks').textContent = getWeeks2025(carPayment2025, income2025);
+          items2025[2].querySelector('.item-percent').textContent = Math.round((carPayment2025/income2025)*100) + '%';
+        }
+        if (items2025[3]) { // Utilities
+          items2025[3].querySelector('.item-amount').textContent = '$' + utilities2025.toLocaleString();
+          items2025[3].querySelector('.item-weeks').textContent = getWeeks2025(utilities2025, income2025);
+          items2025[3].querySelector('.item-percent').textContent = Math.round((utilities2025/income2025)*100) + '%';
+        }
+        if (items2025[4]) { // Gas
+          items2025[4].querySelector('.item-amount').textContent = '$' + gasAnnual2025.toLocaleString();
+          items2025[4].querySelector('.item-weeks').textContent = getWeeks2025(gasAnnual2025, income2025);
+          items2025[4].querySelector('.item-percent').textContent = Math.round((gasAnnual2025/income2025)*100) + '%';
+        }
+        if (items2025[5]) { // Healthcare
+          items2025[5].querySelector('.item-amount').textContent = '$' + healthcare2025.toLocaleString();
+          items2025[5].querySelector('.item-weeks').textContent = getWeeks2025(healthcare2025, income2025);
+          items2025[5].querySelector('.item-percent').textContent = Math.round((healthcare2025/income2025)*100) + '%';
+        }
+        if (items2025[6]) { // Debt
+          items2025[6].querySelector('.item-amount').textContent = '$' + debtPayment2025.toLocaleString();
+          items2025[6].querySelector('.item-weeks').textContent = getWeeks2025(debtPayment2025, income2025);
+          items2025[6].querySelector('.item-percent').textContent = Math.round((debtPayment2025/income2025)*100) + '%';
+        }
+        
+        card2025.querySelector('.total-spent').textContent = 'Total Essentials: $' + Math.round(total2025).toLocaleString();
+        card2025.querySelector('.total-leftover').textContent = 'Leftover: $' + Math.round(leftover2025).toLocaleString();
+        const leftoverPercent2025 = Math.round((leftover2025/income2025)*100);
+        const leftoverMonths2025 = Math.round((leftover2025/income2025)*12 * 10) / 10;
+        card2025.querySelector('.leftover-months').textContent = `(${leftoverPercent2025}% of salary = ${leftoverMonths2025} months)`;
+        if (savingsYears2025 === Infinity || savingsYears2025 > 50) {
+          card2025.querySelector('.savings-years').textContent = 'Never';
+          card2025.querySelector('.savings-detail').textContent = 'One salary. Can\'t save enough for down payment.';
+          card2025.querySelector('.savings-fineprint').innerHTML = `Assumes ${loanProgram2025} (${(downPaymentPercent2025*100).toFixed(1)}% down = $${Math.round(downPayment2025).toLocaleString()}). VA loans available for veterans (0% down).<br><em>FHA has no income limits; $${income2025.toLocaleString()} qualifies if debt-to-income ratio is acceptable.</em>`;
+        } else {
+          card2025.querySelector('.savings-years').textContent = savingsYears2025.toFixed(1) + ' years';
+          card2025.querySelector('.savings-detail').textContent = savingsDetail2025 || 'One salary. No house. Can\'t save enough.';
+          card2025.querySelector('.savings-fineprint').innerHTML = `Assumes ${loanProgram2025} (${(downPaymentPercent2025*100).toFixed(1)}% down = $${Math.round(downPayment2025).toLocaleString()}). VA loans available for veterans (0% down).<br><em>FHA has no income limits; $${income2025.toLocaleString()} qualifies if debt-to-income ratio is acceptable.</em>`;
+        }
+      }
+      
+      // Update hero comparison
+      const hero1970 = document.getElementById('hero-years-1970');
+      const hero2025 = document.getElementById('hero-years-2025');
+      if (hero1970) hero1970.textContent = houseYears1970.toFixed(1);
+      if (hero2025) hero2025.textContent = houseYears2025.toFixed(1);
+      
+      const heroBar1970 = document.getElementById('hero-bar-1970');
+      const heroBar2025 = document.getElementById('hero-bar-2025');
+      if (heroBar1970) {
+        heroBar1970.style.width = Math.min((houseYears1970 / 7) * 100, 100) + '%';
+        heroBar1970.textContent = houseYears1970.toFixed(1);
+      }
+      if (heroBar2025) {
+        heroBar2025.style.width = Math.min((houseYears2025 / 7) * 100, 100) + '%';
+        heroBar2025.textContent = houseYears2025.toFixed(1);
+      }
+      
+      const delta = houseYears2025 - houseYears1970;
+      const deltaHighlight = document.getElementById('delta-highlight');
+      if (deltaHighlight) {
+        deltaHighlight.textContent = `You're working ${delta.toFixed(1)} extra years for the same house`;
+      }
+      
+      // Update conclusion
+      const essentialsPercent1970 = Math.round((total1970/income1970)*100);
+      const essentialsPercent2025 = Math.round((total2025/income2025)*100);
+      const leftoverPercent1970 = 100 - essentialsPercent1970;
+      const leftoverPercent2025 = 100 - essentialsPercent2025;
+      
+      const conclusionText = document.getElementById('conclusion-text');
+      if (conclusionText) {
+        conclusionText.innerHTML = `In 1970, essentials (rent, food, car, utilities, gas, healthcare) cost <strong>${essentialsPercent1970}% of one salary</strong>, leaving ${leftoverPercent1970}% for savings and a house.<br>
+          In 2025, essentials (rent, food, car, utilities, gas, healthcare, debt) cost <strong>${essentialsPercent2025}% of one salary</strong>, leaving ${leftoverPercent2025}% — but houses cost <strong>${(houseYears2025/houseYears1970).toFixed(1)}x more</strong> relative to income.`;
+      }
+      
+      const conclusionImpact = document.getElementById('conclusion-impact');
+      if (conclusionImpact) {
+        const multiplier = savingsYears2025 > 50 ? 'impossible' : (savingsYears2025/savingsYears1970).toFixed(1) + 'x longer';
+        conclusionImpact.innerHTML = `<strong>Result:</strong> What took ${savingsYears1970.toFixed(1)} years in 1970 now takes ${savingsYears2025 > 50 ? 'never (can\'t save enough)' : savingsYears2025.toFixed(1) + ' years'} — ${multiplier}.`;
+      }
+    }
+    
+    // Initialize
+    loadData().then(() => {
+      console.log('Data loaded');
+      updateBudgetValues();
+    });
+  </script>
+</body>
+</html>

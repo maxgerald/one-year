@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Duplicate files (keeping originals)
+* (1).html
+* (1).json
+
+# Temporary files
+*.tmp
+*.log

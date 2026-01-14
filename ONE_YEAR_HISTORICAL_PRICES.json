@@ -1,0 +1,478 @@
+{
+  "metadata": {
+    "title": "ONE YEAR Historical Prices Dataset",
+    "version": "1.0",
+    "created": "2025-12-31",
+    "description": "Common consumer goods prices across milestone years (1945-2025) for ONE YEAR purchasing power comparisons",
+    "criteria": "Only items with 50+ years of reliable historical data included",
+    "primary_sources": [
+      "Bureau of Labor Statistics (BLS)",
+      "FRED - Federal Reserve Economic Data",
+      "Census Bureau",
+      "AAA (gasoline)",
+      "USPS (postage)",
+      "National Association of Theatre Owners"
+    ]
+  },
+  
+  "income_baseline": {
+    "description": "Median income used for 1Y calculations",
+    "2025": {
+      "median_individual_ft": 63128,
+      "median_household": 83730,
+      "source": "BLS Q3 2025 / Census 2024"
+    },
+    "historical_household_income": {
+      "1945": 2379,
+      "1950": 3216,
+      "1955": 4421,
+      "1960": 5620,
+      "1965": 6957,
+      "1970": 9867,
+      "1975": 13719,
+      "1980": 21023,
+      "1985": 27735,
+      "1990": 35353,
+      "1995": 40611,
+      "2000": 50732,
+      "2005": 55832,
+      "2010": 50046,
+      "2015": 56516,
+      "2020": 67521,
+      "2025": 83730,
+      "source": "Census Bureau Historical Income Tables"
+    }
+  },
+
+  "items": {
+    "eggs": {
+      "name": "Eggs, Grade A Large",
+      "unit": "dozen",
+      "years_of_data": "1940-2025 (85 years)",
+      "prices": {
+        "1945": 0.58,
+        "1950": 0.60,
+        "1955": 0.61,
+        "1960": 0.57,
+        "1965": 0.53,
+        "1970": 0.60,
+        "1975": 0.77,
+        "1980": 0.84,
+        "1985": 0.80,
+        "1990": 1.01,
+        "1995": 0.92,
+        "2000": 0.91,
+        "2005": 1.35,
+        "2010": 1.79,
+        "2015": 2.03,
+        "2020": 1.48,
+        "2025": 2.86
+      },
+      "current_price_note": "Nov 2025 BLS average $2.86; prices volatile due to avian flu",
+      "sources": [
+        "BLS Average Price Data (APU0000708111)",
+        "FRED",
+        "Daily Meal historical compilation"
+      ]
+    },
+
+    "gasoline": {
+      "name": "Regular Unleaded Gasoline",
+      "unit": "gallon",
+      "years_of_data": "1929-2025 (96 years)",
+      "prices": {
+        "1945": 0.21,
+        "1950": 0.27,
+        "1955": 0.29,
+        "1960": 0.31,
+        "1965": 0.31,
+        "1970": 0.36,
+        "1975": 0.57,
+        "1980": 1.19,
+        "1985": 1.12,
+        "1990": 1.16,
+        "1995": 1.15,
+        "2000": 1.51,
+        "2005": 2.30,
+        "2010": 2.79,
+        "2015": 2.43,
+        "2020": 2.17,
+        "2025": 2.84
+      },
+      "current_price_note": "Dec 2025 national average ~$2.84-2.99, lowest since 2021",
+      "sources": [
+        "AAA Fuel Gauge Report",
+        "EIA (Energy Information Administration)",
+        "Department of Energy historical data"
+      ]
+    },
+
+    "milk": {
+      "name": "Milk, Fresh Whole",
+      "unit": "gallon",
+      "years_of_data": "1930-2025 (95 years)",
+      "prices": {
+        "1945": 0.63,
+        "1950": 0.82,
+        "1955": 0.93,
+        "1960": 1.04,
+        "1965": 1.05,
+        "1970": 1.32,
+        "1975": 1.57,
+        "1980": 2.16,
+        "1985": 2.26,
+        "1990": 2.78,
+        "1995": 2.52,
+        "2000": 2.78,
+        "2005": 3.24,
+        "2010": 3.32,
+        "2015": 3.42,
+        "2020": 3.54,
+        "2025": 4.00
+      },
+      "current_price_note": "Nov 2025 BLS average $3.997/gallon",
+      "sources": [
+        "BLS Average Price Data (APU0000709112)",
+        "FRED",
+        "USDA National Agricultural Statistical Service"
+      ]
+    },
+
+    "bread": {
+      "name": "Bread, White Pan",
+      "unit": "pound (loaf)",
+      "years_of_data": "1939-2025 (86 years)",
+      "prices": {
+        "1945": 0.09,
+        "1950": 0.14,
+        "1955": 0.18,
+        "1960": 0.20,
+        "1965": 0.21,
+        "1970": 0.24,
+        "1975": 0.36,
+        "1980": 0.50,
+        "1985": 0.55,
+        "1990": 0.70,
+        "1995": 0.84,
+        "2000": 0.99,
+        "2005": 1.05,
+        "2010": 1.37,
+        "2015": 1.43,
+        "2020": 1.44,
+        "2025": 1.91
+      },
+      "current_price_note": "2023-2025 average ~$1.91/lb",
+      "sources": [
+        "BLS Average Price Data (APU0000702111)",
+        "FRED"
+      ]
+    },
+
+    "ground_beef": {
+      "name": "Ground Beef, 100%",
+      "unit": "pound",
+      "years_of_data": "1943-2025 (82 years)",
+      "prices": {
+        "1945": 0.30,
+        "1950": 0.53,
+        "1955": 0.48,
+        "1960": 0.53,
+        "1965": 0.50,
+        "1970": 0.66,
+        "1975": 0.98,
+        "1980": 1.82,
+        "1985": 1.43,
+        "1990": 1.63,
+        "1995": 1.37,
+        "2000": 1.63,
+        "2005": 2.30,
+        "2010": 2.85,
+        "2015": 4.24,
+        "2020": 4.17,
+        "2025": 5.55
+      },
+      "current_price_note": "2024-2025 average ~$5.55/lb",
+      "sources": [
+        "BLS Average Price Data (APU0000703112)",
+        "FRED"
+      ]
+    },
+
+    "movie_ticket": {
+      "name": "Movie Theater Ticket",
+      "unit": "single admission",
+      "years_of_data": "1946-2025 (79 years)",
+      "prices": {
+        "1945": 0.35,
+        "1950": 0.46,
+        "1955": 0.50,
+        "1960": 0.69,
+        "1965": 1.01,
+        "1970": 1.55,
+        "1975": 2.05,
+        "1980": 2.69,
+        "1985": 3.55,
+        "1990": 4.22,
+        "1995": 4.35,
+        "2000": 5.39,
+        "2005": 6.41,
+        "2010": 7.89,
+        "2015": 8.43,
+        "2020": 9.16,
+        "2025": 11.35
+      },
+      "current_price_note": "2024-2025 national average ~$11.35",
+      "sources": [
+        "National Association of Theatre Owners (NATO)",
+        "24/7 Wall St. historical compilation"
+      ]
+    },
+
+    "postage_stamp": {
+      "name": "First-Class Postage Stamp",
+      "unit": "1 oz letter",
+      "years_of_data": "1863-2025 (162 years)",
+      "prices": {
+        "1945": 0.03,
+        "1950": 0.03,
+        "1955": 0.03,
+        "1960": 0.04,
+        "1965": 0.05,
+        "1970": 0.06,
+        "1975": 0.10,
+        "1980": 0.15,
+        "1985": 0.22,
+        "1990": 0.25,
+        "1995": 0.32,
+        "2000": 0.33,
+        "2005": 0.37,
+        "2010": 0.44,
+        "2015": 0.49,
+        "2020": 0.55,
+        "2025": 0.73
+      },
+      "current_price_note": "As of July 2025: $0.73 (Forever stamp)",
+      "sources": [
+        "USPS Official Rate History",
+        "Wikipedia - History of United States postage rates"
+      ]
+    },
+
+    "new_car": {
+      "name": "New Car (Average)",
+      "unit": "vehicle",
+      "years_of_data": "1950-2025 (75 years)",
+      "prices": {
+        "1945": 1125,
+        "1950": 1510,
+        "1955": 1910,
+        "1960": 2600,
+        "1965": 2650,
+        "1970": 3450,
+        "1975": 4950,
+        "1980": 7200,
+        "1985": 9005,
+        "1990": 16950,
+        "1995": 20450,
+        "2000": 21850,
+        "2005": 28400,
+        "2010": 29217,
+        "2015": 33560,
+        "2020": 40472,
+        "2025": 48644
+      },
+      "current_price_note": "2025 average new car ~$48,644 (Kelley Blue Book)",
+      "sources": [
+        "Morris County Library historical data",
+        "Bureau of Economic Analysis",
+        "Kelley Blue Book"
+      ]
+    },
+
+    "median_home": {
+      "name": "Median Home Price",
+      "unit": "single-family home",
+      "years_of_data": "1950-2025 (75 years)",
+      "prices": {
+        "1945": 5500,
+        "1950": 7354,
+        "1955": 10950,
+        "1960": 12700,
+        "1965": 18600,
+        "1970": 23900,
+        "1975": 39300,
+        "1980": 68700,
+        "1985": 84300,
+        "1990": 122900,
+        "1995": 133900,
+        "2000": 165300,
+        "2005": 240900,
+        "2010": 222900,
+        "2015": 294200,
+        "2020": 329000,
+        "2025": 409200
+      },
+      "current_price_note": "Nov 2025 median existing home $409,200 (NAR)",
+      "sources": [
+        "FRED MSPUS Series",
+        "Census Bureau",
+        "National Association of Realtors"
+      ]
+    },
+
+    "college_tuition": {
+      "name": "Public 4-Year College Tuition",
+      "unit": "annual in-state",
+      "years_of_data": "1963-2025 (62 years)",
+      "prices": {
+        "1965": 243,
+        "1970": 394,
+        "1975": 599,
+        "1980": 804,
+        "1985": 1318,
+        "1990": 2159,
+        "1995": 2977,
+        "2000": 3508,
+        "2005": 5491,
+        "2010": 7605,
+        "2015": 9139,
+        "2020": 9687,
+        "2025": 11950
+      },
+      "current_price_note": "2025-26 average $11,950 tuition only; total COA $27,146",
+      "sources": [
+        "College Board Trends in College Pricing",
+        "National Center for Education Statistics"
+      ]
+    }
+  },
+
+  "one_year_calculations": {
+    "description": "Cost of each item as fraction of 1Y (median household income)",
+    "methodology": "Price divided by median household income for that year",
+    "sample_calculations": {
+      "median_home": {
+        "1950": {
+          "price": 7354,
+          "income": 3216,
+          "years_of_work": 2.29,
+          "months_of_work": 27.4
+        },
+        "2025": {
+          "price": 409200,
+          "income": 83730,
+          "years_of_work": 4.89,
+          "months_of_work": 58.6
+        },
+        "change": "Home costs MORE than DOUBLED in years-of-labor (2.29Y → 4.89Y)"
+      },
+      "college_tuition_4yr": {
+        "1970": {
+          "price_4yr": 1576,
+          "income": 9867,
+          "years_of_work": 0.16,
+          "months_of_work": 1.9
+        },
+        "2025": {
+          "price_4yr": 47800,
+          "income": 83730,
+          "years_of_work": 0.57,
+          "months_of_work": 6.8
+        },
+        "change": "College (4 years) went from 2 months to 7 months of work"
+      },
+      "new_car": {
+        "1970": {
+          "price": 3450,
+          "income": 9867,
+          "years_of_work": 0.35,
+          "months_of_work": 4.2
+        },
+        "2025": {
+          "price": 48644,
+          "income": 83730,
+          "years_of_work": 0.58,
+          "months_of_work": 7.0
+        },
+        "change": "New car went from 4 months to 7 months of work"
+      },
+      "dozen_eggs": {
+        "1970": {
+          "price": 0.60,
+          "income": 9867,
+          "annual_consumption_cost": 31.20,
+          "fraction_of_1Y": 0.003
+        },
+        "2025": {
+          "price": 2.86,
+          "income": 83730,
+          "annual_consumption_cost": 148.72,
+          "fraction_of_1Y": 0.002
+        },
+        "note": "Eggs have actually become MORE affordable relative to income"
+      }
+    }
+  },
+
+  "data_quality": {
+    "high_confidence": [
+      "Gasoline (EIA/AAA official data)",
+      "Eggs (BLS CPI)",
+      "Milk (BLS CPI)",
+      "Bread (BLS CPI)", 
+      "Ground Beef (BLS CPI)",
+      "Postage (USPS official)",
+      "Median Home (FRED/Census)",
+      "College Tuition (College Board)"
+    ],
+    "medium_confidence": [
+      "Movie Tickets (NATO estimates)",
+      "New Car (various sources, methodology varies)"
+    ],
+    "notes": [
+      "Pre-1980 BLS data may have gaps or methodology differences",
+      "Car prices vary significantly by model - these are averages",
+      "Movie ticket prices are national averages; regional variation is significant",
+      "Egg prices highly volatile due to avian flu outbreaks"
+    ]
+  },
+
+  "interesting_findings": {
+    "items_MORE_expensive_in_1Y": [
+      {
+        "item": "Median Home",
+        "1970_in_1Y": 2.42,
+        "2025_in_1Y": 4.89,
+        "change": "+102%"
+      },
+      {
+        "item": "College (4 years)",
+        "1970_in_1Y": 0.16,
+        "2025_in_1Y": 0.57,
+        "change": "+256%"
+      },
+      {
+        "item": "New Car",
+        "1970_in_1Y": 0.35,
+        "2025_in_1Y": 0.58,
+        "change": "+66%"
+      }
+    ],
+    "items_LESS_expensive_in_1Y": [
+      {
+        "item": "Eggs (annual)",
+        "note": "Despite price spikes, eggs remain affordable relative to income"
+      },
+      {
+        "item": "Gasoline",
+        "note": "Gas prices have roughly tracked inflation when adjusted"
+      }
+    ],
+    "headline_stats": [
+      "House: 1950 = 2.3 years of work → 2025 = 4.9 years",
+      "College (4 years): 1970 = 2 months → 2025 = 7 months",
+      "New Car: 1970 = 4 months → 2025 = 7 months",
+      "Postage Stamp: 1950 = 0.001% of income → 2025 = 0.001% (unchanged!)"
+    ]
+  }
+}

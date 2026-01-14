@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONE YEAR - 112 Years of American Purchasing Power</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+      min-height: 100vh;
+      color: #1a3a52;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #1a3a52 0%, #2d4a5e 100%);
+      color: white;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: white;
+      color: #1a3a52;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 28px;
+      margin: 0 auto 16px;
+      border: 3px solid #e67e22;
+    }
+    
+    .header h1 { font-size: 32px; font-weight: 900; letter-spacing: -1px; }
+    .tagline { font-size: 15px; opacity: 0.9; margin-top: 8px; }
+    
+    .hero-stat {
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 28px auto 0;
+      max-width: 520px;
+    }
+    
+    .hero-stat .label { font-size: 14px; opacity: 0.8; }
+    .hero-stat .value { font-size: 32px; font-weight: 900; margin: 4px 0; }
+    .hero-stat .value.alert { color: #e67e22; }
+    .hero-stat .value.good { color: #7cb342; }
+    
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 24px;
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 28px;
+      background: #f5f5f5;
+      color: #1a3a52;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    
+    .nav-btn:hover { background: #e0e0e0; }
+    .nav-btn.active { background: #1a3a52; color: white; }
+    
+    main { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .view { display: none; }
+    .view.active { display: block; }
+    
+    .slider-section {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    
+    .year-display {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    
+    .current-year { font-size: 56px; font-weight: 900; color: #1a3a52; line-height: 1; }
+    .income-display { text-align: right; }
+    .income-label { font-size: 12px; color: #546e7a; text-transform: uppercase; letter-spacing: 0.5px; }
+    .income-value { font-size: 24px; font-weight: 700; color: #1a3a52; }
+    .income-value.minwage { color: #d32f2f; }
+    .income-note { font-size: 13px; color: #e67e22; font-weight: 600; }
+    
+    .wage-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e9ecef;
+    }
+    
+    .wage-toggle-label {
+      font-size: 12px;
+      color: #546e7a;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    
+    .wage-toggle-label:hover { background: #f5f5f5; }
+    .wage-toggle-label.active { background: #1a3a52; color: white; font-weight: 600; }
+    .wage-toggle-label.active.minwage { background: #d32f2f; }
+    
+    .toggle-switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      background: #7cb342;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch.minwage { background: #d32f2f; }
+    
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .toggle-switch.minwage::after { transform: translateX(20px); }
+    
+    .minwage-warning {
+      background: #ffebee;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: #c62828;
+      display: none;
+    }
+    
+    .minwage-warning.show { display: block; }
+    
+    .era-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    
+    .era-badge.depression { background: #ffebee; color: #c62828; }
+    .era-badge.war { background: #e3f2fd; color: #1565c0; }
+    .era-badge.boom { background: #e8f5e9; color: #2e7d32; }
+    .era-badge.modern { background: #fff3e0; color: #e65100; }
+    
+    .slider {
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, 
+        #9e9e9e 0%, 
+        #d32f2f 15%, 
+        #1976d2 25%, 
+        #7cb342 35%, 
+        #e67e22 60%, 
+        #d32f2f 100%
+      );
+      appearance: none;
+      cursor: pointer;
+      margin: 16px 0;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #1a3a52;
+      border: 4px solid white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+    
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #546e7a;
+    }
+    
+    .slider-labels span { text-align: center; }
+    .slider-labels .era { font-weight: 600; display: block; font-size: 9px; margin-top: 2px; }
+    
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 20px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #546e7a;
+    }
+    
+    .section-title:first-child { margin-top: 0; }
+    
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    
+    .item-card {
+      background: white;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    
+    .item-card:hover { transform: translateY(-1px); box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+    .item-card.highlight { border-left: 4px solid #e67e22; }
+    .item-card.extreme { background: linear-gradient(135deg, #fff5f5 0%, #ffebee 100%); }
+    
+    .item-icon-sm {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    
+    .item-card.extreme .item-icon-sm { background: #ffcdd2; }
+    
+    .item-details { flex: 1; min-width: 0; }
+    .item-name-sm { font-weight: 600; font-size: 13px; color: #1a3a52; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .item-price-sm { font-size: 11px; color: #546e7a; }
+    
+    .item-years-box {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    
+    .years-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a3a52;
+      line-height: 1.2;
+    }
+    
+    .years-value.severe { color: #d32f2f; }
+    .years-value.warning { color: #e67e22; }
+    .years-value.good { color: #7cb342; }
+    
+    .years-label {
+      font-size: 10px;
+      color: #9e9e9e;
+      text-transform: uppercase;
+    }
+    
+    .gross-income-note {
+      background: #fff3e0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: #e65100;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .gross-income-note .icon { font-size: 18px; }
+    .gross-income-note strong { color: #bf360c; }
+    
+    .gross-income-note.extreme {
+      background: #ffebee;
+      color: #c62828;
+    }
+    
+    .gross-income-note.extreme strong { color: #b71c1c; }
+    
+    .context-box {
+      background: #fff8e1;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      border-left: 4px solid #ffc107;
+    }
+    
+    .context-box.depression { background: #ffebee; border-left-color: #d32f2f; }
+    .context-box.war { background: #e3f2fd; border-left-color: #1976d2; }
+    .context-box h4 { font-size: 14px; margin-bottom: 8px; }
+    .context-box p { font-size: 13px; color: #546e7a; line-height: 1.5; }
+    
+    .ceo-section {
+      background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 28px;
+      margin-top: 28px;
+    }
+    
+    .ratio-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .ratio-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 14px; text-align: center; }
+    .ratio-card .label { font-size: 11px; opacity: 0.8; }
+    .ratio-card .value { font-size: 24px; font-weight: 900; margin-top: 4px; }
+    .ratio-card .value.peak { color: #e67e22; }
+    .ratio-card .value.current { color: #ef5350; }
+    
+    .debunker-card {
+      background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    
+    .debunker-title { font-size: 13px; font-weight: 700; color: #e67e22; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .debunker-claim { font-size: 20px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+    .debunker-source { font-size: 12px; opacity: 0.7; margin-bottom: 20px; }
+    .debunker-facts { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    .fact-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+    .fact-row:last-child { border-bottom: none; }
+    .fact-row .value { font-weight: 700; }
+    .debunker-result { background: #e67e22; border-radius: 12px; padding: 16px; font-weight: 600; font-size: 14px; }
+    
+    .timeline-section {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-year { font-weight: 900; font-size: 18px; color: #1a3a52; min-width: 50px; }
+    .timeline-content { flex: 1; }
+    .timeline-title { font-weight: 600; margin-bottom: 4px; }
+    .timeline-desc { font-size: 13px; color: #546e7a; }
+    
+    .bottom-line {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    
+    .bottom-line .emoji { font-size: 56px; margin-bottom: 16px; }
+    .bottom-line h3 { font-size: 24px; margin-bottom: 16px; }
+    .bottom-line p { color: #546e7a; line-height: 1.7; font-size: 15px; }
+    .bottom-line strong.alert { color: #d32f2f; }
+    
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      background: #1a3a52;
+      color: white;
+      margin-top: 48px;
+    }
+    
+    footer .unit { font-size: 13px; opacity: 0.8; margin-bottom: 8px; }
+    footer .sources { font-size: 14px; }
+    footer .motto { font-size: 13px; opacity: 0.6; margin-top: 12px; font-style: italic; }
+    
+    @media (max-width: 600px) {
+      .current-year { font-size: 42px; }
+      .income-value { font-size: 20px; }
+      .hero-stat .value { font-size: 26px; }
+      .item-icon { width: 44px; height: 44px; font-size: 24px; }
+      .item-price { font-size: 16px; }
+      .debunker-claim { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">1Y</div>
+    <h1>ONE YEAR</h1>
+    <p class="tagline">112 Years of American Purchasing Power</p>
+    
+    <div class="hero-stat" id="hero-stat">
+      <div class="label">Housing in 1950 (post-war boom)</div>
+      <div class="value good">2.3 years of work</div>
+      <div class="label" style="margin-top: 16px;">Housing in 2025</div>
+      <div class="value alert">6.5 years of work</div>
+      <div style="margin-top: 12px; font-size: 13px; opacity: 0.9;">
+        That's 4+ extra years of your life
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showView('purchasing')">💰 Purchasing Power</button>
+    <button class="nav-btn" onclick="showView('wealth')">📈 Wealth Gap</button>
+    <button class="nav-btn" onclick="showView('timeline')">📅 Key Moments</button>
+    <button class="nav-btn" onclick="showView('debunkers')">🎯 Myth Busters</button>
+  </nav>
+
+  <main>
+    <!-- Purchasing Power View -->
+    <div id="purchasing-view" class="view active">
+      <div class="slider-section">
+        <div class="year-display">
+          <div>
+            <div class="current-year" id="year-display">2025</div>
+            <div class="era-badge modern" id="era-badge">Modern Era</div>
+          </div>
+          <div class="income-display">
+            <div class="income-label" id="income-type-label">Median Annual Earnings</div>
+            <div class="income-value" id="income-display">$63,128</div>
+            <div class="income-note">= 1 Year of Work (1Y)</div>
+            <div class="wage-toggle">
+              <span class="wage-toggle-label active" id="median-label" onclick="setWageType('median')">Median</span>
+              <div class="toggle-switch" id="wage-toggle" onclick="toggleWageType()"></div>
+              <span class="wage-toggle-label" id="minwage-label" onclick="setWageType('minwage')">Min Wage</span>
+            </div>
+            <div class="minwage-warning" id="minwage-warning">
+              ⚠️ Federal minimum wage: $7.25/hr since 2009. Many states higher.
+            </div>
+          </div>
+        </div>
+        <input type="range" class="slider" id="year-slider" min="1913" max="2025" step="1" value="2025" oninput="updateYear(this.value)">
+        <div class="slider-labels">
+          <span>1913<span class="era">WWI Era</span></span>
+          <span>1933<span class="era">Depression</span></span>
+          <span>1950<span class="era">Post-War</span></span>
+          <span>1970<span class="era">Golden Age</span></span>
+          <span>2000<span class="era">Modern</span></span>
+          <span>2025<span class="era">Today</span></span>
+        </div>
+      </div>
+
+      <div id="context-container"></div>
+      <div id="items-container"></div>
+    </div>
+
+    <!-- Wealth Gap View -->
+    <div id="wealth-view" class="view">
+      <div class="slider-section">
+        <div class="year-display">
+          <div class="current-year" id="wealth-year-display">2025</div>
+          <div class="income-display">
+            <div class="income-label">CEO-to-Worker Pay Ratio</div>
+            <div class="income-value" id="ratio-display" style="color: #d32f2f;">281:1</div>
+          </div>
+        </div>
+        <input type="range" class="slider" id="wealth-slider" min="1965" max="2025" step="5" value="2025" oninput="updateWealthYear(this.value)">
+      </div>
+
+      <div class="ceo-section">
+        <h3 style="margin-bottom: 20px;">📊 CEO Pay vs Worker Pay</h3>
+        <div class="ratio-cards">
+          <div class="ratio-card">
+            <div class="label">1965</div>
+            <div class="value">21:1</div>
+          </div>
+          <div class="ratio-card">
+            <div class="label">1978</div>
+            <div class="value">31:1</div>
+          </div>
+          <div class="ratio-card">
+            <div class="label">2000 Peak</div>
+            <div class="value peak">380:1</div>
+          </div>
+          <div class="ratio-card">
+            <div class="label">2024</div>
+            <div class="value current">281:1</div>
+          </div>
+        </div>
+        <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px;">
+          <div style="margin-bottom: 12px; font-weight: 600;">Since 1978:</div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span>Worker pay grew:</span>
+            <span style="font-weight: 700;">+26%</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>CEO pay grew:</span>
+            <span style="font-weight: 700; color: #e67e22;">+1,094%</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <div class="section-title">💵 Minimum Wage Purchasing Power</div>
+        <div class="card" style="text-align: center; padding: 32px;">
+          <div class="income-label">Peak (1968): $1.60/hr</div>
+          <div style="font-size: 28px; font-weight: 900; color: #7cb342; margin: 8px 0;">= $14.13 in today's dollars</div>
+          <div class="income-label" style="margin-top: 20px;">Today: $7.25/hr</div>
+          <div style="font-size: 28px; font-weight: 900; color: #d32f2f; margin: 8px 0;">= $7.25</div>
+          <div style="background: #ffebee; border-radius: 12px; padding: 16px; margin-top: 20px; color: #c62828; font-weight: 600;">
+            Today's minimum wage buys 49% LESS than 1968's
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <div class="section-title">🏦 Billionaire Wealth in Years of Work</div>
+        <p style="color: #546e7a; margin-bottom: 16px; font-size: 14px;">
+          How many years would a median worker need to work to match this wealth?
+        </p>
+        <div id="billionaire-container"></div>
+      </div>
+    </div>
+
+    <!-- Timeline View -->
+    <div id="timeline-view" class="view">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h2 style="font-size: 28px; margin-bottom: 8px;">📅 Key Moments in American Purchasing Power</h2>
+        <p style="color: #546e7a;">When things got better — and when they got worse</p>
+      </div>
+      
+      <div class="timeline-section">
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #7cb342;">1925</div>
+          <div class="timeline-content">
+            <div class="timeline-title">🚗 Model T Revolution - Cars Become Affordable</div>
+            <div class="timeline-desc">Ford's assembly line drops car prices from 15 months' wages (1913) to just 4 months. For the first and only time, cars are this affordable.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #d32f2f;">1933</div>
+          <div class="timeline-content">
+            <div class="timeline-title">📉 Great Depression Trough</div>
+            <div class="timeline-desc">25% unemployment. Wages fall 32%. Prices drop too, but for those without jobs, nothing is affordable. Home prices crash 38% from 1930.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #1976d2;">1944</div>
+          <div class="timeline-content">
+            <div class="timeline-title">🎓 GI Bill Passes</div>
+            <div class="timeline-desc">Free college for veterans transforms higher education. By 1947, veterans are 49% of college students. The template for affordable education.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #7cb342;">1950</div>
+          <div class="timeline-content">
+            <div class="timeline-title">🏠 Post-War Housing Boom - Peak Affordability</div>
+            <div class="timeline-desc">Median home costs just 2.3 years of work — the most affordable housing in American history. Single-income families buy homes easily.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #7cb342;">1968</div>
+          <div class="timeline-content">
+            <div class="timeline-title">💵 Minimum Wage Peak</div>
+            <div class="timeline-desc">$1.60/hour = $14.13 in today's dollars. Minimum wage workers have the most purchasing power they will ever have. It's been downhill since.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #e67e22;">1978</div>
+          <div class="timeline-content">
+            <div class="timeline-title">📊 The Divergence Begins</div>
+            <div class="timeline-desc">Productivity and wages start to separate. CEO pay: $1.1M. Worker pay growth slows while executive pay accelerates. The gap widens every year after.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #d32f2f;">2000</div>
+          <div class="timeline-content">
+            <div class="timeline-title">🏦 CEO Pay Peaks at 380:1</div>
+            <div class="timeline-desc">Dot-com bubble. CEOs now make 380x their workers (vs 21x in 1965). The ratio will drop after the crash but never return to pre-1990 levels.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #d32f2f;">2010</div>
+          <div class="timeline-content">
+            <div class="timeline-title">🎓 College Crosses 4 Months' Work</div>
+            <div class="timeline-desc">A year of public tuition now costs 4.5 months of median wages — was 1.3 months in 1970. Summer jobs no longer cover tuition.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year" style="color: #d32f2f;">2024</div>
+          <div class="timeline-content">
+            <div class="timeline-title">🏠 Housing Hits 6.5 Years of Work</div>
+            <div class="timeline-desc">Median home now costs 6.5 years of median wages — nearly triple the 1950s ratio. More expensive than the Great Depression in real terms.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Debunkers View -->
+    <div id="debunkers-view" class="view">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h2 style="font-size: 28px; margin-bottom: 8px;">🎯 Generational Talking Points</h2>
+        <p style="color: #546e7a;">Data to bring to Thanksgiving dinner</p>
+      </div>
+      <div id="debunkers-container"></div>
+      
+      <div class="bottom-line">
+        <div class="emoji">📊</div>
+        <h3>The Bottom Line</h3>
+        <p>
+          Eggs? 90% cheaper than 1920.<br>
+          Milk? 90% cheaper than 1920.<br>
+          Movies? Same relative cost for 100 years.<br><br>
+          <strong class="alert">But housing went from 2.3 years to 6.5 years.</strong><br>
+          <strong class="alert">College went from FREE to 9 months of work.</strong><br><br>
+          The economy grew. Where did it go?
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="unit">1Y = One median worker's annual salary</div>
+    <div class="sources">Data from BLS, Census Bureau, NBER, EPI, College Board (1913-2025)</div>
+    <div class="motto">This isn't opinion. It's math.</div>
+  </footer>
+
+  <script>
+    // Extended historical data (1913-2025)
+    const incomeData = {
+      1913: 638, 1915: 687, 1918: 1050, 1920: 1489, 1925: 1420, 1929: 1534,
+      1930: 1368, 1933: 1045, 1935: 1137, 1938: 1176, 1940: 1299, 1945: 2390,
+      1950: 2500, 1955: 3300, 1960: 4200, 1965: 5200, 1970: 7400, 1975: 10300,
+      1980: 15700, 1985: 20800, 1990: 26500, 1995: 30500, 2000: 38000,
+      2005: 41900, 2010: 40200, 2015: 44600, 2020: 52700, 2025: 63128
+    };
+
+    // Minimum wage annual income (hourly × 2080 hours full-time)
+    // Federal minimum wage established 1938
+    const minWageData = {
+      1913: null, 1920: null, 1925: null, 1929: null, 1930: null, 1933: null, 1935: null,
+      1938: 520,   // $0.25/hr - first federal minimum wage
+      1940: 624,   // $0.30/hr
+      1945: 832,   // $0.40/hr
+      1950: 1560,  // $0.75/hr
+      1955: 1560,  // $0.75/hr
+      1956: 2080,  // $1.00/hr
+      1960: 2080,  // $1.00/hr
+      1961: 2392,  // $1.15/hr
+      1963: 2600,  // $1.25/hr
+      1965: 2600,  // $1.25/hr
+      1967: 2912,  // $1.40/hr
+      1968: 3328,  // $1.60/hr - PEAK purchasing power
+      1970: 3328,  // $1.60/hr
+      1974: 4160,  // $2.00/hr
+      1975: 4368,  // $2.10/hr
+      1976: 4784,  // $2.30/hr
+      1978: 5512,  // $2.65/hr
+      1979: 6032,  // $2.90/hr
+      1980: 6448,  // $3.10/hr
+      1981: 6968,  // $3.35/hr
+      1985: 6968,  // $3.35/hr
+      1990: 7072,  // $3.40/hr (raised to $3.80 mid-year)
+      1991: 8840,  // $4.25/hr
+      1995: 8840,  // $4.25/hr
+      1996: 9048,  // $4.35/hr
+      1997: 10712, // $5.15/hr
+      2000: 10712, // $5.15/hr
+      2005: 10712, // $5.15/hr
+      2007: 12168, // $5.85/hr
+      2008: 13520, // $6.55/hr
+      2009: 15080, // $7.25/hr
+      2010: 15080, // $7.25/hr
+      2015: 15080, // $7.25/hr
+      2020: 15080, // $7.25/hr
+      2025: 15080  // $7.25/hr - unchanged since 2009!
+    };
+
+    // State to track which wage type is selected
+    let currentWageType = 'median';
+    let currentYear = 2025;
+
+    const priceData = {
+      medianHome: {
+        name: "Median Home", icon: "🏠", category: "Housing", highlight: true,
+        prices: { 1920: 4350, 1925: 5050, 1929: 5200, 1930: 4778, 1933: 3250, 1940: 2938, 1950: 7354, 1960: 11900, 1970: 23450, 1980: 63700, 1990: 123000, 2000: 165300, 2010: 221800, 2020: 329000, 2025: 409200 }
+      },
+      monthlyRent: {
+        name: "Annual Rent", icon: "🏢", category: "Housing", highlight: true,
+        prices: { 1913: 216, 1920: 336, 1930: 324, 1940: 324, 1950: 504, 1960: 852, 1970: 1296, 1980: 2916, 1990: 5364, 2000: 7224, 2010: 10260, 2020: 13152, 2025: 17400 }
+      },
+      collegeTuition: {
+        name: "4-Year College", icon: "🎓", category: "Education", highlight: true,
+        prices: { 1913: 0, 1920: 80, 1930: 280, 1940: 360, 1950: 600, 1960: 972, 1970: 1576, 1980: 3216, 1990: 8636, 2000: 14032, 2010: 30420, 2020: 38320, 2025: 47800 }
+      },
+      newCar: {
+        name: "New Car", icon: "🚗", category: "Transportation", highlight: true,
+        prices: { 1913: 825, 1920: 650, 1925: 500, 1930: 640, 1940: 800, 1950: 1510, 1960: 2600, 1970: 3450, 1980: 7200, 1990: 16950, 2000: 21850, 2010: 29217, 2020: 40472, 2025: 48644 }
+      },
+      eggs: {
+        name: "Eggs (Annual, 20 doz)", icon: "🥚", category: "Groceries", highlight: false,
+        prices: { 1913: 6.80, 1920: 13.60, 1930: 9.00, 1940: 6.60, 1950: 12, 1960: 11.4, 1970: 12.2, 1980: 16.8, 1990: 20, 2000: 19.2, 2010: 35.8, 2020: 29.6, 2025: 57.2 }
+      },
+      milk: {
+        name: "Milk (Annual, 104 gal)", icon: "🥛", category: "Groceries", highlight: false,
+        prices: { 1913: 37, 1920: 69, 1930: 58, 1940: 54, 1950: 85, 1960: 99, 1970: 120, 1980: 225, 1990: 289, 2000: 290, 2010: 345, 2020: 368, 2025: 416 }
+      },
+      gasoline: {
+        name: "Gas (Annual, 600 gal)", icon: "⛽", category: "Transportation", highlight: false,
+        prices: { 1920: 180, 1930: 120, 1940: 108, 1950: 162, 1960: 186, 1970: 216, 1980: 714, 1990: 690, 2000: 906, 2010: 1674, 2020: 1302, 2025: 1704 }
+      },
+      movieTicket: {
+        name: "Movie Tickets (12/yr)", icon: "🎬", category: "Entertainment", highlight: false,
+        prices: { 1930: 3.00, 1940: 2.88, 1950: 5.52, 1960: 8.28, 1970: 18.6, 1980: 32.28, 1990: 50.76, 2000: 64.68, 2010: 94.68, 2020: 109.92, 2025: 136.2 }
+      }
+    };
+
+    const billionaireData = [
+      { name: "Rockefeller (1913)", years: 1410658 },
+      { name: "J. Paul Getty (1976)", years: 212000 },
+      { name: "Jeff Bezos (2024)", years: 3342600 },
+      { name: "Elon Musk (2024)", years: 3976700 }
+    ];
+
+    const debunkers = [
+      {
+        title: "THE AVOCADO TOAST MYTH",
+        claim: '"Stop buying avocado toast if you want to buy a home"',
+        source: "Tim Gurner, 2017",
+        facts: [
+          { label: "Skip $19 toast daily for 45 years", value: "$311,325" },
+          { label: "Median home price 2025", value: "$409,200" },
+          { label: "Years of daily toasts to buy house", value: "59 years" }
+        ],
+        result: "In 1950, a house cost 2.3 years of work. In 2025, it's 6.5 years. That's not avocado toast — that's 4 extra years of your life."
+      },
+      {
+        title: "THE SUMMER JOB MYTH",
+        claim: '"I paid for college with a summer job"',
+        source: "Every Thanksgiving dinner",
+        facts: [
+          { label: "1970: Min wage hours for 1 year tuition", value: "247 hours (6 weeks)" },
+          { label: "2025: Min wage hours for 1 year tuition", value: "1,648 hours (41 weeks)" },
+          { label: "Summer break length", value: "~13 weeks" }
+        ],
+        result: "In 1970, 6 weeks covered a year's tuition. In 2025, you'd need 41 weeks — that's the entire school year too."
+      },
+      {
+        title: "THE DEPRESSION COMPARISON",
+        claim: '"At least it\'s not the Great Depression"',
+        source: "Well-meaning relatives",
+        facts: [
+          { label: "Depression-era housing (1933)", value: "3.1 years of work" },
+          { label: "2025 housing", value: "6.5 years of work" },
+          { label: "Difference", value: "Housing costs 2x MORE now" }
+        ],
+        result: "Housing in 2025 costs MORE relative to income than during the Great Depression. That's not a typo."
+      },
+      {
+        title: "THE PRODUCTIVITY MYTH",
+        claim: '"People just need to work harder"',
+        source: "Bootstraps enthusiasts",
+        facts: [
+          { label: "Productivity growth 1979-2024", value: "+80.5%" },
+          { label: "Worker pay growth 1979-2024", value: "+26%" },
+          { label: "CEO pay growth 1978-2024", value: "+1,094%" }
+        ],
+        result: "Workers ARE 80% more productive. But the gains went to CEOs (+1,094%) and shareholders, not workers (+26%)."
+      }
+    ];
+
+    // Helper functions
+    function interpolate(data, year) {
+      const years = Object.keys(data).map(Number).sort((a, b) => a - b);
+      if (data[year] !== undefined) return data[year];
+      
+      let lower = years[0], upper = years[years.length - 1];
+      for (let i = 0; i < years.length - 1; i++) {
+        if (years[i] <= year && years[i + 1] >= year) {
+          lower = years[i];
+          upper = years[i + 1];
+          break;
+        }
+      }
+      
+      if (year < lower) return data[lower];
+      if (year > upper) return data[upper];
+      
+      const ratio = (year - lower) / (upper - lower);
+      return data[lower] + (data[upper] - data[lower]) * ratio;
+    }
+
+    function getIncome(year, wageType) {
+      if (wageType === 'minwage') {
+        const minWage = interpolate(minWageData, year);
+        return minWage || null; // null if no minimum wage existed
+      }
+      return interpolate(incomeData, year);
+    }
+
+    function toggleWageType() {
+      setWageType(currentWageType === 'median' ? 'minwage' : 'median');
+    }
+
+    function setWageType(type) {
+      currentWageType = type;
+      
+      // Update toggle UI
+      const toggle = document.getElementById('wage-toggle');
+      const medianLabel = document.getElementById('median-label');
+      const minwageLabel = document.getElementById('minwage-label');
+      const incomeValue = document.getElementById('income-display');
+      const incomeTypeLabel = document.getElementById('income-type-label');
+      const minwageWarning = document.getElementById('minwage-warning');
+      
+      if (type === 'minwage') {
+        toggle.classList.add('minwage');
+        medianLabel.classList.remove('active');
+        minwageLabel.classList.add('active', 'minwage');
+        incomeValue.classList.add('minwage');
+        incomeTypeLabel.textContent = 'Minimum Wage Annual';
+        minwageWarning.classList.add('show');
+      } else {
+        toggle.classList.remove('minwage');
+        medianLabel.classList.add('active');
+        minwageLabel.classList.remove('active', 'minwage');
+        incomeValue.classList.remove('minwage');
+        incomeTypeLabel.textContent = 'Median Annual Earnings';
+        minwageWarning.classList.remove('show');
+      }
+      
+      // Update hero stat
+      updateHeroStat(type);
+      
+      // Re-render with new wage type
+      updateYear(currentYear);
+    }
+    
+    function updateHeroStat(type) {
+      const heroStat = document.getElementById('hero-stat');
+      
+      if (type === 'minwage') {
+        // For minimum wage: 1968 was peak, show 2025 comparison
+        // 1968: home $23,450, min wage $3,328 = 7.0 years
+        // 2025: home $409,200, min wage $15,080 = 27.1 years
+        heroStat.innerHTML = `
+          <div class="label">Housing in 1968 (min wage peak)</div>
+          <div class="value" style="color: #e67e22;">7.0 years of work</div>
+          <div class="label" style="margin-top: 16px;">Housing in 2025 (min wage)</div>
+          <div class="value alert">27.1 years of work</div>
+          <div style="margin-top: 12px; font-size: 13px; opacity: 0.9; color: #ffcdd2;">
+            That's 20 extra years — half a working lifetime
+          </div>
+        `;
+      } else {
+        heroStat.innerHTML = `
+          <div class="label">Housing in 1950 (post-war boom)</div>
+          <div class="value good">2.3 years of work</div>
+          <div class="label" style="margin-top: 16px;">Housing in 2025</div>
+          <div class="value alert">6.5 years of work</div>
+          <div style="margin-top: 12px; font-size: 13px; opacity: 0.9;">
+            That's 4+ extra years of your life
+          </div>
+        `;
+      }
+    }
+
+    function formatYearsOfWork(years) {
+      if (years >= 1) return years.toFixed(1) + ' years';
+      const months = years * 12;
+      if (months >= 1) return months.toFixed(1) + ' months';
+      return (months * 4.33).toFixed(1) + ' weeks';
+    }
+
+    function getEra(year) {
+      if (year < 1920) return { name: 'WWI Era', class: 'war' };
+      if (year < 1930) return { name: 'Roaring 20s', class: 'boom' };
+      if (year < 1940) return { name: 'Great Depression', class: 'depression' };
+      if (year < 1946) return { name: 'World War II', class: 'war' };
+      if (year < 1970) return { name: 'Post-War Boom', class: 'boom' };
+      if (year < 1980) return { name: 'Stagflation Era', class: 'modern' };
+      if (year < 2000) return { name: 'Modern Era', class: 'modern' };
+      return { name: 'Contemporary', class: 'modern' };
+    }
+
+    function getColorClass(yearsNow, yearsBase) {
+      const change = ((yearsNow - yearsBase) / yearsBase) * 100;
+      if (change > 50) return 'severe';
+      if (change > 20) return 'warning';
+      if (change < -20) return 'good';
+      return '';
+    }
+
+    function getBarColor(yearsNow, yearsBase) {
+      const change = ((yearsNow - yearsBase) / yearsBase) * 100;
+      if (change > 50) return '#d32f2f';
+      if (change > 20) return '#e67e22';
+      if (change < -20) return '#7cb342';
+      return '#546e7a';
+    }
+
+    // View management
+    function showView(viewName) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(viewName + '-view').classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // Update functions
+    function updateYear(year) {
+      year = parseInt(year);
+      currentYear = year;
+      document.getElementById('year-display').textContent = year;
+      
+      const income = getIncome(year, currentWageType);
+      const incomeDisplay = document.getElementById('income-display');
+      const minwageWarning = document.getElementById('minwage-warning');
+      
+      if (currentWageType === 'minwage' && (income === null || year < 1938)) {
+        incomeDisplay.textContent = 'N/A';
+        minwageWarning.innerHTML = '⚠️ No federal minimum wage before 1938';
+        minwageWarning.classList.add('show');
+      } else {
+        incomeDisplay.textContent = '$' + Math.round(income).toLocaleString();
+        if (currentWageType === 'minwage') {
+          const hourly = (income / 2080).toFixed(2);
+          minwageWarning.innerHTML = `⚠️ $${hourly}/hr × 2,080 hrs. Federal min wage unchanged since 2009.`;
+          minwageWarning.classList.add('show');
+        }
+      }
+      
+      const era = getEra(year);
+      const eraBadge = document.getElementById('era-badge');
+      eraBadge.textContent = era.name;
+      eraBadge.className = 'era-badge ' + era.class;
+      
+      renderContext(year);
+      renderItems(year);
+    }
+
+    function updateWealthYear(year) {
+      year = parseInt(year);
+      document.getElementById('wealth-year-display').textContent = year;
+      
+      const ceoRatioData = {
+        1965: 21, 1970: 25, 1978: 31, 1980: 42, 1989: 61, 1990: 71,
+        1995: 131, 2000: 380, 2005: 295, 2010: 227, 2015: 286, 2020: 351, 2025: 281
+      };
+      
+      const ratio = Math.round(interpolate(ceoRatioData, year));
+      document.getElementById('ratio-display').textContent = ratio + ':1';
+      document.getElementById('ratio-display').style.color = ratio > 100 ? '#d32f2f' : '#1a3a52';
+    }
+
+    function renderContext(year) {
+      const container = document.getElementById('context-container');
+      let html = '';
+      
+      if (year >= 1930 && year <= 1939) {
+        html = `
+          <div class="context-box depression">
+            <h4>📉 Great Depression Context (1930-1939)</h4>
+            <p>Unemployment peaked at 25% in 1933. Wages fell 32% from 1929-1933. While prices dropped, the lack of jobs made everything unaffordable for millions. Over 9,000 banks failed, wiping out savings.</p>
+          </div>
+        `;
+      } else if (year >= 1941 && year <= 1945) {
+        html = `
+          <div class="context-box war">
+            <h4>⚔️ World War II Context (1941-1945)</h4>
+            <p>War economy with rationing and price controls. Consumer goods scarce. Wages rose but there was little to buy. Women entered workforce en masse. GI Bill passed in 1944.</p>
+          </div>
+        `;
+      } else if (year >= 1946 && year <= 1965) {
+        html = `
+          <div class="context-box" style="background: #e8f5e9; border-left-color: #4caf50;">
+            <h4>🏠 Post-War Golden Age (1946-1965)</h4>
+            <p>Housing most affordable in American history. Single-income families could buy homes. College often free at state schools. Strong unions. Middle class expansion. CEO pay: 21x workers.</p>
+          </div>
+        `;
+      }
+      
+      container.innerHTML = html;
+    }
+
+    function renderItems(year) {
+      const container = document.getElementById('items-container');
+      const income = getIncome(year, currentWageType);
+      
+      // Handle pre-minimum wage era
+      if (currentWageType === 'minwage' && (income === null || year < 1938)) {
+        container.innerHTML = `
+          <div class="context-box depression">
+            <h4>⚠️ No Federal Minimum Wage</h4>
+            <p>The federal minimum wage wasn't established until 1938 (Fair Labor Standards Act). Move the slider to 1938 or later to see minimum wage calculations.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Check if any item exceeds 5 years (to show gross income note)
+      let maxYears = 0;
+      Object.entries(priceData).forEach(([key, item]) => {
+        const price = interpolate(item.prices, year);
+        const years = price / income;
+        if (years > maxYears) maxYears = years;
+      });
+      
+      let html = '';
+      
+      // Add gross income clarification if numbers are large
+      if (maxYears > 5) {
+        const isExtreme = maxYears > 15;
+        html += `
+          <div class="gross-income-note ${isExtreme ? 'extreme' : ''}">
+            <span class="icon">💡</span>
+            <div>
+              <strong>"Years of work"</strong> = 100% of gross salary, before taxes, spending $0 on anything else. 
+              ${isExtreme ? `At ${maxYears.toFixed(0)}+ years for a single purchase, this illustrates why minimum wage workers cannot afford major purchases without decades of saving or significant debt.` : 'Real affordability requires factoring in taxes, rent, food, and other necessities.'}
+            </div>
+          </div>
+        `;
+      }
+      
+      // Add wage comparison note for minimum wage view
+      if (currentWageType === 'minwage') {
+        const medianIncome = interpolate(incomeData, year);
+        const ratio = (medianIncome / income).toFixed(1);
+        html += `
+          <div class="context-box" style="background: #fff3e0; border-left-color: #e67e22; padding: 12px 16px;">
+            <p style="margin: 0; font-size: 13px;"><strong>Min wage = ${(100/ratio).toFixed(0)}% of median income.</strong> Everything costs ${ratio}× more of your working life compared to median earners.</p>
+          </div>
+        `;
+      }
+      
+      // Group all items by category
+      const categories = [
+        { name: 'Housing', emoji: '🏠', keys: ['medianHome', 'monthlyRent'] },
+        { name: 'Education', emoji: '🎓', keys: ['collegeTuition'] },
+        { name: 'Transportation', emoji: '🚗', keys: ['newCar', 'gasoline'] },
+        { name: 'Groceries', emoji: '🛒', keys: ['eggs', 'milk'] },
+        { name: 'Entertainment', emoji: '🎬', keys: ['movieTicket'] }
+      ];
+      
+      categories.forEach(category => {
+        const categoryItems = category.keys.filter(key => priceData[key]);
+        if (categoryItems.length === 0) return;
+        
+        html += `<div class="section-title"><span>${category.emoji}</span> ${category.name}</div>`;
+        html += `<div class="items-grid">`;
+        
+        categoryItems.forEach(key => {
+          const item = priceData[key];
+          const price = interpolate(item.prices, year);
+          const yearsOfWork = price / income;
+          
+          // Determine severity
+          let colorClass = '';
+          let isExtreme = false;
+          if (yearsOfWork > 10) { colorClass = 'severe'; isExtreme = true; }
+          else if (yearsOfWork > 3) { colorClass = 'warning'; }
+          else if (yearsOfWork < 0.1) { colorClass = 'good'; }
+          
+          // Format years display
+          let yearsDisplay, yearsLabel;
+          if (key === 'collegeTuition' && price === 0) {
+            yearsDisplay = 'FREE';
+            yearsLabel = 'at state schools';
+          } else if (yearsOfWork >= 1) {
+            yearsDisplay = yearsOfWork.toFixed(1);
+            yearsLabel = yearsOfWork === 1 ? 'year' : 'years';
+          } else {
+            const months = yearsOfWork * 12;
+            if (months >= 1) {
+              yearsDisplay = months.toFixed(1);
+              yearsLabel = months === 1 ? 'month' : 'months';
+            } else {
+              const weeks = months * 4.33;
+              yearsDisplay = weeks.toFixed(1);
+              yearsLabel = 'weeks';
+            }
+          }
+          
+          // Shorter item names for compact display
+          const shortNames = {
+            'medianHome': 'Median Home',
+            'monthlyRent': 'Annual Rent',
+            'collegeTuition': '4-Year College',
+            'newCar': 'New Car',
+            'gasoline': 'Gas (year)',
+            'eggs': 'Eggs (year)',
+            'milk': 'Milk (year)',
+            'movieTicket': 'Movies (12/yr)'
+          };
+          
+          html += `
+            <div class="item-card ${item.highlight ? 'highlight' : ''} ${isExtreme ? 'extreme' : ''}">
+              <div class="item-icon-sm">${item.icon}</div>
+              <div class="item-details">
+                <div class="item-name-sm">${shortNames[key] || item.name}</div>
+                <div class="item-price-sm">${price === 0 ? '—' : '$' + Math.round(price).toLocaleString()}</div>
+              </div>
+              <div class="item-years-box">
+                <div class="years-value ${colorClass}">${yearsDisplay}</div>
+                <div class="years-label">${yearsLabel}</div>
+              </div>
+            </div>
+          `;
+        });
+        
+        html += `</div>`;
+      });
+      
+      container.innerHTML = html;
+    }
+
+    function renderBillionaires() {
+      const container = document.getElementById('billionaire-container');
+      const maxYears = Math.max(...billionaireData.map(b => b.years));
+      let html = '';
+      
+      billionaireData.forEach(person => {
+        const lifetimes = Math.round(person.years / 40);
+        const barWidth = (person.years / maxYears) * 100;
+        
+        html += `
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-weight: 600;">${person.name}</span>
+              <span style="color: #d32f2f; font-weight: 700;">${(person.years / 1000000).toFixed(1)}M years</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: ${barWidth}%; background: linear-gradient(90deg, #1a3a52, #d32f2f);"></div>
+            </div>
+            <div style="font-size: 12px; color: #546e7a; margin-top: 8px;">
+              That's ${lifetimes.toLocaleString()} complete working lifetimes
+            </div>
+          </div>
+        `;
+      });
+      
+      container.innerHTML = html;
+    }
+
+    function renderDebunkers() {
+      const container = document.getElementById('debunkers-container');
+      let html = '';
+      
+      debunkers.forEach(item => {
+        let factsHtml = '';
+        item.facts.forEach(fact => {
+          factsHtml += `
+            <div class="fact-row">
+              <span>${fact.label}</span>
+              <span class="value">${fact.value}</span>
+            </div>
+          `;
+        });
+        
+        html += `
+          <div class="debunker-card">
+            <div class="debunker-title">${item.title}</div>
+            <div class="debunker-claim">${item.claim}</div>
+            <div class="debunker-source">— ${item.source}</div>
+            <div class="debunker-facts">${factsHtml}</div>
+            <div class="debunker-result">💡 ${item.result}</div>
+          </div>
+        `;
+      });
+      
+      container.innerHTML = html;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      renderItems(2025);
+      renderBillionaires();
+      renderDebunkers();
+    });
+  </script>
+</body>
+</html>
