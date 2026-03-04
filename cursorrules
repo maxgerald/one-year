@@ -1,0 +1,133 @@
+# ONE YEAR - Cursor Rules
+
+You are building ONE YEAR, a React web application that visualizes purchasing power changes across American history using the "1Y" unit (one median worker's annual salary).
+
+## Project Context
+
+Read these files before starting any task:
+- `@PRD.md` for product requirements, component architecture, and acceptance criteria
+- `@Tasks.md` for the current task list and completion status
+- `@src/data/oneYearData.json` for the data structure
+
+## Task Execution Protocol
+
+1. Before writing any code, read the current task from `@Tasks.md`
+2. Identify which files need to be created or modified
+3. Implement the task completely, including edge cases
+4. Run `npm run dev` to verify no errors
+5. Run `npm run build` to verify production build works
+6. Mark the task as complete in `Tasks.md` by changing `[ ]` to `[x]`
+7. Move to the next task automatically unless you hit a blocking issue
+
+If you finish a task and there is a next task, proceed to it immediately. Do not stop to ask for confirmation. The user is in a Project Manager role and will review your work after a batch of tasks, not after each one.
+
+If you encounter an error:
+- Read the error message carefully
+- Fix it
+- Re-run the dev server
+- Continue
+
+If you are stuck after 3 attempts on the same error, document what you tried in a comment at the top of the affected file and move to the next task.
+
+## Tech Stack Rules
+
+### React
+- Use functional components with hooks exclusively
+- Use `useState`, `useMemo`, `useCallback` for state and performance
+- No class components
+- No Redux or external state management (app state is simple: selected year + income type)
+- Export components as default exports
+- Keep components under 150 lines. Extract sub-components if longer.
+
+### Tailwind CSS
+- Use Tailwind utility classes for all styling
+- Define brand colors as CSS custom properties in `index.css` and reference via Tailwind's arbitrary value syntax (e.g., `bg-[var(--color-primary)]`) or extend the Tailwind config
+- No inline style objects unless Tailwind cannot express it (e.g., dynamic widths for fraction bars)
+- Mobile-first: write base styles for mobile, add `sm:`, `md:`, `lg:` for larger screens
+- Use `max-w-7xl mx-auto px-4` for content containers
+
+### Data Handling
+- All data comes from `src/data/oneYearData.json`. Never hardcode prices or incomes.
+- Use the `useYearData` hook to get data for a selected year
+- Use the `useOneYearCalc` hook to compute 1Y fractions
+- For years between data points, interpolate linearly using `utils/interpolate.js`
+- Monthly items (rent): multiply by 12 before dividing by annual income
+- Handle missing data gracefully: show "No data available" with muted styling
+
+### Charts (Recharts)
+- Import only the components you need (no `import * from 'recharts'`)
+- Use brand colors from constants
+- Include tooltips on all charts
+- Make charts responsive with `<ResponsiveContainer>`
+- Minimum chart height: 300px on desktop, 250px on mobile
+
+### File Organization
+- One component per file
+- Co-locate hooks in `src/hooks/`
+- Co-locate utilities in `src/utils/`
+- Data files in `src/data/`
+- Logo assets in `public/logos/`
+
+## Code Style
+
+- Use descriptive variable names: `yearsOfLabor` not `yol`, `medianIncome` not `mi`
+- Use template literals for dynamic strings
+- Prefer `const` over `let`. Never use `var`.
+- Destructure props: `function ItemCard({ item, year, income })` not `function ItemCard(props)`
+- Add JSDoc comments on hooks and utility functions explaining inputs/outputs
+- Use early returns to reduce nesting
+- No `console.log` in committed code (use it for debugging, remove before marking task done)
+
+## Design Rules
+
+- Font: Inter. Always load from Google Fonts. Fallback: `-apple-system, BlinkMacSystemFont, sans-serif`
+- Body text: minimum 16px (1rem)
+- Primary color: `#1a3a52` (Deep Navy)
+- Accent color: `#e67e22` (Burnt Orange)
+- Never use em dashes in UI copy. Use commas, periods, or parentheses instead.
+- Numbers: use `toLocaleString()` for currency formatting. Always include dollar sign.
+- Fraction bars: green (#7cb342) for affordable, red (#d32f2f) for unaffordable
+- Cards: rounded corners (rounded-xl), subtle shadow (shadow-sm), white background
+- Hover states: `hover:shadow-md transition-shadow duration-200`
+- Dark sections (Act 2): use navy (#1a3a52) background with white text
+- Logo: render from PNG in `/public/logos/`. Never recreate in CSS/SVG.
+
+## Tone of UI Copy
+
+- Write in second person: "Your year" not "A worker's year"
+- Short, punchy sentences
+- No jargon. If you use an economic term, explain it in a tooltip or parenthetical.
+- No partisan language. Present data, let users draw conclusions.
+- Emotional but factual: "A house cost 2.3 years of your labor" not "Houses were cheap"
+
+## Performance
+
+- Lazy load Act 2 components (React.lazy + Suspense)
+- Memoize expensive calculations (useMemo for interpolation results)
+- Use CSS transitions for number changes, not JS animation libraries
+- Images: use WebP where possible, lazy load below-the-fold images
+- Target: Lighthouse performance score > 90
+
+## Testing (Phase 2, but write testable code now)
+
+- Keep business logic in hooks and utils, not in component JSX
+- Pure functions for all calculations (interpolation, formatting, 1Y math)
+- Hooks should accept parameters and return values, not read from context
+
+## Git Conventions
+
+- Commit after each completed task
+- Commit message format: `feat(scope): description` or `fix(scope): description`
+- Examples: `feat(act1): add year slider component`, `fix(data): handle missing 1935 rent data`
+
+## Common Pitfalls to Avoid
+
+- Do NOT use `dangerouslySetInnerHTML`
+- Do NOT fetch data from external APIs (all data is local JSON)
+- Do NOT add a backend or database
+- Do NOT use Next.js, Remix, or any SSR framework (this is a static SPA)
+- Do NOT install moment.js or date-fns (we barely deal with dates)
+- Do NOT add authentication or user accounts
+- Do NOT use localStorage for state (no persistent state needed for MVP)
+- Do NOT create a separate CSS file per component (use Tailwind)
+- Do NOT use `index.js` barrel files for exports (import directly from component files)

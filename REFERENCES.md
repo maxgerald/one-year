@@ -54,6 +54,30 @@ These sources document the current housing crisis and validate the app's core th
   - Key takeaway: Monthly mortgage payments on median home rose to $2,570 (record). Need $126,700 income to afford it. Only 6 million of 46 million renters can meet this benchmark. Median buyer age surged to 59 years old.
   - Relevant to: Housing affordability calculations, Act 1 context
 
+- **Washington Post: Buying a home feels out of reach for middle class** - https://www.washingtonpost.com/business/2026/02/27/affordability-homeownership-poll/
+  - Key takeaway: Health care, new cars and new homes feel unaffordable to most Americans per WaPo-ABC-Ipsos poll. 53% have just enough to maintain standard of living. Roughly half or more say discretionary spending on dinner, vacations and new cars is unaffordable.
+  - Relevant to: Act 1 hero stat, overall app messaging, cultural discourse (most recent)
+
+- **Axios: 75% of U.S. homes unaffordable to typical households** - https://www.axios.com/2026/01/19/affordable-homes-metro-income
+  - Key takeaway: Bankrate analysis: median household earns ~$80K, needs $113K to afford median $435K home ($33K gap). In only 11 of 34 largest metros do 30%+ of listings fall within reach. Pittsburgh and St. Louis offer ~50% affordable.
+  - Relevant to: Act 1 housing cards, metro comparison context
+
+- **Bankrate: American dream of homeownership turning into luxury** - https://www.bankrate.com/mortgages/american-dream-of-homeownership-turning-into-luxury/
+  - Key takeaway: Typical household priced out of 75% of U.S. homes. Need $33K+ more annually to afford median home. Miami, LA, San Diego: fewer than 1 in 50 listings affordable. Median first-time buyer age now 40.
+  - Relevant to: Act 1 "American Dream" preset, housing item card
+
+- **CNBC: Incomes need to rise $50K for 2019 affordability** - https://www.cnbc.com/2026/02/07/housing-affordability-income-changes.html
+  - Key takeaway: Mortgage payment on median home took 21% of income in 2019, now 30%+. To restore 2019 levels would require incomes up 56% to $132K or mortgage rates at 2.65%. Neither likely soon. Housing shortfall ~4 million homes.
+  - Relevant to: Act 1 year context, affordability math
+
+- **KUTV/Redfin: Half of Americans struggling with housing payments** - https://kutv.com/news/eye-on-your-money/half-of-americans-struggling-to-make-housing-payments
+  - Key takeaway: ~50% of Americans report concerns affording rent or mortgage. Gen Z hit hardest (no peak earnings yet). Many borrowing money and skipping meals to afford payments. 1 in 3 cutting dining out and vacations.
+  - Relevant to: Act 1 housing context, generational framing
+
+- **Bloomberg: US new home sales hold near fastest pace** - https://www.bloomberg.com/news/articles/2026-01-13/us-new-home-sales-little-changed-after-september-increase
+  - Key takeaway: New home sales eased 0.1% to 737K annual rate in Oct 2025. Builders luring customers with price cuts and incentives. Report delayed by federal shutdown.
+  - Relevant to: Housing market context, year context 2025
+
 ---
 
 ## Wealth Inequality & Concentration (2024-2026)
@@ -84,6 +108,14 @@ These sources provide the data and framing for Act 2's wealth concentration narr
   - Key takeaway: 340 new billionaires in 2025. 10 richest US billionaires gained ~$700B in one year. 791 million workers saw wages fail to keep pace with inflation (2021-2023), losing ~25 days of wages per worker.
   - Relevant to: Act 2 billionaire cards, "where did the money go" transition copy
 
+- **Fortune: Record gap between corporate profits and worker pay** - https://fortune.com/2026/02/23/record-gap-corporate-profits-worker-pay-gdp-share-wealth-inequality-betrayal-social-instability/
+  - Key takeaway: Corporate profits as share of GDP soared to 15.85% from 8% in 1982; employee compensation fell to 61.9% from 66.6%. Gap at post-WWII record. Economist: "undercurrent of betrayal," inequality fuels social instability.
+  - Relevant to: Act 2 productivity vs wages, CEO pay chart
+
+- **Visual Capitalist: All of the world's billionaires by country** - https://www.visualcapitalist.com/all-of-the-worlds-billionaires-by-country/
+  - Key takeaway: Global billionaire distribution and wealth concentration by country. Useful for Act 2 international comparison and billionaire cards.
+  - Relevant to: Act 2 billionaire grid, global context
+
 - **Al Jazeera: World Inequality Report 2026 summary** - https://www.aljazeera.com/news/2025/12/10/where-in-the-world-are-wealth-and-income-most-unequal
   - Key takeaway: Richest 10% own 75% of all personal wealth. US top 1% take 20% of income, bottom 50% take 10%. In Europe, top 1% takes only 12% and bottom 50% takes 22%.
   - Relevant to: Act 2, potential international comparison feature
@@ -91,6 +123,22 @@ These sources provide the data and framing for Act 2's wealth concentration narr
 ---
 
 ## Cost of Living & Consumer Prices
+
+- **CNBC: CPI inflation breakdown December 2025** - https://www.cnbc.com/2026/01/13/cpi-inflation-december-2025-breakdown.html
+  - Key takeaway: CPI rose 2.7% YoY in Dec 2025. Tariffs pushed inflation ~0.5pt. Food, electricity, clothing elevated. Coffee ~20%, beef ~16% YoY. Rent growth weak (housing may pull inflation down in 2026).
+  - Relevant to: Grocery item cards, inflation context
+
+- **NPR: Walmart price check — 114 items** - https://www.npr.org/2026/01/14/nx-s1-5638908/walmart-prices-inflation-affordability-shrinkflation
+  - Key takeaway: NPR basket rose 5% avg in 2025. Tariffs and extreme weather drove hikes (coffee, beef, chocolate). Eggs down 30%, butter down 16%. Tide shrinkflation: 100oz→80oz. Brands cutting prices to retain shoppers.
+  - Relevant to: Grocery item cards, shrinkflation context
+
+- **Marketplace: Why is everything so hard to afford now?** - https://www.marketplace.org/story/2026/02/06/why-is-everything-so-hard-to-afford-now
+  - Key takeaway: 1950 home ~$7,400 vs $410K now. Price-to-income ratio 2.5x in 1950 vs ~5x in 2024. Construction productivity flat 50 years. Money supply expansion and wage competition explain rises.
+  - Relevant to: Act 1 historical comparison, "your year buys less" framing
+
+- **Bloomberg: Cost of living** - https://www.bloomberg.com/graphics/2026-cost-of-living/
+  - Key takeaway: Interactive cost-of-living data and graphics for 2026. Useful for regional and category comparisons.
+  - Relevant to: Data validation, item cards
 
 - **USDA Food Plans** - https://www.fns.usda.gov/research/cnpp/usda-food-plans
   - Key takeaway: Official government food cost benchmarks by household size and spending tier (thrifty, low-cost, moderate, liberal)
@@ -103,6 +151,22 @@ These sources provide the data and framing for Act 2's wealth concentration narr
 - **College Board Trends in College Pricing** - https://research.collegeboard.org/trends/college-pricing
   - Key takeaway: Official annual report on tuition, fees, room and board at US colleges
   - Relevant to: College tuition item card
+
+- **Visual Capitalist: Median income by household size** - https://www.visualcapitalist.com/charted-median-income-by-household-size-in-the-u-s/
+  - Key takeaway: Median U.S. household income $81,604 (2024). Single-person $42K, two-person $90K, four-person $125K. Per-person income highest in smaller households.
+  - Relevant to: Income display, household size presets
+
+- **Moneywise: Average income of Americans by age in 2026** - https://moneywise.com/news/economy/the-average-income-of-americans-by-age-in-2026
+  - Key takeaway: Age-based income breakdown for 2026. Useful for validating income by cohort in Act 1.
+  - Relevant to: Income display, year context
+
+- **Visual Capitalist: Payday Pulse — 5000 years of wages** - https://www.visualcapitalist.com/sp/pay01-payday-pulse-5000-years-of-wages-in-one-giant-timeline/
+  - Key takeaway: Long-run wage and purchasing power timeline. Historical context for era comparisons.
+  - Relevant to: Historical context, pre-1940 data
+
+- **The Independent (UK): 4 million working households struggling** - https://www.the-independent.com/news/uk/home-news/cost-of-living-work-wages-inflation-costs-research-b2922166.html
+  - Key takeaway: 4.2M UK working households below minimum income standard (68.5% of those falling short). Wages failed to keep pace with food, energy, transport, childcare. International parallel to US affordability crisis.
+  - Relevant to: International context, cultural discourse
 
 ---
 
@@ -134,6 +198,30 @@ Use these for writing YearContext blurbs and validating historical data.
 ## Cultural Discourse & Framing
 
 These inform the app's tone and validate that we're tapping into a real cultural conversation, not creating one.
+
+- **CNBC: Consumer sentiment nears lowest ever** - https://www.cnbc.com/2025/11/07/consumer-sentiment-shutdown.html
+  - Key takeaway: Michigan sentiment 50.3 (Nov 2025), second-lowest since 1978. Government shutdown fears topped concerns. Current conditions index hit lowest in history. Sentiment among largest stock holders improved 11%.
+  - Relevant to: Overall app tone, validates "things feel broken" framing
+
+- **Business Insider: Older than my parents when I was born** - https://www.businessinsider.com/older-than-my-parents-were-when-born-falling-behind-2026-2
+  - Key takeaway: 27-year-old essay: parents had house, marriage, kids by 25; author has none. "Income hasn't risen to keep pace with housing prices." "Becoming a homeowner in your 20s is simply not realistic anymore." Generational comparison is powerful.
+  - Relevant to: American Dream preset, generational framing
+
+- **SFGate: Six-figure salary in California** - https://www.sfgate.com/california/article/six-figure-salary-california-21938779.php
+  - Key takeaway: Regional context on what six figures means (or doesn't) in high-cost California. Validates that "middle class" thresholds vary wildly by geography.
+  - Relevant to: Regional income context, metro comparisons
+
+- **NYT: Affordability poll** - https://www.nytimes.com/2026/01/26/us/politics/affordability-poll.html
+  - Key takeaway: Political/polling coverage of affordability. (Paywalled; add takeaways if accessed.)
+  - Relevant to: Cultural discourse, polling validation
+
+- **NYT: Home buying market and real estate economy** - https://www.nytimes.com/2026/02/23/business/home-buying-market-real-estate-economy.html
+  - Key takeaway: Housing market and economy coverage. (Paywalled; add takeaways if accessed.)
+  - Relevant to: Act 1 housing context
+
+- **NYT: Trump affordability and inflation for families** - https://www.nytimes.com/2026/02/23/us/trump-affordability-inflation-families.html
+  - Key takeaway: Political/policy coverage of affordability and inflation. (Paywalled; add takeaways if accessed.)
+  - Relevant to: Cultural discourse, policy context
 
 - The phrase "affordability crisis" dominates current headlines and political campaigns
 - 70% of Americans say cost of living is "not affordable" for the average family (Marist poll, Dec 2025)

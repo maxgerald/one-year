@@ -2,7 +2,7 @@
   "metadata": {
     "title": "ONE YEAR - Complete Historical Economic Data with Source Citations",
     "version": "4.0",
-    "lastUpdated": "2025-01-04",
+    "lastUpdated": "2026-01-13",
     "description": "Comprehensive purchasing power and economic data spanning 1913-2025. Every data point includes source citations with URLs for verification.",
     "dataRange": "1913-2025 (112 years)",
     "primaryMetric": "1Y = One Year of median worker's annual salary",
@@ -20,6 +20,27 @@
           "years": "1947-2024",
           "confidence": "high",
           "notes": "Official federal household and individual income statistics"
+        },
+        {
+          "name": "ADP Research Institute - Pay Insights",
+          "url": "https://payinsights.adp.com/",
+          "years": "2019-present",
+          "confidence": "medium",
+          "notes": "Monthly job-stayer and job-changer pay growth, plus median annual pay"
+        },
+        {
+          "name": "Paychex - Small Business Employment Watch",
+          "url": "https://www.paychex.com/employment-watch/#!/news-release/",
+          "years": "2014-present",
+          "confidence": "medium",
+          "notes": "Small business jobs index and hourly earnings growth"
+        },
+        {
+          "name": "BLS - Employment Cost Index (ECI)",
+          "url": "https://www.bls.gov/eci/",
+          "years": "2001-present",
+          "confidence": "high",
+          "notes": "Quarterly compensation growth for wages and benefits"
         },
         {
           "name": "Bureau of Labor Statistics (BLS) - Monthly Labor Review",
@@ -66,6 +87,27 @@
           "notes": "Median sales price of houses sold in the United States"
         },
         {
+          "name": "FHFA House Price Index",
+          "url": "https://www.fhfa.gov/data/hpi/",
+          "years": "1975-present",
+          "confidence": "high",
+          "notes": "Repeat-sales home price index for purchase-only mortgages"
+        },
+        {
+          "name": "S&P CoreLogic Case-Shiller Home Price Indices",
+          "url": "https://www.spglobal.com/spdji/en/indices/indicators/sp-corelogic-case-shiller-us-national-home-price-nsa-index/",
+          "years": "1987-present",
+          "confidence": "high",
+          "notes": "Monthly home price indices for national and metro markets"
+        },
+        {
+          "name": "NAR - Housing Affordability Index",
+          "url": "https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index",
+          "years": "1970s-present",
+          "confidence": "high",
+          "notes": "Home-buying affordability measure based on mortgage rates, prices, and income"
+        },
+        {
           "name": "U.S. Census Bureau - Historical Housing Tables",
           "url": "https://www.census.gov/housing/hvs/data/histtabs.html",
           "years": "1940-present",
@@ -85,6 +127,13 @@
           "years": "1890-1940",
           "confidence": "medium",
           "notes": "Historical housing economics research"
+        },
+        {
+          "name": "Reuters - U.S. New Home Sales (October 2025)",
+          "url": "https://www.reuters.com/world/us/us-new-home-sales-fall-marginally-october-2026-01-13",
+          "years": "2025",
+          "confidence": "high",
+          "notes": "New U.S. single-family home sales data for October 2025. Sales fell 0.1% to 737,000 units (seasonally adjusted annual rate), up 18.7% year-over-year. Released January 13, 2026."
         }
       ],
       "transportation": [
@@ -156,6 +205,13 @@
           "notes": "Official consumer price tracking for eggs, milk, bread, meat, etc."
         },
         {
+          "name": "BLS - CPI Shelter Component",
+          "url": "https://www.bls.gov/cpi/",
+          "years": "1983-present",
+          "confidence": "high",
+          "notes": "Housing and shelter inflation components within CPI"
+        },
+        {
           "name": "BLS Bulletin Series (300, 418, 495, 635)",
           "url": "https://www.bls.gov/opub/bls-bulletin/",
           "years": "1913-1970",
@@ -168,6 +224,13 @@
           "years": "1863-present",
           "confidence": "high",
           "notes": "Agricultural commodity prices including dairy and meat"
+        },
+        {
+          "name": "BLS - Consumer Price Index News Release (December 2025)",
+          "url": "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
+          "years": "2025",
+          "confidence": "high",
+          "notes": "Official BLS CPI release for December 2025. CPI-U increased 0.3% month-over-month, 2.7% year-over-year. Released January 13, 2026."
         }
       ],
       "other": [
@@ -177,6 +240,41 @@
           "years": "1863-present",
           "confidence": "high",
           "notes": "Complete history of postal rates"
+        },
+        {
+          "name": "BEA - Personal Consumption Expenditures (PCE)",
+          "url": "https://www.bea.gov/data/consumer-spending/main",
+          "years": "1959-present",
+          "confidence": "high",
+          "notes": "Household spending totals and inflation trends"
+        },
+        {
+          "name": "Federal Reserve - Survey of Consumer Finances (SCF)",
+          "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+          "years": "1989-present",
+          "confidence": "high",
+          "notes": "Household wealth, debt, and balance sheet distribution"
+        },
+        {
+          "name": "MIT Living Wage Calculator",
+          "url": "https://livingwage.mit.edu/",
+          "years": "2004-present",
+          "confidence": "medium",
+          "notes": "Regional living wage thresholds by household type"
+        },
+        {
+          "name": "Child Care Aware of America - Child Care Cost Reports",
+          "url": "https://www.childcareaware.org/",
+          "years": "2011-present",
+          "confidence": "medium",
+          "notes": "Annual childcare costs by state and age group"
+        },
+        {
+          "name": "Kaiser Family Foundation - Employer Health Benefits Survey",
+          "url": "https://www.kff.org/health-costs/report/2024-employer-health-benefits-survey/",
+          "years": "1999-present",
+          "confidence": "high",
+          "notes": "Employer premiums, contributions, and out-of-pocket costs"
         },
         {
           "name": "National Association of Theatre Owners (NATO)",
@@ -198,6 +296,13 @@
           "years": "1945-present",
           "confidence": "high",
           "notes": "Consumer credit card debt statistics"
+        },
+        {
+          "name": "MarketWatch - CPI Report Coverage (December 2025)",
+          "url": "https://www.marketwatch.com/livecoverage/december-2025-cpi-report-today",
+          "years": "2025",
+          "confidence": "medium",
+          "notes": "News coverage and analysis of December 2025 CPI report release. Published January 13, 2026."
         }
       ]
     }

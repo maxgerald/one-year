@@ -54,6 +54,69 @@
       margin-top: 8px;
     }
     
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-top: 18px;
+    }
+    
+    .hero-headline {
+      font-size: 36px;
+      font-weight: 900;
+      margin-top: 10px;
+      line-height: 1.1;
+    }
+    
+    .hero-subhead {
+      font-size: 16px;
+      margin-top: 12px;
+      opacity: 0.9;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      border: none;
+      border-radius: 26px;
+      padding: 12px 22px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    
+    .btn-primary {
+      background: #e67e22;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #cf6c14;
+    }
+    
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+    }
+    
     .hero-stat {
       background: rgba(255,255,255,0.1);
       border-radius: 16px;
@@ -135,6 +198,36 @@
       padding: 28px;
       margin-bottom: 28px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      padding: 8px 14px;
+      border-radius: 18px;
+      border: 1px solid #e0e0e0;
+      background: #f5f5f5;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chip.active {
+      background: #1a3a52;
+      color: white;
+      border-color: #1a3a52;
     }
     
     .year-display {
@@ -236,6 +329,12 @@
     .card.highlight {
       border-left: 5px solid #e67e22;
     }
+
+    .card.soft {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      box-shadow: none;
+    }
     
     .item-row {
       display: flex;
@@ -307,6 +406,13 @@
     
     .item-years.good {
       color: #7cb342;
+    }
+
+    .item-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #546e7a;
+      line-height: 1.5;
     }
     
     .progress-bar {
@@ -543,6 +649,239 @@
       color: #d32f2f;
     }
     
+    /* Story + Share */
+    .story-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .story-step {
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .story-step strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+    
+    .share-section {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom: 28px;
+    }
+    
+    .share-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    
+    .share-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    
+    .share-tab {
+      padding: 10px 18px;
+      border-radius: 22px;
+      border: 1px solid #e0e0e0;
+      background: #f5f5f5;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    
+    .share-tab.active {
+      background: #1a3a52;
+      color: white;
+      border-color: #1a3a52;
+    }
+    
+    .share-panel {
+      display: none;
+    }
+    
+    .share-panel.active {
+      display: block;
+    }
+    
+    .field {
+      margin-bottom: 14px;
+    }
+    
+    .field label {
+      display: block;
+      font-size: 13px;
+      color: #546e7a;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    
+    .field select,
+    .field input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      font-size: 14px;
+      font-family: inherit;
+      background: white;
+    }
+    
+    .share-preview {
+      background: #f5f5f5;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+    
+    .share-preview canvas {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 12px;
+      background: white;
+    }
+    
+    .share-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      justify-content: center;
+    }
+    
+    .share-note {
+      font-size: 12px;
+      color: #546e7a;
+      margin-top: 10px;
+    }
+
+    .insights {
+      background: #f5f5f5;
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 20px;
+    }
+
+    .insights ul {
+      margin-left: 18px;
+      margin-top: 8px;
+      color: #546e7a;
+      font-size: 14px;
+    }
+
+    .impact-section {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom: 28px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .impact-card {
+      background: #f5f5f5;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .impact-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .impact-sub {
+      font-size: 12px;
+      color: #546e7a;
+      margin-bottom: 12px;
+    }
+
+    .stacked-bar {
+      position: relative;
+      height: 240px;
+      background: #f0f2f4;
+      border-radius: 12px;
+      overflow: visible;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .stacked-column {
+      position: relative;
+      width: 25%;
+      height: 200px;
+      background: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .stacked-overflow {
+      position: absolute;
+      bottom: 200px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: stretch;
+      gap: 2px;
+    }
+
+    .stacked-segment {
+      width: 100%;
+    }
+
+    .salary-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #1a3a52;
+    }
+
+    .overflow-label {
+      position: absolute;
+      top: -22px;
+      right: 8px;
+      background: #d32f2f;
+      color: white;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .stacked-legend {
+      font-size: 12px;
+      color: #546e7a;
+    }
+
+    .stacked-legend div {
+      margin-bottom: 4px;
+    }
+    
     /* Footer */
     footer {
       text-align: center;
@@ -596,6 +935,14 @@
       .debunker-claim {
         font-size: 18px;
       }
+      
+      .hero-headline {
+        font-size: 28px;
+      }
+      
+      .share-layout {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -605,26 +952,167 @@
     <div class="logo">1Y</div>
     <h1>ONE YEAR</h1>
     <p class="tagline">What does your year really buy?</p>
-    
+    <div class="hero-kicker">A new way to measure purchasing power</div>
+    <div class="hero-headline">Stop thinking in dollars. Start thinking in years.</div>
+    <div class="hero-subhead">
+      One Year (1Y) = one median worker's annual pay. It turns prices into time so the impact hits immediately.
+    </div>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="showView('start', this)">Make a share card</button>
+      <button class="btn btn-secondary" onclick="showView('purchasing', this)">Explore the timeline</button>
+    </div>
     <div class="hero-stat">
-      <div class="label">In 1970, a house cost</div>
-      <div class="value">2.4 years of work</div>
-      <div class="label" style="margin-top: 16px;">In 2025, it costs</div>
-      <div class="value alert">6.5 years of work</div>
+      <div class="label">In 1975, 1Y bought</div>
+      <div class="value" id="hero-then">1/3 of a home</div>
+      <div class="label" style="margin-top: 16px;">In 2025, 1Y buys</div>
+      <div class="value alert" id="hero-now">1/6 of a home</div>
     </div>
   </header>
 
   <!-- Navigation -->
   <nav class="nav">
-    <button class="nav-btn active" onclick="showView('purchasing')">💰 Purchasing Power</button>
-    <button class="nav-btn" onclick="showView('wealth')">📈 Wealth Gap</button>
-    <button class="nav-btn" onclick="showView('debunkers')">🎯 Myth Busters</button>
+    <button class="nav-btn active" data-view="start" onclick="showView('start', this)">✨ Start Here</button>
+    <button class="nav-btn" data-view="purchasing" onclick="showView('purchasing', this)">💰 Explore</button>
+    <button class="nav-btn" data-view="wealth" onclick="showView('wealth', this)">📈 Context</button>
   </nav>
 
   <!-- Main Content -->
   <main>
+    <!-- Start View -->
+    <div id="start-view" class="view active">
+      <div class="impact-section">
+        <div class="section-title">
+          <span class="emoji">⚡</span>
+          The impact when real life costs enter the picture
+        </div>
+        <div class="card soft">
+          But that's if you DIDN'T have to pay for anything else. Once you add in living expenses and
+          other common costs of the American Dream, your year of work looks more like this.
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="impact-title">Household snapshot</div>
+            <div class="field">
+              <label>Year</label>
+              <select id="impact-then-year"></select>
+            </div>
+            <div class="impact-sub" id="impact-then-income"></div>
+            <div class="stacked-bar" id="impact-then-bar">
+              <div class="salary-line" title="1Y salary line"></div>
+            </div>
+            <div class="stacked-legend" id="impact-then-legend"></div>
+          </div>
+          <div class="impact-card">
+            <div class="impact-title">Household snapshot</div>
+            <div class="field">
+              <label>Year</label>
+              <select id="impact-now-year"></select>
+            </div>
+            <div class="impact-sub" id="impact-now-income"></div>
+            <div class="stacked-bar" id="impact-now-bar">
+              <div class="salary-line" title="1Y salary line"></div>
+            </div>
+            <div class="stacked-legend" id="impact-now-legend"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="share-section">
+        <div class="section-title">
+          <span class="emoji">📣</span>
+          Share your year
+        </div>
+        <p style="color: #546e7a; margin-bottom: 16px; font-size: 14px;">
+          Choose a ready-made summary or customize your own comparison. Download a square graphic for social.
+        </p>
+        <div class="share-layout">
+          <div>
+            <div class="share-tabs">
+              <button class="share-tab active" onclick="showShareTab('summary', this)">Default summary</button>
+              <button class="share-tab" onclick="showShareTab('custom', this)">Custom comparison</button>
+              <button class="share-tab" onclick="showShareTab('dream', this)">American Dream</button>
+            </div>
+
+            <div id="share-summary" class="share-panel active">
+              <div class="field">
+                <label>Then year (baseline)</label>
+                <select id="summary-then"></select>
+              </div>
+              <div class="field">
+                <label>Now year</label>
+                <select id="summary-now"></select>
+              </div>
+              <div class="card soft">
+                Default card compares median home affordability, plus a few essentials that anchor the story.
+              </div>
+            </div>
+
+            <div id="share-custom" class="share-panel">
+              <div class="field">
+                <label>Pick a comparison</label>
+                <select id="custom-item"></select>
+              </div>
+              <div class="field">
+                <label>Then year</label>
+                <select id="custom-then"></select>
+              </div>
+              <div class="field">
+                <label>Now year</label>
+                <select id="custom-now"></select>
+              </div>
+              <div class="card soft">
+                Use items like milk, gas, or a home purchase. If a unit exists, we show how many units 1Y buys.
+              </div>
+            </div>
+
+            <div id="share-dream" class="share-panel">
+              <div class="field">
+                <label>Then year</label>
+                <select id="dream-then"></select>
+              </div>
+              <div class="field">
+                <label>Now year</label>
+                <select id="dream-now"></select>
+              </div>
+              <div class="card soft">
+                American Dream bundle = home + 2 kids' college + new car + one year of childcare.
+              </div>
+            </div>
+          </div>
+
+          <div class="share-preview">
+            <canvas id="share-canvas" width="1080" height="1080"></canvas>
+            <div class="share-actions">
+              <button class="btn btn-primary" onclick="downloadShareCard()">Download PNG</button>
+              <button class="btn btn-secondary" onclick="copyShareText()">Copy caption text</button>
+            </div>
+            <div class="share-note" id="share-caption"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Purchasing Power View -->
-    <div id="purchasing-view" class="view active">
+    <div id="purchasing-view" class="view">
+      <div class="slider-section">
+        <div class="section-title">
+          <span class="emoji">🧭</span>
+          The story so far
+        </div>
+        <p style="color: #546e7a; margin-bottom: 14px; font-size: 14px;">
+          One Year shows how the same year of work buys less of the essentials over time.
+          Housing, childcare, healthcare, and education grew faster than pay.
+        </p>
+        <div class="card soft">
+          <div style="font-weight: 700; margin-bottom: 6px;">🎂 Your Year</div>
+          <div class="field">
+            <label>Birth year</label>
+            <input type="number" id="birth-year" min="1913" max="2025" value="1990">
+          </div>
+          <div id="your-year-output" style="font-size: 14px; color: #1a3a52;"></div>
+        </div>
+      </div>
+
       <div class="slider-section">
         <div class="year-display">
           <div class="current-year" id="year-display">2025</div>
@@ -634,20 +1122,50 @@
             <div class="income-note">= 1 Year of Work (1Y)</div>
           </div>
         </div>
-        <input type="range" class="slider" id="year-slider" min="1950" max="2025" step="5" value="2025" oninput="updateYear(this.value)">
+        <input type="range" class="slider" id="year-slider" min="1950" max="2025" step="1" value="2025" oninput="updateYear(this.value)">
         <div class="slider-labels">
-          <span>1950</span>
-          <span>1970</span>
-          <span>1990</span>
-          <span>2010</span>
-          <span>2025</span>
+          <span id="year-min-label">1950</span>
+          <span id="year-mid-label">1985</span>
+          <span id="year-max-label">2025</span>
+        </div>
+
+        <div class="controls-grid">
+          <div>
+            <div class="income-label">Compare vs baseline year</div>
+            <select id="baseline-year"></select>
+          </div>
+          <div>
+            <div class="income-label">View mode</div>
+            <div class="chip-row" id="view-mode">
+              <button class="chip active" data-mode="years">Years</button>
+              <button class="chip" data-mode="months">Months</button>
+              <button class="chip" data-mode="weeks">Weeks</button>
+            </div>
+          </div>
+          <div>
+            <div class="income-label">Filters</div>
+            <div class="chip-row">
+              <label class="chip"><input type="checkbox" id="show-highlights" style="margin-right:6px;">Highlight only</label>
+              <label class="chip"><input type="checkbox" id="show-notes" style="margin-right:6px;">Show story notes</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="income-label" style="margin-top: 18px;">Quick presets</div>
+        <div class="chip-row" id="quick-presets">
+          <button class="chip" data-year="1975">1975 baseline</button>
+          <button class="chip" data-year="1990">1990 baseline</button>
+          <button class="chip" data-year="2000">2000 baseline</button>
+          <button class="chip" data-year="2025">2025 snapshot</button>
         </div>
       </div>
 
+      <div class="card soft" id="category-filters"></div>
+      <div id="insights" class="insights"></div>
       <div id="items-container"></div>
     </div>
 
-    <!-- Wealth Gap View -->
+    <!-- Context View -->
     <div id="wealth-view" class="view">
       <div class="slider-section">
         <div class="year-display">
@@ -696,14 +1214,23 @@
           <span class="emoji">💵</span>
           Minimum Wage Purchasing Power
         </div>
-        <div class="card min-wage-card">
-          <div class="income-label">In <span id="minwage-year">2025</span>, minimum wage buys:</div>
-          <div class="min-wage-value low" id="minwage-value">$7.07/hr</div>
-          <div class="income-label">(in 2024 dollars)</div>
-          <div class="min-wage-note">
-            <strong>Peak (1968):</strong> $14.47/hr in today's dollars<br>
-            <strong>Today:</strong> $7.25/hr — <span style="color: #d32f2f; font-weight: 600;">50% LESS purchasing power</span>
-          </div>
+        <p style="color: #546e7a; margin-bottom: 16px; font-size: 14px;">
+          What can minimum wage actually buy? Compare 1975 vs 2025.
+        </p>
+        
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; margin-bottom: 12px; font-weight: 600; color: #1a3a52;">Compare by category:</label>
+          <select id="minwage-category" style="padding: 12px 16px; border-radius: 8px; border: 2px solid #e0e0e0; font-size: 16px; width: 100%; max-width: 400px; background: white; cursor: pointer;" onchange="updateMinWageComparison()">
+            <option value="groceriesFamily4">Groceries (Family of 4)</option>
+            <option value="monthlyRent">Annual Rent</option>
+            <option value="medianHome">Median Home</option>
+            <option value="newCar">New Car</option>
+            <option value="collegeTuition">College Tuition (4-Year)</option>
+          </select>
+        </div>
+        
+        <div id="minwage-comparison" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
+          <!-- Populated by JavaScript -->
         </div>
       </div>
 
@@ -717,24 +1244,23 @@
         </p>
         <div id="billionaire-container"></div>
       </div>
-    </div>
 
-    <!-- Debunkers View -->
-    <div id="debunkers-view" class="view">
-      <div style="text-align: center; margin-bottom: 32px;">
-        <h2 style="font-size: 28px; margin-bottom: 8px;">🎯 Generational Talking Points</h2>
-        <p style="color: #546e7a;">Data to bring to Thanksgiving dinner</p>
-      </div>
-      <div id="debunkers-container"></div>
-      
-      <div class="bottom-line">
-        <div class="emoji">📊</div>
-        <h3>The Bottom Line</h3>
-        <p>
-          Groceries got cheaper. Movies stayed the same. Stamps barely changed.<br><br>
-          <strong class="alert">But housing, education, healthcare, and childcare ate your extra years.</strong><br><br>
-          That's where the money went.
-        </p>
+      <div style="margin-top: 28px;">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <h2 style="font-size: 26px; margin-bottom: 6px;">🎯 Generational Talking Points</h2>
+          <p style="color: #546e7a;">Short, defensible facts you can share</p>
+        </div>
+        <div id="debunkers-container"></div>
+        
+        <div class="bottom-line">
+          <div class="emoji">📊</div>
+          <h3>The Bottom Line</h3>
+          <p>
+            Groceries got cheaper. Movies stayed the same. Stamps barely changed.<br><br>
+            <strong class="alert">But housing, education, healthcare, and childcare ate your extra years.</strong><br><br>
+            That's where the time went.
+          </p>
+        </div>
       </div>
     </div>
   </main>
@@ -748,14 +1274,14 @@
 
   <script>
     // Data
-    const incomeData = {
+    let incomeData = {
       1950: 2500, 1955: 3300, 1960: 4200, 1965: 5200, 1970: 7400,
       1975: 10300, 1980: 15700, 1985: 20800, 1990: 26500, 1995: 30500,
       2000: 38000, 2005: 41900, 2010: 40200, 2015: 44600, 2020: 52700,
       2024: 63128, 2025: 63128
     };
 
-    const priceData = {
+    let priceData = {
       medianHome: {
         name: "Median Home", icon: "🏠", category: "Housing", highlight: true,
         prices: { 1950: 7354, 1960: 11900, 1970: 23450, 1980: 63700, 1990: 123000, 2000: 165300, 2010: 221800, 2020: 329000, 2025: 409200 }
@@ -781,19 +1307,19 @@
         prices: { 1950: 1510, 1960: 2600, 1970: 3450, 1980: 7200, 1990: 16950, 2000: 21850, 2010: 29217, 2020: 40472, 2025: 48644 }
       },
       gasoline: {
-        name: "Gas (Annual, 600 gal)", icon: "⛽", category: "Transportation", highlight: false,
+        name: "Gas (Annual, 600 gal)", icon: "⛽", category: "Transportation", highlight: false, unitQuantity: 600, unitLabel: "gallons of gas",
         prices: { 1950: 162, 1960: 186, 1970: 216, 1980: 714, 1990: 690, 2000: 906, 2010: 1674, 2020: 1302, 2025: 1704 }
       },
       eggs: {
-        name: "Eggs (Annual, 20 doz)", icon: "🥚", category: "Groceries", highlight: false,
+        name: "Eggs (Annual, 20 doz)", icon: "🥚", category: "Groceries", highlight: false, unitQuantity: 20, unitLabel: "dozen eggs",
         prices: { 1950: 12, 1960: 11.4, 1970: 12.2, 1980: 16.8, 1990: 20, 2000: 19.2, 2010: 35.8, 2020: 29.6, 2025: 57.2 }
       },
       milk: {
-        name: "Milk (Annual, 104 gal)", icon: "🥛", category: "Groceries", highlight: false,
+        name: "Milk (Annual, 104 gal)", icon: "🥛", category: "Groceries", highlight: false, unitQuantity: 104, unitLabel: "gallons of milk",
         prices: { 1950: 85, 1960: 98, 1970: 119, 1980: 223, 1990: 287, 2000: 288, 2010: 343, 2020: 365, 2025: 416 }
       },
       movieTicket: {
-        name: "Movie Tickets (12/yr)", icon: "🎬", category: "Entertainment", highlight: false,
+        name: "Movie Tickets (12/yr)", icon: "🎬", category: "Entertainment", highlight: false, unitQuantity: 12, unitLabel: "movie tickets",
         prices: { 1950: 5.52, 1960: 8.28, 1970: 18.6, 1980: 32.28, 1990: 50.76, 2000: 64.68, 2010: 94.68, 2020: 109.92, 2025: 136.2 }
       }
     };
@@ -865,11 +1391,23 @@
       }
     ];
 
+    const BASELINE_YEAR = 1975;
+    const SHARE_DEFAULTS = { then: 1975, now: 2025 };
+    let selectedBaselineYear = BASELINE_YEAR;
+    let viewMode = 'years';
+    let selectedCategories = new Set();
+    let showHighlightsOnly = false;
+    let showStoryNotes = false;
+    let dataRange = { min: 1950, max: 2025 };
+    let completeDataLoaded = false;
+
     // Helper functions
     function interpolate(data, year) {
       const years = Object.keys(data).map(Number).sort((a, b) => a - b);
       if (data[year] !== undefined) return data[year];
-      
+      if (year <= years[0]) return data[years[0]];
+      if (year >= years[years.length - 1]) return data[years[years.length - 1]];
+
       let lower = years[0], upper = years[years.length - 1];
       for (let i = 0; i < years.length - 1; i++) {
         if (years[i] <= year && years[i + 1] >= year) {
@@ -884,6 +1422,12 @@
     }
 
     function formatYearsOfWork(years) {
+      if (viewMode === 'weeks') {
+        return (years * 52).toFixed(1) + ' weeks';
+      }
+      if (viewMode === 'months') {
+        return (years * 12).toFixed(1) + ' months';
+      }
       if (years >= 1) return years.toFixed(1) + ' years';
       const months = years * 12;
       if (months >= 1) return months.toFixed(1) + ' months';
@@ -906,12 +1450,397 @@
       return '#546e7a';
     }
 
+    function formatFractionFromYears(years) {
+      if (!years || years <= 0) return '1/?';
+      return '1/' + years.toFixed(1);
+    }
+
+    function getIncomeForYear(year) {
+      return interpolate(incomeData, year);
+    }
+
+    function getItemPriceForYear(itemKey, year) {
+      const aliases = {
+        monthlyRent: 'annualRent',
+        collegeTuition: 'collegeTuition4Year',
+        healthInsurance: 'healthcare'
+      };
+      const resolvedKey = priceData[itemKey] ? itemKey : aliases[itemKey];
+      const item = priceData[resolvedKey];
+      if (!item) return 0;
+      return interpolate(item.prices, year);
+    }
+
+    function getAmericanDreamCost(year) {
+      const home = getItemPriceForYear('medianHome', year);
+      const college = getItemPriceForYear('collegeTuition', year) * 2;
+      const car = getItemPriceForYear('newCar', year);
+      const childcare = getItemPriceForYear('childcare', year);
+      return home + college + car + childcare;
+    }
+
+    function getAvailableCategories() {
+      const categories = new Set();
+      Object.values(priceData).forEach(item => {
+        if (item.category) categories.add(item.category);
+      });
+      return Array.from(categories);
+    }
+
+    function getAvailableYears() {
+      return Object.keys(incomeData).map(Number).sort((a, b) => a - b);
+    }
+
+    function updateDataRange() {
+      const years = getAvailableYears();
+      dataRange.min = years[0];
+      dataRange.max = years[years.length - 1];
+    }
+
+    function updateSliderRange() {
+      const slider = document.getElementById('year-slider');
+      if (!slider) return;
+      slider.min = dataRange.min;
+      slider.max = dataRange.max;
+      if (parseInt(slider.value) > dataRange.max) slider.value = dataRange.max;
+      if (parseInt(slider.value) < dataRange.min) slider.value = dataRange.min;
+
+      const mid = Math.round((dataRange.min + dataRange.max) / 2);
+      const minLabel = document.getElementById('year-min-label');
+      const midLabel = document.getElementById('year-mid-label');
+      const maxLabel = document.getElementById('year-max-label');
+      if (minLabel) minLabel.textContent = dataRange.min;
+      if (midLabel) midLabel.textContent = mid;
+      if (maxLabel) maxLabel.textContent = dataRange.max;
+    }
+
+    function updateBaselineYear(year) {
+      selectedBaselineYear = parseInt(year);
+      renderItems(parseInt(document.getElementById('year-slider').value));
+      renderInsights(parseInt(document.getElementById('year-slider').value));
+    }
+
+    function renderCategoryFilters() {
+      const container = document.getElementById('category-filters');
+      if (!container) return;
+      const categories = getAvailableCategories();
+      const coreDefaults = ['Housing', 'Food', 'Groceries', 'Education', 'Healthcare', 'Family', 'Transportation', 'Entertainment'];
+      if (selectedCategories.size === 0) {
+        categories.forEach(category => {
+          if (coreDefaults.includes(category)) selectedCategories.add(category);
+        });
+      }
+      const checks = categories.map(category => {
+        const checked = selectedCategories.has(category) ? 'checked' : '';
+        return `<label style="display:inline-flex; align-items:center; gap:6px; margin-right:12px;">
+          <input type="checkbox" data-category="${category}" ${checked}>${category}
+        </label>`;
+      }).join('');
+
+      container.innerHTML = `
+        <div style="font-weight:700; margin-bottom:6px;">Categories</div>
+        <div style="margin-bottom:10px;">
+          <button class="chip" id="select-core">Core only</button>
+          <button class="chip" id="select-all">Show all</button>
+          <button class="chip" id="clear-all">Clear</button>
+        </div>
+        <div>${checks}</div>
+      `;
+
+      container.querySelectorAll('input[type="checkbox"]').forEach(input => {
+        input.addEventListener('change', (event) => {
+          const category = event.target.getAttribute('data-category');
+          if (event.target.checked) {
+            selectedCategories.add(category);
+          } else {
+            selectedCategories.delete(category);
+          }
+          renderItems(parseInt(document.getElementById('year-slider').value));
+          renderInsights(parseInt(document.getElementById('year-slider').value));
+        });
+      });
+
+      document.getElementById('select-core').addEventListener('click', () => {
+        selectedCategories = new Set(coreDefaults.filter(c => categories.includes(c)));
+        renderCategoryFilters();
+        renderItems(parseInt(document.getElementById('year-slider').value));
+        renderInsights(parseInt(document.getElementById('year-slider').value));
+      });
+
+      document.getElementById('select-all').addEventListener('click', () => {
+        selectedCategories = new Set(categories);
+        renderCategoryFilters();
+        renderItems(parseInt(document.getElementById('year-slider').value));
+        renderInsights(parseInt(document.getElementById('year-slider').value));
+      });
+
+      document.getElementById('clear-all').addEventListener('click', () => {
+        selectedCategories = new Set();
+        renderCategoryFilters();
+        renderItems(parseInt(document.getElementById('year-slider').value));
+        renderInsights(parseInt(document.getElementById('year-slider').value));
+      });
+    }
+
+    function renderInsights(year) {
+      const container = document.getElementById('insights');
+      if (!container) return;
+      const items = Object.values(priceData).filter(item => {
+        if (selectedCategories.size > 0 && !selectedCategories.has(item.category)) return false;
+        if (showHighlightsOnly && !item.highlight && !item.generationalTalkingPoint) return false;
+        return true;
+      });
+
+      const comparisons = items.map(item => {
+        const price = interpolate(item.prices, year);
+        const income = interpolate(incomeData, year);
+        const yearsOfWork = price / income;
+        const basePrice = interpolate(item.prices, selectedBaselineYear);
+        const baseIncome = interpolate(incomeData, selectedBaselineYear);
+        const baseYears = basePrice / baseIncome;
+        const changePercent = baseYears === 0 ? 0 : ((yearsOfWork - baseYears) / baseYears) * 100;
+        return { item, changePercent, yearsOfWork, baseYears };
+      }).sort((a, b) => b.changePercent - a.changePercent);
+
+      const top = comparisons.slice(0, 3).filter(c => Number.isFinite(c.changePercent));
+      const listItems = top.map(c => {
+        const dir = c.changePercent >= 0 ? '↑' : '↓';
+        return `<li>${c.item.name}: ${dir} ${Math.abs(c.changePercent).toFixed(0)}% vs ${selectedBaselineYear}</li>`;
+      }).join('');
+
+      container.innerHTML = `
+        <div style="font-weight:700;">Impact insights</div>
+        <div style="color:#546e7a; font-size:13px; margin-top:6px;">
+          Biggest changes for ${year} compared to ${selectedBaselineYear}.
+        </div>
+        <ul>${listItems || '<li>No insights for this selection.</li>'}</ul>
+      `;
+    }
+
+    function initExploreControls() {
+      updateDataRange();
+      updateSliderRange();
+      const years = getAvailableYears();
+      if (!years.includes(selectedBaselineYear)) {
+        selectedBaselineYear = years[Math.max(0, years.length - 2)];
+      }
+      populateYearSelect('baseline-year', selectedBaselineYear);
+      const baselineSelect = document.getElementById('baseline-year');
+      if (baselineSelect) {
+        baselineSelect.value = selectedBaselineYear;
+        baselineSelect.addEventListener('change', (e) => updateBaselineYear(e.target.value));
+      }
+
+      const viewModeContainer = document.getElementById('view-mode');
+      if (viewModeContainer) {
+        viewModeContainer.querySelectorAll('.chip').forEach(button => {
+          button.addEventListener('click', () => {
+            viewModeContainer.querySelectorAll('.chip').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            viewMode = button.getAttribute('data-mode');
+            renderItems(parseInt(document.getElementById('year-slider').value));
+          });
+        });
+      }
+
+      const highlightsToggle = document.getElementById('show-highlights');
+      if (highlightsToggle) {
+        highlightsToggle.addEventListener('change', (e) => {
+          showHighlightsOnly = e.target.checked;
+          renderItems(parseInt(document.getElementById('year-slider').value));
+          renderInsights(parseInt(document.getElementById('year-slider').value));
+        });
+      }
+
+      const notesToggle = document.getElementById('show-notes');
+      if (notesToggle) {
+        notesToggle.addEventListener('change', (e) => {
+          showStoryNotes = e.target.checked;
+          renderItems(parseInt(document.getElementById('year-slider').value));
+        });
+      }
+
+      const presetRow = document.getElementById('quick-presets');
+      if (presetRow) {
+        presetRow.querySelectorAll('button').forEach(button => {
+          button.addEventListener('click', () => {
+            const year = parseInt(button.getAttribute('data-year'));
+            const slider = document.getElementById('year-slider');
+            if (slider) {
+              slider.value = year;
+              updateYear(year);
+            }
+          });
+        });
+      }
+
+      const birthInput = document.getElementById('birth-year');
+      if (birthInput) {
+        birthInput.min = dataRange.min;
+        birthInput.max = dataRange.max;
+        if (parseInt(birthInput.value) < dataRange.min) {
+          birthInput.value = dataRange.min;
+        }
+        if (parseInt(birthInput.value) > dataRange.max) {
+          birthInput.value = dataRange.max;
+        }
+        birthInput.addEventListener('input', updateYourYear);
+        updateYourYear();
+      }
+
+      renderCategoryFilters();
+      renderInsights(parseInt(document.getElementById('year-slider').value));
+    }
+
+    function updateYourYear() {
+      const input = document.getElementById('birth-year');
+      const output = document.getElementById('your-year-output');
+      if (!input || !output) return;
+      const birthYear = parseInt(input.value);
+      const nowYear = parseInt(document.getElementById('year-slider')?.value || dataRange.max);
+      if (Number.isNaN(birthYear)) {
+        output.textContent = '';
+        return;
+      }
+      const homeThen = getItemPriceForYear('medianHome', birthYear) / getIncomeForYear(birthYear);
+      const homeNow = getItemPriceForYear('medianHome', nowYear) / getIncomeForYear(nowYear);
+      output.textContent = `In ${birthYear}, 1Y bought ${formatFractionFromYears(homeThen)} of a home. In ${nowYear}, it buys ${formatFractionFromYears(homeNow)}.`;
+    }
+
+    function getImpactBasketItems(year) {
+      const basket = [
+        { key: 'medianHome', label: 'Home payment (30yr)', type: 'annualized', years: 30, color: '#1a3a52' },
+        { key: 'newCar', label: 'Car payment (5yr)', type: 'annualized', years: 5, color: '#37474f' },
+        { key: 'annualRent', label: 'Rent (annual)', type: 'direct', color: '#546e7a' },
+        { key: 'groceriesFamily4', label: 'Groceries (family)', type: 'direct', color: '#7cb342' },
+        { key: 'gasoline', label: 'Gas (600 gal)', type: 'quantity', quantity: 600, color: '#d32f2f' },
+        { key: 'milk', label: 'Milk (104 gal)', type: 'quantity', quantity: 104, color: '#e67e22' },
+        { key: 'eggs', label: 'Eggs (20 doz)', type: 'quantity', quantity: 20, color: '#ff9800' },
+        { key: 'healthcare', label: 'Healthcare', type: 'direct', color: '#8e24aa' },
+        { key: 'childcare', label: 'Childcare', type: 'direct', color: '#ad1457' },
+        { key: 'creditCardDebt', label: 'Credit card debt', type: 'direct', color: '#6d4c41' },
+        { key: 'studentLoanDebt', label: 'Student loan debt', type: 'direct', color: '#5d4037' }
+      ];
+
+      const items = [];
+      basket.forEach(entry => {
+        const price = getItemPriceForYear(entry.key, year);
+        if (!price || Number.isNaN(price)) return;
+        let value = price;
+        if (entry.type === 'quantity') {
+          value = price * entry.quantity;
+        }
+        if (entry.type === 'annualized') {
+          value = price / entry.years;
+        }
+        items.push({ ...entry, value });
+      });
+      return items;
+    }
+
+    function renderImpactStack(year, income, barId, legendId, incomeId) {
+      const bar = document.getElementById(barId);
+      const legend = document.getElementById(legendId);
+      const incomeLabel = document.getElementById(incomeId);
+      if (!bar || !legend || !incomeLabel) return;
+
+      const items = getImpactBasketItems(year);
+      const total = items.reduce((sum, item) => sum + item.value, 0);
+      const ratioTotal = income > 0 ? total / income : 0;
+        const overflow = Math.max(0, ratioTotal - 1);
+
+      bar.innerHTML = `
+        <div class="stacked-column" data-height="200">
+          <div class="salary-line" title="1Y salary line"></div>
+        </div>
+        <div class="stacked-overflow" data-height="120"></div>
+      `;
+
+      const column = bar.querySelector('.stacked-column');
+      const overflowColumn = bar.querySelector('.stacked-overflow');
+
+      items.forEach(item => {
+        const ratio = income > 0 ? item.value / income : 0;
+        const within = Math.min(ratio, 1);
+        const above = Math.max(0, ratio - 1);
+
+        if (within > 0) {
+          const segment = document.createElement('div');
+          segment.className = 'stacked-segment';
+          segment.style.height = `${within * 100}%`;
+          segment.style.background = item.color;
+          column.appendChild(segment);
+        }
+
+        if (above > 0) {
+          const overflowSeg = document.createElement('div');
+          overflowSeg.className = 'stacked-segment';
+          overflowSeg.style.height = `${above * 100}%`;
+          overflowSeg.style.background = item.color;
+          overflowColumn.appendChild(overflowSeg);
+        }
+      });
+
+        if (overflow > 0) {
+        const label = document.createElement('div');
+        label.className = 'overflow-label';
+        label.textContent = `+${(overflow * 100).toFixed(0)}% over 1Y`;
+        bar.appendChild(label);
+      }
+
+      let summary = '';
+      if (ratioTotal > 1) {
+        const extraMonths = (ratioTotal - 1) * 12;
+        const extraYears = ratioTotal - 1;
+        summary = extraYears >= 1
+          ? `<strong>${extraYears.toFixed(1)} years</strong> beyond 1Y`
+          : `<strong>${extraMonths.toFixed(1)} months</strong> beyond 1Y`;
+      } else {
+        const remainingMonths = (1 - ratioTotal) * 12;
+        summary = `<strong>${remainingMonths.toFixed(1)} months</strong> left over`;
+      }
+      incomeLabel.innerHTML = `1Y salary: $${Math.round(income).toLocaleString()} • Total: ${(ratioTotal).toFixed(2)} of 1Y • ${summary}`;
+
+      legend.innerHTML = items.map(item => {
+        const ratio = income > 0 ? item.value / income : 0;
+        const above = Math.max(0, ratio - 1);
+        const tag = above > 0 ? ` (↑ ${above.toFixed(2)} over 1Y)` : '';
+        return `<div>■ ${item.label}: ${ratio.toFixed(2)} of 1Y${tag}</div>`;
+      }).join('');
+    }
+
+    function renderImpactSection() {
+      const leftSelect = document.getElementById('impact-then-year');
+      const rightSelect = document.getElementById('impact-now-year');
+      const leftYear = leftSelect ? parseInt(leftSelect.value) : BASELINE_YEAR;
+      const rightYear = rightSelect ? parseInt(rightSelect.value) : dataRange.max;
+      const leftIncome = getIncomeForYear(leftYear);
+      const rightIncome = getIncomeForYear(rightYear);
+      renderImpactStack(leftYear, leftIncome, 'impact-then-bar', 'impact-then-legend', 'impact-then-income');
+      renderImpactStack(rightYear, rightIncome, 'impact-now-bar', 'impact-now-legend', 'impact-now-income');
+    }
+
+    function initImpactControls() {
+      populateYearSelect('impact-then-year', BASELINE_YEAR);
+      populateYearSelect('impact-now-year', dataRange.max);
+      const leftSelect = document.getElementById('impact-then-year');
+      const rightSelect = document.getElementById('impact-now-year');
+      if (leftSelect) leftSelect.addEventListener('change', renderImpactSection);
+      if (rightSelect) rightSelect.addEventListener('change', renderImpactSection);
+      renderImpactSection();
+    }
+
     // View management
-    function showView(viewName) {
+    function showView(viewName, button) {
       document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
       document.getElementById(viewName + '-view').classList.add('active');
-      event.target.classList.add('active');
+      const navButton = document.querySelector(`.nav-btn[data-view="${viewName}"]`);
+      if (navButton) navButton.classList.add('active');
+      if (button && button.classList.contains('nav-btn')) {
+        button.classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Update functions
@@ -921,6 +1850,8 @@
       const income = interpolate(incomeData, year);
       document.getElementById('income-display').textContent = '$' + Math.round(income).toLocaleString();
       renderItems(year);
+      renderInsights(year);
+      updateYourYear();
     }
 
     function updateWealthYear(year) {
@@ -929,36 +1860,34 @@
       const ratio = Math.round(interpolate(ceoRatioData, year));
       document.getElementById('ratio-display').textContent = ratio + ':1';
       document.getElementById('ratio-display').style.color = ratio > 100 ? '#d32f2f' : '#1a3a52';
-      
-      const minWage = interpolate(minWageData, year);
-      document.getElementById('minwage-year').textContent = year;
-      document.getElementById('minwage-value').textContent = '$' + minWage.toFixed(2) + '/hr';
-      document.getElementById('minwage-value').className = 'min-wage-value' + (minWage < 10 ? ' low' : '');
     }
 
     function renderItems(year) {
       const container = document.getElementById('items-container');
-      const categories = ['Housing', 'Education', 'Healthcare', 'Family', 'Transportation', 'Groceries', 'Entertainment'];
+      const categories = getAvailableCategories();
       const categoryEmojis = {
         'Housing': '🏠', 'Education': '🎓', 'Healthcare': '🏥',
-        'Family': '👨‍👩‍👧', 'Transportation': '🚗', 'Groceries': '🛒', 'Entertainment': '🎭'
+        'Family': '👨‍👩‍👧', 'Transportation': '🚗', 'Groceries': '🛒', 'Entertainment': '🎭',
+        'Food': '🍞', 'Debt': '💳', 'Utilities': '💡', 'Lifestyle': '🌴'
       };
       
       let html = '';
       
       categories.forEach(category => {
+        if (selectedCategories.size > 0 && !selectedCategories.has(category)) return;
         const items = Object.entries(priceData).filter(([_, item]) => item.category === category);
         if (items.length === 0) return;
         
-        html += `<div class="section-title"><span class="emoji">${categoryEmojis[category]}</span>${category}</div>`;
+        html += `<div class="section-title"><span class="emoji">${categoryEmojis[category] || '📊'}</span>${category}</div>`;
         
         items.forEach(([key, item]) => {
+          if (showHighlightsOnly && !item.highlight && !item.generationalTalkingPoint) return;
           const price = interpolate(item.prices, year);
           const income = interpolate(incomeData, year);
           const yearsOfWork = price / income;
           
-          const basePrice = interpolate(item.prices, 1970);
-          const baseIncome = interpolate(incomeData, 1970);
+          const basePrice = interpolate(item.prices, selectedBaselineYear);
+          const baseIncome = interpolate(incomeData, selectedBaselineYear);
           const baseYears = basePrice / baseIncome;
           
           const changePercent = ((yearsOfWork - baseYears) / baseYears) * 100;
@@ -967,14 +1896,14 @@
           const barWidth = Math.min((yearsOfWork / 7) * 100, 100);
           
           html += `
-            <div class="card ${item.highlight ? 'highlight' : ''}">
+            <div class="card ${item.highlight || item.generationalTalkingPoint ? 'highlight' : ''}">
               <div class="item-row">
                 <div class="item-info">
                   <div class="item-icon">${item.icon}</div>
                   <div>
                     <div class="item-name">${item.name}</div>
                     <div class="item-change ${changePercent > 0 ? 'up' : 'down'}">
-                      ${changePercent > 0 ? '↑' : '↓'} ${Math.abs(changePercent).toFixed(0)}% vs 1970
+                      ${changePercent > 0 ? '↑' : '↓'} ${Math.abs(changePercent).toFixed(0)}% vs ${selectedBaselineYear}
                     </div>
                   </div>
                 </div>
@@ -986,6 +1915,7 @@
               <div class="progress-bar">
                 <div class="progress-fill" style="width: ${barWidth}%; background: ${barColor};"></div>
               </div>
+              ${showStoryNotes && item.narrative ? `<div class="item-note">${item.narrative}</div>` : ''}
             </div>
           `;
         });
@@ -1052,11 +1982,721 @@
       container.innerHTML = html;
     }
 
+    function updateMinWageComparison() {
+      const categorySelect = document.getElementById('minwage-category');
+      const categoryKey = categorySelect ? categorySelect.value : 'monthlyRent';
+      
+      // Get minimum wage annual income (convert hourly to annual: hourly * 2080 hours/year)
+      // minWageData is in 2024 dollars, so use actual values
+      const minWage1975Hourly = 2.10; // 1975 federal minimum wage
+      const minWage2025Hourly = 7.25; // 2025 federal minimum wage
+      const minWage1975 = minWage1975Hourly * 2080; // Annual income
+      const minWage2025 = minWage2025Hourly * 2080; // Annual income
+      
+      // Map category keys to priceData keys
+      let categoryItem;
+      let price1975, price2025;
+      let categoryName;
+      
+      if (categoryKey === 'groceriesFamily4') {
+        // Estimate groceriesFamily4 from available data (interpolate from 1970: 1800, 1980: 2800)
+        price1975 = 1800 + ((2800 - 1800) * 0.5); // ~2300 for 1975
+        price2025 = 10500; // Estimated from common data
+        categoryName = 'Groceries (Family of 4)';
+      } else {
+        const dataKey = categoryKey === 'monthlyRent' ? 'monthlyRent' : 
+                       categoryKey === 'medianHome' ? 'medianHome' :
+                       categoryKey === 'newCar' ? 'newCar' :
+                       categoryKey === 'collegeTuition' ? 'collegeTuition' : categoryKey;
+        
+        categoryItem = priceData[dataKey] || priceData['annualRent'] || priceData[dataKey];
+        if (!categoryItem) return;
+        
+        categoryName = categoryItem.name;
+        
+        price1975 = getItemPriceForYear(dataKey, 1975);
+        price2025 = getItemPriceForYear(dataKey, 2025);
+      }
+      
+      // Calculate how much of the category minimum wage can buy
+      const isAnnual = categoryKey === 'monthlyRent' || categoryKey === 'groceriesFamily4';
+      
+      let fraction1975, fraction2025, comparison1975, comparison2025;
+      
+      if (isAnnual) {
+        // For annual expenses: what fraction/percentage can minimum wage cover?
+        fraction1975 = minWage1975 / price1975;
+        fraction2025 = minWage2025 / price2025;
+        
+        if (fraction1975 >= 1) {
+          comparison1975 = `Minimum wage covers <strong>${fraction1975.toFixed(1)}x</strong> the annual cost`;
+        } else {
+          const percent = (fraction1975 * 100).toFixed(0);
+          comparison1975 = `Minimum wage covers <strong>${percent}%</strong> of the annual cost`;
+        }
+        
+        if (fraction2025 >= 1) {
+          comparison2025 = `Minimum wage covers <strong>${fraction2025.toFixed(1)}x</strong> the annual cost`;
+        } else {
+          const percent = (fraction2025 * 100).toFixed(0);
+          comparison2025 = `Minimum wage covers <strong>${percent}%</strong> of the annual cost`;
+        }
+      } else {
+        // For one-time purchases: how many years of minimum wage work needed?
+        const years1975 = price1975 / minWage1975;
+        const years2025 = price2025 / minWage2025;
+        
+        comparison1975 = `Minimum wage worker needs <strong>${years1975.toFixed(1)} years</strong> of work`;
+        comparison2025 = `Minimum wage worker needs <strong>${years2025.toFixed(1)} years</strong> of work`;
+      }
+      
+      const container = document.getElementById('minwage-comparison');
+      if (container) {
+        container.innerHTML = `
+          <div style="background: #f5f5f5; padding: 32px; border-radius: 16px; border: 2px solid #7cb342;">
+            <div style="font-size: 18px; font-weight: 700; color: #1a3a52; margin-bottom: 16px;">1975</div>
+            <div style="font-size: 32px; font-weight: 900; color: #7cb342; margin-bottom: 8px;">$${minWage1975.toLocaleString()}/year</div>
+            <div style="font-size: 14px; color: #546e7a; margin-bottom: 16px;">Minimum wage annual income</div>
+            <div style="font-size: 16px; color: #1a3a52; margin-top: 24px; padding-top: 24px; border-top: 2px solid #e0e0e0;">
+              <strong>${categoryName}:</strong> $${Math.round(price1975).toLocaleString()}
+            </div>
+            <div style="font-size: 18px; color: #1a3a52; margin-top: 16px; line-height: 1.6;">
+              ${comparison1975}
+            </div>
+          </div>
+          
+          <div style="background: #f5f5f5; padding: 32px; border-radius: 16px; border: 2px solid #d32f2f;">
+            <div style="font-size: 18px; font-weight: 700; color: #1a3a52; margin-bottom: 16px;">2025</div>
+            <div style="font-size: 32px; font-weight: 900; color: #d32f2f; margin-bottom: 8px;">$${minWage2025.toLocaleString()}/year</div>
+            <div style="font-size: 14px; color: #546e7a; margin-bottom: 16px;">Minimum wage annual income</div>
+            <div style="font-size: 16px; color: #1a3a52; margin-top: 24px; padding-top: 24px; border-top: 2px solid #e0e0e0;">
+              <strong>${categoryName}:</strong> $${Math.round(price2025).toLocaleString()}
+            </div>
+            <div style="font-size: 18px; color: #1a3a52; margin-top: 16px; line-height: 1.6;">
+              ${comparison2025}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function updateHeroStats() {
+      const thenYear = SHARE_DEFAULTS.then;
+      const nowYear = SHARE_DEFAULTS.now;
+      const homeThen = getItemPriceForYear('medianHome', thenYear) / getIncomeForYear(thenYear);
+      const homeNow = getItemPriceForYear('medianHome', nowYear) / getIncomeForYear(nowYear);
+      const heroThen = document.getElementById('hero-then');
+      const heroNow = document.getElementById('hero-now');
+      if (heroThen) heroThen.textContent = `${formatFractionFromYears(homeThen)} of a home`;
+      if (heroNow) heroNow.textContent = `${formatFractionFromYears(homeNow)} of a home`;
+    }
+
+    function populateYearSelect(selectId, defaultYear) {
+      const select = document.getElementById(selectId);
+      if (!select) return;
+      const years = [];
+      for (let year = dataRange.min; year <= dataRange.max; year++) {
+        years.push(year);
+      }
+      select.innerHTML = '';
+      years.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        select.appendChild(option);
+      });
+      select.value = defaultYear;
+    }
+
+    function populateItemSelect(selectId) {
+      const select = document.getElementById(selectId);
+      if (!select) return;
+      select.innerHTML = '';
+      Object.entries(priceData).forEach(([key, item]) => {
+        const option = document.createElement('option');
+        option.value = key;
+        option.textContent = item.name;
+        select.appendChild(option);
+      });
+      select.value = 'milk';
+    }
+
+    function showShareTab(tab, button) {
+      document.querySelectorAll('.share-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.share-panel').forEach(p => p.classList.remove('active'));
+      if (button) button.classList.add('active');
+      const panel = document.getElementById(`share-${tab}`);
+      if (panel) panel.classList.add('active');
+      updateSharePreview();
+    }
+
+    function formatUnits(value) {
+      if (value >= 1000) return Math.round(value).toLocaleString();
+      if (value >= 100) return value.toFixed(0);
+      return value.toFixed(1);
+    }
+
+    function buildSummaryLines(thenYear, nowYear) {
+      const homeThen = getItemPriceForYear('medianHome', thenYear) / getIncomeForYear(thenYear);
+      const homeNow = getItemPriceForYear('medianHome', nowYear) / getIncomeForYear(nowYear);
+      const rentThen = getItemPriceForYear('monthlyRent', thenYear) / getIncomeForYear(thenYear);
+      const rentNow = getItemPriceForYear('monthlyRent', nowYear) / getIncomeForYear(nowYear);
+      const collegeThen = getItemPriceForYear('collegeTuition', thenYear) / getIncomeForYear(thenYear);
+      const collegeNow = getItemPriceForYear('collegeTuition', nowYear) / getIncomeForYear(nowYear);
+      return [
+        `Home: ${formatFractionFromYears(homeThen)} → ${formatFractionFromYears(homeNow)}`,
+        `Rent: ${formatFractionFromYears(rentThen)} → ${formatFractionFromYears(rentNow)}`,
+        `College: ${formatFractionFromYears(collegeThen)} → ${formatFractionFromYears(collegeNow)}`
+      ];
+    }
+
+    function updateSharePreview() {
+      const summaryPanel = document.getElementById('share-summary');
+      const customPanel = document.getElementById('share-custom');
+      const dreamPanel = document.getElementById('share-dream');
+      const captionEl = document.getElementById('share-caption');
+
+      let title = 'WHAT ONE YEAR\'S SALARY AFFORDS';
+      let subtitle = 'ONE YEAR of work doesn\'t go as far as it used to';
+      let lines = [];
+      let footer = 'OneYear.work';
+      let caption = '';
+      let thenYear = SHARE_DEFAULTS.then;
+      let nowYear = SHARE_DEFAULTS.now;
+
+      if (summaryPanel && summaryPanel.classList.contains('active')) {
+        thenYear = parseInt(document.getElementById('summary-then').value);
+        nowYear = parseInt(document.getElementById('summary-now').value);
+        const homeThen = getItemPriceForYear('medianHome', thenYear) / getIncomeForYear(thenYear);
+        const homeNow = getItemPriceForYear('medianHome', nowYear) / getIncomeForYear(nowYear);
+        title = 'WHAT ONE YEAR\'S SALARY AFFORDS';
+        subtitle = 'ONE YEAR of work doesn\'t go as far as it used to';
+        lines = buildSummaryLines(thenYear, nowYear);
+        caption = `In ${nowYear}, 1Y buys ${formatFractionFromYears(homeNow)} of a home. In ${thenYear}, it bought ${formatFractionFromYears(homeThen)}. See the full breakdown at OneYear.work`;
+      }
+
+      if (customPanel && customPanel.classList.contains('active')) {
+        const itemKey = document.getElementById('custom-item').value;
+        thenYear = parseInt(document.getElementById('custom-then').value);
+        nowYear = parseInt(document.getElementById('custom-now').value);
+        const item = priceData[itemKey];
+        const thenPrice = getItemPriceForYear(itemKey, thenYear);
+        const nowPrice = getItemPriceForYear(itemKey, nowYear);
+        const thenIncome = getIncomeForYear(thenYear);
+        const nowIncome = getIncomeForYear(nowYear);
+        title = 'WHAT ONE YEAR\'S SALARY AFFORDS';
+        subtitle = 'ONE YEAR of work doesn\'t go as far as it used to';
+
+        if (item.unitQuantity && item.unitLabel) {
+          const thenUnits = thenIncome / (thenPrice / item.unitQuantity);
+          const nowUnits = nowIncome / (nowPrice / item.unitQuantity);
+          lines = [
+            `${item.name}: ${thenYear} vs ${nowYear}`,
+            `${thenYear}: ${formatUnits(thenUnits)} ${item.unitLabel}`,
+            `${nowYear}: ${formatUnits(nowUnits)} ${item.unitLabel}`
+          ];
+          caption = `In ${nowYear}, 1Y buys ${formatUnits(nowUnits)} ${item.unitLabel}. In ${thenYear}, it bought ${formatUnits(thenUnits)}. OneYear.work`;
+        } else {
+          const thenYears = thenPrice / thenIncome;
+          const nowYears = nowPrice / nowIncome;
+          lines = [
+            `${item.name}: ${thenYear} vs ${nowYear}`,
+            `${thenYear}: ${formatFractionFromYears(thenYears)} of a ${item.name.toLowerCase()}`,
+            `${nowYear}: ${formatFractionFromYears(nowYears)} of a ${item.name.toLowerCase()}`
+          ];
+          caption = `In ${nowYear}, 1Y buys ${formatFractionFromYears(nowYears)} of a ${item.name.toLowerCase()}. In ${thenYear}, it bought ${formatFractionFromYears(thenYears)}. OneYear.work`;
+        }
+      }
+
+      if (dreamPanel && dreamPanel.classList.contains('active')) {
+        thenYear = parseInt(document.getElementById('dream-then').value);
+        nowYear = parseInt(document.getElementById('dream-now').value);
+        const thenCost = getAmericanDreamCost(thenYear);
+        const nowCost = getAmericanDreamCost(nowYear);
+        const thenYears = thenCost / getIncomeForYear(thenYear);
+        const nowYears = nowCost / getIncomeForYear(nowYear);
+        title = 'WHAT ONE YEAR\'S SALARY AFFORDS';
+        subtitle = 'ONE YEAR of work doesn\'t go as far as it used to';
+        lines = [
+          `The American Dream: ${thenYear} vs ${nowYear}`,
+          `Bundle: home + 2 college + car + childcare`,
+          `${thenYear}: ${formatFractionFromYears(thenYears)} of the Dream`,
+          `${nowYear}: ${formatFractionFromYears(nowYears)} of the Dream`
+        ];
+        caption = `The American Dream bundle: In ${nowYear}, 1Y buys ${formatFractionFromYears(nowYears)} of the Dream. In ${thenYear}, it bought ${formatFractionFromYears(thenYears)}. OneYear.work`;
+      }
+
+      drawShareCard({ title, subtitle, lines, footer, thenYear, nowYear });
+      if (captionEl) captionEl.textContent = caption;
+    }
+
+    function drawShareCard({ title, subtitle, lines, footer, thenYear, nowYear }) {
+      const canvas = document.getElementById('share-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+
+      // Clear canvas with light grey background
+      ctx.fillStyle = '#f5f5f5';
+      ctx.fillRect(0, 0, width, height);
+
+      const padding = 60;
+      const topSectionHeight = 600;
+      const bottomSectionHeight = 420;
+      
+      // Top section background (light grey)
+      ctx.fillStyle = '#f8f9fa';
+      ctx.fillRect(padding, padding, width - (padding * 2), topSectionHeight);
+
+      // === TOP LEFT: Calendar/Graph Hybrid ===
+      const calendarX = padding + 40;
+      const calendarY = padding + 40;
+      const calendarWidth = 420;
+      const calendarHeight = 520;
+
+      // Calendar background (white paper with binder clips)
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(calendarX, calendarY, calendarWidth, calendarHeight);
+      
+      // Shadow effect
+      ctx.fillStyle = 'rgba(0,0,0,0.1)';
+      ctx.fillRect(calendarX + 4, calendarY + 4, calendarWidth, calendarHeight);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(calendarX, calendarY, calendarWidth, calendarHeight);
+      
+      // Binder clips (silver bar at top)
+      ctx.fillStyle = '#b0b0b0';
+      ctx.fillRect(calendarX - 8, calendarY - 12, calendarWidth + 16, 18);
+      // Clip details
+      ctx.fillStyle = '#d0d0d0';
+      ctx.beginPath();
+      ctx.arc(calendarX + 85, calendarY - 6, 12, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(calendarX + calendarWidth - 85, calendarY - 6, 12, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Calendar title
+      ctx.fillStyle = '#1a3a52';
+      ctx.font = '700 28px Inter';
+      ctx.textAlign = 'center';
+      const calendarTitle = thenYear && nowYear ? `${thenYear} → ${nowYear}` : 'Purchasing Power Timeline';
+      ctx.fillText(calendarTitle, calendarX + calendarWidth / 2, calendarY + 50);
+      
+      // Subtitle showing years
+      if (thenYear && nowYear) {
+        ctx.fillStyle = '#546e7a';
+        ctx.font = '500 16px Inter';
+        ctx.fillText(`${nowYear - thenYear} years of change`, calendarX + calendarWidth / 2, calendarY + 80);
+      }
+      
+      // Calendar grid - show timeline visualization
+      const cellWidth = calendarWidth / 7;
+      const cellHeight = 55;
+      const startY = calendarY + 110;
+      const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+      
+      // Draw day headers
+      ctx.fillStyle = '#546e7a';
+      ctx.font = '600 12px Inter';
+      days.forEach((day, i) => {
+        ctx.fillText(day, calendarX + (i * cellWidth) + cellWidth / 2, startY);
+      });
+      
+      // Draw calendar grid with data-driven highlights
+      ctx.strokeStyle = '#e0e0e0';
+      ctx.lineWidth = 1;
+      
+      // Calculate highlight intensity based on year difference
+      const yearSpan = nowYear && thenYear ? nowYear - thenYear : 50;
+      const highlightDates = [];
+      const lightHighlightDates = [];
+      
+      // Create pattern: more highlights = more years passed
+      for (let i = 1; i <= 28; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          highlightDates.push(i);
+        } else if (i % 2 === 0) {
+          lightHighlightDates.push(i);
+        }
+      }
+      
+      for (let week = 0; week < 4; week++) {
+        for (let day = 0; day < 7; day++) {
+          const x = calendarX + (day * cellWidth);
+          const y = startY + 20 + (week * cellHeight);
+          const dateNum = (week * 7) + day + 1;
+          
+          // Draw cell border
+          ctx.strokeStyle = '#e0e0e0';
+          ctx.lineWidth = 1;
+          ctx.strokeRect(x, y, cellWidth, cellHeight);
+          
+          // Highlight dates with gradient effect
+          if (highlightDates.includes(dateNum)) {
+            ctx.fillStyle = '#4a90e2';
+            ctx.fillRect(x + 1, y + 1, cellWidth - 2, cellHeight - 2);
+          } else if (lightHighlightDates.includes(dateNum)) {
+            ctx.fillStyle = '#a8d0f0';
+            ctx.fillRect(x + 1, y + 1, cellWidth - 2, cellHeight - 2);
+          }
+          
+          // Date number
+          if (dateNum <= 28) {
+            ctx.fillStyle = highlightDates.includes(dateNum) || lightHighlightDates.includes(dateNum) ? '#ffffff' : '#1a3a52';
+            ctx.font = '600 18px Inter';
+            ctx.textAlign = 'center';
+            ctx.fillText(dateNum.toString(), x + cellWidth / 2, y + 35);
+          }
+        }
+      }
+      
+      // Add timeline indicator at bottom of calendar
+      ctx.fillStyle = '#1a3a52';
+      ctx.font = '600 14px Inter';
+      ctx.textAlign = 'left';
+      if (thenYear && nowYear) {
+        ctx.fillText(`Timeline: ${thenYear} - ${nowYear}`, calendarX + 20, calendarY + calendarHeight - 30);
+        ctx.fillStyle = '#546e7a';
+        ctx.font = '500 12px Inter';
+        ctx.fillText('Each highlighted date represents economic change', calendarX + 20, calendarY + calendarHeight - 10);
+      }
+
+      // === TOP RIGHT: Financial Visualizations ===
+      const vizX = calendarX + calendarWidth + 50;
+      const vizY = calendarY + 40;
+      const vizWidth = width - vizX - padding - 40;
+      const vizHeight = topSectionHeight - 80;
+
+      // Pie chart section
+      const pieCenterX = vizX + (vizWidth / 2);
+      const pieCenterY = vizY + 200;
+      const pieRadius = 130;
+      
+      // Pie chart background circle with subtle pattern
+      ctx.beginPath();
+      ctx.arc(pieCenterX, pieCenterY, pieRadius + 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#e9ecef';
+      ctx.fill();
+      
+      // Draw pie slices (representing cost breakdown for current year)
+      const colors = ['#1a3a52', '#2d5a7b', '#4a90e2', '#6ba3d4', '#8bb6e6', '#a8d0f0', '#c5d9f0'];
+      let sliceData = [];
+      
+      if (nowYear) {
+        // Calculate actual costs for current year
+        const homeCost = getItemPriceForYear('medianHome', nowYear);
+        const rentCost = getItemPriceForYear('monthlyRent', nowYear);
+        const collegeCost = getItemPriceForYear('collegeTuition', nowYear);
+        const carCost = getItemPriceForYear('newCar', nowYear);
+        const healthCost = getItemPriceForYear('healthInsurance', nowYear);
+        const childcareCost = getItemPriceForYear('childcare', nowYear);
+        
+        sliceData = [
+          { value: homeCost, label: 'Home' },
+          { value: rentCost, label: 'Rent' },
+          { value: collegeCost, label: 'College' },
+          { value: carCost, label: 'Car' },
+          { value: healthCost, label: 'Health' },
+          { value: childcareCost, label: 'Childcare' }
+        ].filter(d => d.value > 0).slice(0, 6);
+      } else if (lines && lines.length > 0) {
+        // Fallback: use lines data with proportional sizing
+        sliceData = lines.slice(0, 6).map((line, i) => {
+          // Extract fraction denominator (e.g., "1/4.9" -> 4.9)
+          const fractionMatch = line.match(/1\/(\d+\.?\d*)/);
+          const value = fractionMatch ? parseFloat(fractionMatch[1]) : (i + 1) * 2;
+          return { value, label: line.split(':')[0] || line.substring(0, 25) };
+        });
+      } else {
+        // Default equal slices
+        sliceData = Array(6).fill(0).map((_, i) => ({ value: 1, label: `Item ${i+1}` }));
+      }
+      
+      // Normalize values for pie chart
+      const total = sliceData.reduce((sum, d) => sum + d.value, 0);
+      if (total > 0) {
+        sliceData = sliceData.map(d => ({ ...d, value: d.value / total }));
+      }
+      
+      let currentAngle = -Math.PI / 2; // Start at top
+      sliceData.forEach((data, i) => {
+        const sliceAngle = data.value * Math.PI * 2;
+        
+        // Draw slice
+        ctx.beginPath();
+        ctx.moveTo(pieCenterX, pieCenterY);
+        ctx.arc(pieCenterX, pieCenterY, pieRadius, currentAngle, currentAngle + sliceAngle);
+        ctx.closePath();
+        ctx.fillStyle = colors[i % colors.length];
+        ctx.fill();
+        
+        // Add subtle border
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        
+        currentAngle += sliceAngle;
+      });
+      
+      // Center circle (donut effect)
+      ctx.beginPath();
+      ctx.arc(pieCenterX, pieCenterY, pieRadius * 0.4, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffffff';
+      ctx.fill();
+      ctx.fillStyle = '#1a3a52';
+      ctx.font = '900 32px Inter';
+      ctx.textAlign = 'center';
+      ctx.fillText('1Y', pieCenterX, pieCenterY + 10);
+
+      // Financial breakdown section below pie chart
+      const breakdownY = pieCenterY + pieRadius + 80;
+      ctx.fillStyle = '#1a3a52';
+      ctx.font = '700 24px Inter';
+      ctx.textAlign = 'left';
+      ctx.fillText('Modern Financial Breakdown', vizX, breakdownY);
+      
+      ctx.fillStyle = '#546e7a';
+      ctx.font = '500 14px Inter';
+      ctx.fillText('How 1Y is allocated across essentials', vizX, breakdownY + 32);
+      
+      // Draw data bars/indicators with better styling
+      if (lines && lines.length > 0) {
+        let barY = breakdownY + 70;
+        const maxBars = 4;
+        lines.slice(0, maxBars).forEach((line, i) => {
+          const barWidth = 240;
+          const barHeight = 24;
+          // Vary bar width based on position (representing different cost levels)
+          const fillWidth = barWidth * (0.25 + (i * 0.18));
+          
+          // Bar background with rounded corners effect
+          ctx.fillStyle = '#e0e0e0';
+          ctx.fillRect(vizX, barY, barWidth, barHeight);
+          
+          // Bar fill
+          ctx.fillStyle = colors[i] || '#4a90e2';
+          ctx.fillRect(vizX, barY, fillWidth, barHeight);
+          
+          // Bar value text on bar
+          ctx.fillStyle = fillWidth > barWidth * 0.4 ? '#ffffff' : '#1a3a52';
+          ctx.font = '600 11px Inter';
+          ctx.textAlign = 'left';
+          const label = line.split(':')[0] || line.substring(0, 25);
+          ctx.fillText(label, vizX + 8, barY + 16);
+          
+          // Percentage or value on right
+          ctx.fillStyle = '#546e7a';
+          ctx.font = '600 11px Inter';
+          ctx.textAlign = 'right';
+          const valueText = line.includes(':') ? line.split(':')[1].trim() : `${Math.round((fillWidth / barWidth) * 100)}%`;
+          ctx.fillText(valueText, vizX + barWidth - 8, barY + 16);
+          
+          barY += 38;
+        });
+      }
+
+      // === BOTTOM: Text Box ===
+      const bottomY = padding + topSectionHeight + 50;
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(padding, bottomY, width - (padding * 2), bottomSectionHeight);
+      
+      // Add subtle shadow
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
+      ctx.fillRect(padding + 2, bottomY + 2, width - (padding * 2), bottomSectionHeight);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(padding, bottomY, width - (padding * 2), bottomSectionHeight);
+      
+      // Main title - bold and prominent
+      ctx.fillStyle = '#1a3a52';
+      ctx.font = '900 64px Inter';
+      ctx.textAlign = 'center';
+      const mainTitle = title || 'WHAT ONE YEAR\'S SALARY AFFORDS';
+      const titleY = bottomY + 140;
+      wrapText(ctx, mainTitle, padding + 60, titleY, width - (padding * 2) - 120, 80);
+      
+      // Subtitle - slightly smaller, lighter color
+      const subtitleText = subtitle || 'ONE YEAR of work doesn\'t go as far as it used to';
+      ctx.fillStyle = '#546e7a';
+      ctx.font = '500 36px Inter';
+      const subtitleY = titleY + 100;
+      wrapText(ctx, subtitleText, padding + 60, subtitleY, width - (padding * 2) - 120, 45);
+      
+      // Optional: Add key stat or callout
+      if (thenYear && nowYear) {
+        const homeThen = getItemPriceForYear('medianHome', thenYear) / getIncomeForYear(thenYear);
+        const homeNow = getItemPriceForYear('medianHome', nowYear) / getIncomeForYear(nowYear);
+        const changePercent = ((homeNow - homeThen) / homeThen * 100).toFixed(0);
+        
+        ctx.fillStyle = '#e67e22';
+        ctx.font = '700 28px Inter';
+        ctx.textAlign = 'center';
+        ctx.fillText(`Housing affordability changed by ${changePercent}%`, width / 2, subtitleY + 80);
+      }
+      
+      // Footer
+      if (footer) {
+        ctx.fillStyle = '#1a3a52';
+        ctx.font = '700 28px Inter';
+        ctx.textAlign = 'center';
+        ctx.fillText(footer, width / 2, height - 50);
+      }
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      const words = text.split(' ');
+      let line = '';
+      for (let n = 0; n < words.length; n++) {
+        const testLine = line + words[n] + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && n > 0) {
+          ctx.fillText(line.trim(), x, y);
+          line = words[n] + ' ';
+          y += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line.trim(), x, y);
+    }
+
+    function downloadShareCard() {
+      const canvas = document.getElementById('share-canvas');
+      if (!canvas) return;
+      const link = document.createElement('a');
+      link.download = 'one-year-share.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function copyShareText() {
+      const captionEl = document.getElementById('share-caption');
+      if (!captionEl) return;
+      const text = captionEl.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+      } else {
+        window.prompt('Copy this text:', text);
+      }
+    }
+
+    function initShareControls() {
+      populateYearSelect('summary-then', SHARE_DEFAULTS.then);
+      populateYearSelect('summary-now', SHARE_DEFAULTS.now);
+      populateYearSelect('custom-then', SHARE_DEFAULTS.then);
+      populateYearSelect('custom-now', SHARE_DEFAULTS.now);
+      populateYearSelect('dream-then', SHARE_DEFAULTS.then);
+      populateYearSelect('dream-now', SHARE_DEFAULTS.now);
+      populateItemSelect('custom-item');
+
+      ['summary-then', 'summary-now', 'custom-then', 'custom-now', 'dream-then', 'dream-now', 'custom-item']
+        .forEach(id => {
+          const element = document.getElementById(id);
+          if (element) element.addEventListener('change', updateSharePreview);
+        });
+
+      updateSharePreview();
+    }
+
+    async function loadCompleteData() {
+      try {
+        const response = await fetch('ONE_YEAR_COMPLETE_DATA.json', { cache: 'no-store' });
+        if (!response.ok) return;
+        const data = await response.json();
+        applyCompleteData(data);
+        return true;
+      } catch (error) {
+        // Fallback to inline data if local fetch is blocked
+      }
+      return false;
+    }
+
+    function applyCompleteData(data) {
+      completeDataLoaded = true;
+      const income = data?.incomeData?.medianWorker?.data || {};
+      const items = data?.items || {};
+
+      const mappedIncome = {};
+      Object.entries(income).forEach(([year, entry]) => {
+        if (entry && typeof entry.value === 'number') {
+          mappedIncome[year] = entry.value;
+        }
+      });
+      if (Object.keys(mappedIncome).length > 0) {
+        incomeData = mappedIncome;
+      }
+
+      const unitMap = {
+        eggs: { unitQuantity: 1, unitLabel: 'dozen eggs' },
+        milk: { unitQuantity: 1, unitLabel: 'gallons of milk' },
+        gasoline: { unitQuantity: 1, unitLabel: 'gallons of gas' },
+        movieTicket: { unitQuantity: 1, unitLabel: 'movie tickets' }
+      };
+
+      const mappedItems = {};
+      Object.entries(items).forEach(([key, item]) => {
+        const prices = {};
+        Object.entries(item.data || {}).forEach(([year, entry]) => {
+          if (entry && typeof entry.price === 'number') {
+            prices[year] = entry.price;
+          }
+        });
+        if (Object.keys(prices).length === 0) return;
+
+        const unit = unitMap[key] || {};
+        mappedItems[key] = {
+          name: item.name,
+          icon: item.icon || '📊',
+          category: item.category || 'Other',
+          highlight: item.generationalTalkingPoint || false,
+          generationalTalkingPoint: item.generationalTalkingPoint || false,
+          narrative: item.narrative || item.notes || '',
+          sources: item.sources || [],
+          sourceURLs: item.sourceURLs || [],
+          prices,
+          ...unit
+        };
+      });
+
+      if (Object.keys(mappedItems).length > 0) {
+        if (mappedItems.annualRent && !mappedItems.monthlyRent) {
+          mappedItems.monthlyRent = mappedItems.annualRent;
+        }
+        if (mappedItems.collegeTuition4Year && !mappedItems.collegeTuition) {
+          mappedItems.collegeTuition = mappedItems.collegeTuition4Year;
+        }
+        priceData = mappedItems;
+      }
+
+      updateDataRange();
+      updateSliderRange();
+      initExploreControls();
+      initShareControls();
+      updateHeroStats();
+      initImpactControls();
+      updateYear(parseInt(document.getElementById('year-slider').value));
+    }
+    
     // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
-      renderItems(2025);
+    document.addEventListener('DOMContentLoaded', async function() {
+      updateWealthYear(2025);
       renderBillionaires();
       renderDebunkers();
+      updateMinWageComparison(); // Initialize minimum wage comparison
+
+      const loaded = await loadCompleteData();
+      if (!loaded) {
+        updateYear(2025);
+        updateDataRange();
+        updateSliderRange();
+        initExploreControls();
+        initShareControls();
+        updateHeroStats();
+        renderCategoryFilters();
+        renderInsights(parseInt(document.getElementById('year-slider').value));
+        initImpactControls();
+      }
     });
   </script>
 </body>

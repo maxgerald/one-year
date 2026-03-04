@@ -1,7 +1,9 @@
 # ONE YEAR - Project Outline
 
+**Canonical Document:** This is the single source of truth for the project outline. It replaces `PROJECT_OUTLINE.md`.
+
 **Version:** 2.0  
-**Last Updated:** December 31, 2025
+**Last Updated:** January 13, 2026
 
 ## 🎯 Project Vision
 
@@ -105,6 +107,33 @@ We use **median** (not mean/average) because:
 | 2020 | $67,521 | - | Census |
 | 2024 | $83,730 | $63,128 | Census/BLS |
 
+### **Affordability Signals (New, 2025)**
+
+**Pay momentum (ADP Pay Insights, Dec 2025):**
+- Median annual pay (job-stayers): **$61,300**
+- Job-stayer pay growth (YoY): **4.4%**
+- Job-changer pay growth (YoY): **6.6%**
+
+**Small business health (Paychex Employment Watch, Dec 2025):**
+- National Small Business Jobs Index: **99.26**
+- 2025 average Jobs Index: **99.67**
+- Hourly earnings growth: **2.71%** (2025 average **2.74%**)
+
+**FRED series to integrate into affordability timeline:**
+- 30-Year Fixed Mortgage Rate (`MORTGAGE30US`)
+- Real Median Household Income (`MEHOINUSA646N`)
+- Real Average Hourly Earnings (`AHETPI`)
+- CPI Shelter Component (BLS CPI shelter series)
+- Employment Cost Index (ECI)
+- BEA Personal Consumption Expenditures (PCE)
+- FHFA House Price Index
+- Case-Shiller Home Price Index
+- NAR Housing Affordability Index
+- Federal Reserve Survey of Consumer Finances (SCF)
+- MIT Living Wage Calculator
+- Child Care Aware of America cost of care
+- Kaiser Family Foundation Employer Health Benefits Survey
+
 ### **Housing Data**
 
 | Year | Median Home Price | Years of 1Y (Household) | Source |
@@ -169,20 +198,31 @@ Historical comparison:
 **Hero Section:**
 > **"Stop thinking in dollars. Start thinking in years."**
 > 
-> Your salary = One Year of your life.
-> In 1950, One Year bought you nearly half a house.
-> In 2025, you need almost 5 years.
+> One Year (1Y) = one median worker's annual pay.
+> In 1975, 1Y bought 1/x of a home.
+> In 2025, 1Y buys 1/y of a home.
 > 
 > Where did those extra years of your life go?
 
-**Primary CTA:** "See What One Year Buys" → Act 1
+**Primary CTA:** "Make a share card" → Act 1  
+**Secondary CTA:** "Explore the timeline"
+
+### **Start Here (Act 1 - Story Spine)**
+**3-step flow:** Feel it → Explore it → Share it
+
+1) **Feel it (Hero):** The 1975 vs 2025 home comparison  
+2) **Explore it (Timeline):** Slide through time, compare essentials  
+3) **Share it (Cards):** Generate a social-ready graphic
 
 ### **Act 1: Main Interactive Timeline**
 
 #### **Controls:**
-- **Year Slider:** 1890 - 2025 (granular, year-by-year)
+- **Year Slider:** 1913 - 2025 (granular, year-by-year with interpolation)
 - **Income Type:** Toggle (Median Income | Minimum Wage) ← Phase 2
 - **View Mode:** Toggle between "Years" and "Months"
+ - **Baseline Year Selector:** Compare any year vs a chosen baseline
+ - **Category Filters:** Show core only or all categories
+ - **Story Notes Toggle:** Show narratives tied to specific items
 
 #### **Display Categories:**
 Each shows as a fraction bar + months conversion:
@@ -269,6 +309,26 @@ Each shows as a fraction bar + months conversion:
 
 ---
 
+## 📣 Shareable Cards (Phase 1 Focus)
+
+### **Default Summary Card (Auto-Generated)**
+- Title: "1975 vs 2025"
+- Headline: "In 2025, 1Y buys 1/x of a home. In 1975 it bought 1/y."
+- Supporting lines: rent, college, childcare (fractions of 1Y)
+- CTA: "OneYear.work"
+
+### **Custom Comparison Card**
+- User selects item + two years
+- If item has unit data: "1Y buys X gallons of milk"
+- Otherwise: fraction of item (1/x of a home)
+
+### **American Dream Deep-Dive**
+- Bundle = home + 2 college tuitions + new car + 1 year childcare
+- Output: "1Y buys 1/x of the American Dream"
+- Directly supports the "American Dream" narrative
+
+---
+
 ## 🎨 Design & Brand
 
 ### **Logo: Circle Badge with "1Y"**
@@ -344,6 +404,7 @@ Four versions finalized (see BRANDING_GUIDELINES.md):
 ### **Data Management:**
 - Static JSON files (simple, fast, versionable)
 - GitHub for version control
+- Monthly update hook (fetch key indicators, log changes) → `scripts/monthly_update.ps1`
 
 ### **Deployment:**
 - GitHub Pages (free, simple)
@@ -383,7 +444,7 @@ Four versions finalized (see BRANDING_GUIDELINES.md):
 
 ## ✅ Current Status
 
-**Last Updated:** December 31, 2025
+**Last Updated:** January 13, 2026
 
 **Current Phase:** Phase 1 - MVP Development
 
@@ -422,11 +483,26 @@ Four versions finalized (see BRANDING_GUIDELINES.md):
 | Income | Census CPS ASEC | census.gov/library/publications/2025/demo/p60-286.html |
 | Weekly Earnings | BLS | bls.gov/news.release/wkyeng.nr0.htm |
 | Home Prices | FRED MSPUS | fred.stlouisfed.org/series/MSPUS |
+| Pay Growth | ADP Pay Insights | payinsights.adp.com |
+| Small Biz Jobs/Wages | Paychex Employment Watch | paychex.com/employment-watch |
+| Wage/Benefit Growth | BLS Employment Cost Index | bls.gov/eci |
+| Housing Inflation | BLS CPI Shelter | bls.gov/cpi |
+| Household Spending | BEA PCE | bea.gov/data/consumer-spending/main |
+| Home Price Index | FHFA HPI | fhfa.gov/data/hpi |
+| Home Price Index | Case-Shiller | spglobal.com/spdji/en/indices/indicators/sp-corelogic-case-shiller-us-national-home-price-nsa-index |
+| Affordability Index | NAR HAI | nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index |
+| Wealth/Balance Sheet | Fed SCF | federalreserve.gov/econres/scfindex.htm |
+| Living Wage (Regional) | MIT Living Wage | livingwage.mit.edu |
+| Childcare Costs | Child Care Aware | childcareaware.org |
+| Health Premiums | KFF Employer Health Benefits | kff.org/health-costs/report/2024-employer-health-benefits-survey |
 | Existing Home Sales | NAR | nar.realtor/research-and-statistics |
 | Rent | Apartment List | apartmentlist.com/research |
 | College Costs | College Board | research.collegeboard.org |
 | Food Costs | USDA | fns.usda.gov/research/cnpp/usda-food-plans |
 | Billionaires | Bloomberg | bloomberg.com/billionaires |
+| CPI (Dec 2025) | BLS News Release | bls.gov/news.release/archives/cpi_01132026.htm |
+| New Home Sales (Oct 2025) | Reuters | reuters.com/world/us/us-new-home-sales-fall-marginally-october-2026-01-13 |
+| CPI Coverage | MarketWatch | marketwatch.com/livecoverage/december-2025-cpi-report-today |
 
 ---
 

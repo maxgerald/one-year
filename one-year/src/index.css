@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Brand tokens - CSS custom properties for arbitrary values */
+:root {
+  --color-primary: #1a3a52;
+  --color-primary-light: #2d4a5e;
+  --color-accent: #e67e22;
+  --color-accent-dark: #d35400;
+  --color-slate: #546e7a;
+  --color-bg: #f5f5f5;
+  --color-bg-card: #ffffff;
+  --color-green: #7cb342;
+  --color-red: #d32f2f;
+  --color-orange: #f57c00;
+}
+
+/* Tailwind v4 @theme - extends utilities (bg-primary, text-accent, etc.) */
+@theme {
+  --color-primary: #1a3a52;
+  --color-primary-light: #2d4a5e;
+  --color-accent: #e67e22;
+  --color-accent-dark: #d35400;
+  --color-slate: #546e7a;
+  --color-bg: #f5f5f5;
+  --color-bg-card: #ffffff;
+  --color-green: #7cb342;
+  --color-red: #d32f2f;
+  --color-orange: #f57c00;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  line-height: 1.6;
+  font-feature-settings: 'tnum';
+}
+
+@keyframes fraction-bar-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Print stylesheet - clean layout for PDF export */
+@media print {
+  body { background: white; color: #1a3a52; }
+  .no-print { display: none !important; }
+  a[href]::after { content: none !important; }
+  .shadow-lg, .shadow-md, .shadow-sm { box-shadow: none !important; }
+  .bg-primary { background: #1a3a52 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
