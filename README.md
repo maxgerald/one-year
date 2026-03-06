@@ -17,9 +17,19 @@ This project helps users understand economic changes by showing how many "years 
 
 ## Main Application
 
-The primary application is `index.html` - a self-contained HTML file that can be opened directly in any modern web browser.
+The primary application is the React app in `one-year/`. A standalone `index.html` is also available at the repo root.
 
 **Live Version**: The app is hosted on GitHub Pages at: https://maxgerald.github.io/one-year/
+
+### Deployment
+
+The app deploys automatically via GitHub Actions when you push to `main`. To enable:
+
+1. Go to **Settings → Pages** in this repo
+2. Under "Build and deployment", set **Source** to **GitHub Actions**
+3. Push to `main` (or re-run the workflow) to deploy
+
+To run locally: `cd one-year && npm install && npm run dev`
 
 ## Data Sources
 

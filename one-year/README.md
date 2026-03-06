@@ -32,6 +32,10 @@ npm run build
 npx vite preview
 ```
 
+## Deployment
+
+Deploys automatically to GitHub Pages on push to `main`. See root README for enabling GitHub Actions deployment.
+
 ## Data Sources
 
 - Census Bureau Historical Income Tables
