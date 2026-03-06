@@ -23,11 +23,12 @@ The primary application is the React app in `one-year/`. A standalone `index.htm
 
 ### Deployment
 
-The app deploys automatically via GitHub Actions when you push to `main`. To enable:
+The app deploys automatically when you push to `main`. To enable:
 
 1. Go to **Settings → Pages** in this repo
-2. Under "Build and deployment", set **Source** to **GitHub Actions**
-3. Push to `main` (or re-run the workflow) to deploy
+2. Under "Build and deployment", set **Source** to **Deploy from a branch**
+3. Set **Branch** to `gh-pages` and folder to `/ (root)`, then Save
+4. Push to `main` (or run the workflow from the Actions tab) to deploy
 
 To run locally: `cd one-year && npm install && npm run dev`
 
