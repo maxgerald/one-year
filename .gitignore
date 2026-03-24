@@ -21,3 +21,7 @@ tatus
 
 # Accidental output files
 status
+
+# Vite pre-bundle cache (local dev only)
+one-year/.vite/
+**/.vite/

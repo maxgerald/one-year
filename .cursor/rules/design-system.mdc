@@ -1,0 +1,113 @@
+---
+description: ONE YEAR visual design system. Apply to ALL UI work.
+globs: ["**/*.html", "**/*.css", "**/*.jsx", "**/*.tsx", "**/*.js"]
+alwaysApply: true
+---
+
+# ONE YEAR Design System Rules
+
+## Aesthetic Identity
+This project is a precision instrument for economic measurement.
+Every design decision should reinforce: calibrated, authoritative,
+measured. NOT: a SaaS dashboard, news site, or data viz tool.
+Reference aesthetic: engineering schematic meets data journalism.
+
+## Typography -- STRICT HIERARCHY, NO EXCEPTIONS
+
+### Money Stats (labor-years values like "6.5 years")
+- Font: IBM Plex Mono
+- Size: clamp(48px, 8vw, 96px)
+- Weight: 700
+- Color: #e67e22 (burnt orange) for alarming, #1a3a52 (navy) for neutral
+- Never place two Tier 1 elements adjacent
+
+### Era Labels / Category Headers / Callout Annotations
+- Font: Barlow Condensed
+- Weight: 600
+- Size: 11-13px
+- Letter spacing: 0.1em
+- Text transform: uppercase
+- Color: #546e7a (slate gray)
+
+### Body / Explanatory Text / Citations  
+- Font: Inter
+- Weight: 400
+- Size: 14-16px
+- Color: #546e7a
+
+### Year Display (e.g. "2025")
+- Font: IBM Plex Mono
+- Weight: 700
+- Size: clamp(72px, 12vw, 140px)
+- Color: #1a3a52 OR ghosted at 6% opacity as background texture
+- Never both simultaneously
+
+## Color Rules
+- #1a3a52 Deep Navy -- primary, structural
+- #e67e22 Burnt Orange -- ACCENT ONLY, max 10% of any layout
+- #f5f5f5 Off-White -- Act 1 backgrounds
+- #546e7a Slate Gray -- secondary text, borders
+- #37474f Dark Slate -- Act 2 backgrounds only
+- #7cb342 Warm Green -- improving/positive data only
+- #d32f2f Deep Red -- alarming data, Act 2 only
+- NEVER: gradients on navy, purple of any kind, pure black backgrounds
+
+## Background Texture (Act 1 only)
+Apply this CSS pattern to Act 1 section backgrounds:
+background-image: 
+  linear-gradient(rgba(26,58,82,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(26,58,82,0.03) 1px, transparent 1px);
+background-size: 24px 24px;
+
+## Stat Display Pattern (THE most important component)
+Always render labor-time equivalents with dimension-line aesthetic:
+- Thin horizontal rule (1px, #546e7a) from 0 to value
+- Endpoint marker: small circle or tick, burnt orange
+- Labeled intervals at meaningful points (3mo, 6mo, 1yr, etc.)
+- The number itself sits ABOVE the rule, large, IBM Plex Mono
+- Source citation sits BELOW in Inter 12px slate gray
+
+## Interactive Components (Neumorphic touches only)
+Apply subtle depth to interactive elements only:
+- Pressed/selected state: box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1)
+- Resting state: box-shadow: 2px 2px 5px rgba(0,0,0,0.08)
+- Cards/panels: box-shadow: 0 1px 3px rgba(0,0,0,0.06)
+- NEVER apply neumorphic shadow to static text or body sections
+
+## Act 1 vs Act 2 Context
+Act 1 (purchasing power):
+- Background: #f5f5f5 with blueprint grid texture
+- Tone: warm, educational, blueprint precision
+- Font colors: navy dominant, slate gray secondary
+
+Act 2 (wealth concentration):
+- Background: #37474f dark slate
+- Introduce: monospaced counters, bracket [] UI elements
+- All text: white or near-white
+- Stats: tick upward with CSS counter animation
+- Borders: replace rounded with sharp/squared
+
+## What NEVER to Do
+- Never use Inter for display/hero numbers (only body copy)
+- Never use box shadows on text
+- Never center-align stat annotations (always left-aligned)
+- Never add emoji or decorative icons outside the blueprint system
+- Never use border-radius > 8px on data cards
+- Never add hover animations to static content
+- Never make two things the same visual weight on one screen
+```
+
+---
+
+### 2. A Component Reference Comment Block
+
+For any NEW component you ask Cursor to build, paste this at the top of your prompt as a "component passport." It takes 10 seconds and prevents drift:
+```
+COMPONENT PASSPORT:
+- Act: [1 or 2]
+- Background: [off-white grid / dark slate]
+- Primary stat displayed: [e.g. "labor-years"]
+- Emotional target: [e.g. "alarming" / "educational" / "revelatory"]
+- Font tier needed: [Tier 1 money stat / Tier 2 era label / Tier 3 body]
+- Interactive? [yes/no -- determines neumorphic shadows]
+- Maximalist moment? [yes/no -- determines burst animation]

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONE YEAR - What Does Your Year Really Buy?</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -200,6 +201,16 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
 
+    /* Hero Stat Card — Blueprint Precision (year + income block) */
+    .slider-section:has(.year-display) {
+      background-color: #f5f5f5;
+      background-image:
+        linear-gradient(rgba(26,58,82,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,58,82,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      box-shadow: inset 1px 1px 2px rgba(0,0,0,0.04);
+    }
+
     .controls-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -233,40 +244,52 @@
     .year-display {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 20px;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 24px;
     }
     
+    /* Year — IBM Plex Mono, massive, dimension-line context */
     .current-year {
-      font-size: 64px;
-      font-weight: 900;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(72px, 12vw, 140px);
+      font-weight: 700;
       color: #1a3a52;
       line-height: 1;
+      letter-spacing: -0.02em;
     }
     
+    /* Income block — technical annotation style */
     .income-display {
       text-align: right;
+      padding-left: 24px;
+      border-left: 1px solid rgba(84,110,122,0.3);
     }
     
     .income-label {
-      font-size: 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       color: #546e7a;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.1em;
     }
     
     .income-value {
-      font-size: 28px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(24px, 4vw, 32px);
       font-weight: 700;
       color: #1a3a52;
+      margin-top: 4px;
     }
     
     .income-note {
-      font-size: 13px;
-      color: #e67e22;
-      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: #546e7a;
+      margin-top: 4px;
     }
     
     .slider {
